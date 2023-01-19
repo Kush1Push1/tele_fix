@@ -61,7 +61,7 @@
 	name = "Advanced Tracksuit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/under/syndicate/rus_army_alt
-	ckeywhitelist = list("No_Terra-Vi-Ja")
+	ckeywhitelist = list("noterravija")
 
 /datum/gear/donator/bm/cerberus_helmet
 	name = "cerberus helmet"
