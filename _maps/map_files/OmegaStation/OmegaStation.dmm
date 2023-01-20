@@ -6841,6 +6841,7 @@
 	c_tag = "Security - Central";
 	dir = 4
 	},
+/obj/machinery/vending/wardrobe/sec_wardrobe,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "amL" = (
@@ -7809,7 +7810,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/machinery/vending/wardrobe/sec_wardrobe,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "aox" = (
@@ -36252,6 +36252,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/aft)
+"iOq" = (
+/obj/machinery/vending/security,
+/turf/open/floor/plasteel,
+/area/security/brig)
 "iOr" = (
 /obj/structure/chair/office/dark,
 /obj/effect/turf_decal/tile/red,
@@ -76741,7 +76745,7 @@ ajV
 akW
 alL
 amK
-aov
+iOq
 aov
 apy
 aqM
