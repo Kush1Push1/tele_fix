@@ -55,7 +55,7 @@
 	name = "Butcher Knife Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/shigu_kit
-	ckeywhitelist = list("Lakomkin0911")
+	ckeywhitelist = list("lakomkin0911")
 
 /datum/gear/donator/bm/Advanced_Tracksuit
 	name = "Advanced Tracksuit"
@@ -80,3 +80,9 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/Kovac_Kit
 	ckeywhitelist = list("stgs")
+
+/datum/gear/donator/bm/Friskis_Mask
+	name = "Magic Kitsune Mask"
+	slot = ITEM_SLOT_MASK
+	path = /obj/item/clothing/mask/magickitsune
+	ckeywhitelist = list("friskis")
