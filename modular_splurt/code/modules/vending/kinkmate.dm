@@ -34,13 +34,12 @@
 	)
 	var/list/extra_contraband = list(
 		//Lewd-Clothes
-		/obj/item/dildo/flared/huge = 3,
+		/obj/item/dildo/flared/huge = 6,
 		/obj/item/clothing/glasses/hypno = 3,
 		/obj/item/clothing/neck/mind_collar = 3,
 		/obj/item/key/latex = 5,
 		/obj/item/clothing/head/dominatrixcap = 3,
 		/obj/item/mesmetron = 3,
-		/obj/item/dildo/flared/huge = 3,
 		/obj/item/clothing/neck/petcollar/locked/holo = 2,
 		/obj/item/storage/box/aphrodisiac_pump/plus = 3,
 		/obj/item/storage/box/medipens/lewd = 2
