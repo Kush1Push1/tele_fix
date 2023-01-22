@@ -4,7 +4,7 @@
 	icon = 'icons/obj/vending_restock.dmi'
 	icon_state = "refill_donksoft"
 	var/product = /obj/item/gun/ballistic/automatic/pistol/enforcer/steyr //what it makes
-	var/list/fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold) //what it needs
+	var/list/fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold) //what it needs
 
 /obj/item/Kovac_Kit/afterattack(obj/O, mob/user as mob)
 	if(istype(O, product))

@@ -440,6 +440,12 @@ AI MODULES
 	law_id = "antimov"
 
 
+/******************** Syndicate ********************/
+
+/obj/item/aiModule/core/full/syndicate
+	name = "Syndicate Core AI Module"
+	law_id = "syndie"
+
 /******************** Freeform Core ******************/
 
 /obj/item/aiModule/core/freeformcore
