@@ -782,7 +782,7 @@
 /area/awaymission/challenge/end)
 "cu" = (
 /mob/living/simple_animal/hostile/syndicate/melee/sword,
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/circuit,
 /area/awaymission/challenge/end)
 "cv" = (
 /obj/structure/chair{
@@ -1360,6 +1360,10 @@
 	icon_state = "iron0"
 	},
 /area/awaymission/challenge/main)
+"OT" = (
+/mob/living/simple_animal/hostile/syndicate/melee/space/stormtrooper,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/challenge/end)
 "Pv" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1450,6 +1454,10 @@
 	},
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
+"Zw" = (
+/mob/living/simple_animal/hostile/syndicate/melee/sword/space,
+/turf/open/floor/plasteel/dark,
+/area/awaymission/challenge/end)
 
 (1,1,1) = {"
 aa
@@ -27561,7 +27569,7 @@ aA
 aA
 bP
 go
-cd
+OT
 cd
 cd
 cx
@@ -27818,7 +27826,7 @@ aF
 aF
 bP
 PS
-ce
+cd
 cd
 cd
 cx
@@ -28076,8 +28084,8 @@ aF
 bP
 bS
 cc
-cd
-cu
+Zw
+cb
 bP
 cn
 cd
@@ -29621,7 +29629,7 @@ cf
 co
 cd
 cd
-cd
+ce
 cd
 cd
 Hr
@@ -31684,7 +31692,7 @@ cn
 cn
 cn
 cn
-cn
+cu
 cn
 cn
 cn

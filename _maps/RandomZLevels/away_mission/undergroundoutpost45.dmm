@@ -217,7 +217,6 @@
 /obj/structure/sign/poster/official/nanotrasen_logo{
 	pixel_y = 32
 	},
-/mob/living/simple_animal/hostile/plaguerat,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -2537,7 +2536,6 @@
 /obj/effect/turf_decal/tile/green{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/plaguerat,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -5052,7 +5050,6 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/plaguerat,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -5153,7 +5150,6 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/plaguerat,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -7928,7 +7924,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/plaguerat,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -9100,7 +9095,6 @@
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/plaguerat,
 /turf/open/floor/plasteel/dark{
 	heat_capacity = 1e+006
 	},
@@ -9584,7 +9578,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/plaguerat,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -10037,7 +10030,6 @@
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/plaguerat,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -10318,7 +10310,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/plaguerat,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -13214,7 +13205,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/plaguerat,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -13645,21 +13635,8 @@
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
-"DM" = (
-/mob/living/simple_animal/hostile/plaguerat,
-/turf/open/floor/plasteel{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/central)
 "Gx" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
-/turf/open/floor/plasteel{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/central)
-"Iu" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/mob/living/simple_animal/hostile/plaguerat,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -13677,18 +13654,6 @@
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/engineering)
-"JR" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/poddoor/preopen{
-	id = "UO45_biohazard";
-	name = "biohazard containment door"
-	},
-/obj/effect/turf_decal/delivery,
-/mob/living/simple_animal/hostile/plaguerat,
-/turf/open/floor/plasteel{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/research)
 "KE" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
@@ -13713,15 +13678,6 @@
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/engineering)
-"Nm" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/plaguerat,
-/turf/open/floor/plasteel{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/central)
 "Of" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
@@ -13753,19 +13709,6 @@
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
-"QP" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple,
-/mob/living/simple_animal/hostile/plaguerat,
-/turf/open/floor/plasteel/white{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/gateway)
 "Rq" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -13789,21 +13732,6 @@
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/gateway)
-"Sn" = (
-/mob/living/simple_animal/hostile/plaguerat,
-/turf/open/floor/plasteel{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/crew_quarters)
-"SR" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/plaguerat,
-/turf/open/floor/plasteel{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/mining)
 "SS" = (
 /obj/structure/table,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -13819,13 +13747,6 @@
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/central)
-"VV" = (
-/mob/living/simple_animal/hostile/plaguerat,
-/turf/open/floor/plasteel/cafeteria{
-	dir = 5;
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/crew_quarters)
 "Wd" = (
 /obj/structure/table,
 /obj/item/book/manual/splurt_space_law,
@@ -13839,23 +13760,6 @@
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/research)
-"Xc" = (
-/mob/living/simple_animal/hostile/plaguerat,
-/turf/open/floor/plasteel/showroomfloor{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/crew_quarters)
-"XM" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/brown{
-	dir = 1
-	},
-/mob/living/simple_animal/hostile/plaguerat,
-/turf/open/floor/plasteel{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/crew_quarters)
 "ZN" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
@@ -36350,7 +36254,7 @@ eJ
 eJ
 gU
 kH
-QP
+ly
 gU
 eJ
 eJ
@@ -42776,7 +42680,7 @@ gz
 gz
 kY
 kY
-JR
+kY
 gz
 hc
 hc
@@ -44028,7 +43932,7 @@ ax
 ax
 bk
 aS
-Nm
+bA
 aF
 bP
 ce
@@ -44042,7 +43946,7 @@ aS
 aS
 aS
 aS
-DM
+aS
 aS
 fE
 aS
@@ -45601,7 +45505,7 @@ eJ
 eJ
 gr
 gA
-Sn
+gs
 fN
 mr
 mX
@@ -45835,7 +45739,7 @@ aC
 cA
 cI
 db
-Iu
+bM
 dA
 dW
 en
@@ -48957,7 +48861,7 @@ rN
 ng
 tt
 tZ
-XM
+tZ
 uT
 vq
 vN
@@ -48969,7 +48873,7 @@ wZ
 xg
 xo
 xo
-SR
+wu
 xG
 Rq
 xV
@@ -49186,8 +49090,8 @@ fk
 fv
 fM
 fZ
-Xc
-Xc
+fZ
+fZ
 gu
 gD
 gO
@@ -49708,7 +49612,7 @@ gO
 gO
 hT
 gO
-VV
+gO
 gD
 jB
 jZ
