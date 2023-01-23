@@ -285,7 +285,7 @@
 	. = ..()
 	if(!CheckAttackCooldown(user, target, TRUE))
 		return
-	if (BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP && prob(90) && isliving(target) && target.Adjacent(user))
+	if (user.zone_selected == BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP && prob(90))
 		if(do_mob(user, target, rand(10,20)))
 			do_eblya(target, user)
 	else process_afterattack(target, user, flag, params)

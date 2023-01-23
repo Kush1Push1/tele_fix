@@ -102,6 +102,7 @@
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	icon_state = "secslutskirt"
 	item_state = "secslutskirt"
+	body_parts_covered = CHEST|ARMS
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30, "wound" = 10)
 	can_adjust = FALSE
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
@@ -113,6 +114,7 @@
 	icon_state = "secslutskirtpink"
 	item_state = "secslutskirtpink"
 	can_adjust = FALSE
+	body_parts_covered = CHEST|ARMS
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
 	mutantrace_variation = NONE
 
@@ -147,6 +149,7 @@
 	desc = "The uniform of the Brig Physician. Do know harm, with a skirt"
 	icon_state = "brigphysf"
 	item_state = "brigphysf"
+	body_parts_covered = CHEST|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/rank/blueshield
@@ -176,6 +179,7 @@
 	desc = "The formal uniform of the Blueshield. It makes you feel protected while looking great. A lot better than the stuffy pants."
 	icon_state = "blueshieldskirt"
 	item_state = "blueshieldskirt"
+	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/under/rank/blueshield/skirt
 	name = "blueshield skirt"
@@ -222,6 +226,7 @@
 	name = "bridge officer skirt"
 	icon_state = "bridgesecf"
 	item_state = "bridgesecf"
+	body_parts_covered = CHEST|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/rank/bridgeofficer/formal

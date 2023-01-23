@@ -24,7 +24,7 @@
 	to_chat(user, "<span class='notice'>Now targetting \the [hole].</span>")
 
 /obj/item/reagent_containers/food/drinks/bottle/attack(mob/living/target, mob/living/user)
-	if (BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP && isliving(target) && target.Adjacent(user))
+	if (user.zone_selected == BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP)
 		if(do_mob(user, target, rand(10,20)))
 			do_eblya(target, user)
 	else

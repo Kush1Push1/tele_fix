@@ -47,6 +47,7 @@
 	desc = "A formal trouser suit for women, intended for the station's finest."
 	icon_state = "black_suit_fem"
 	item_state = "black_suit_fem"
+	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/under/suit/green
 	name = "green suit"

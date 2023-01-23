@@ -13,6 +13,7 @@
 	icon_state = "syndicate_skirt"
 	item_state = "bl_suit"
 	has_sensor = NO_SENSORS
+	body_parts_covered = CHEST|ARMS
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 40, WOUND = 5)
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
@@ -33,21 +34,23 @@
 	desc = "Do operatives dream of nuclear sheep?"
 	icon_state = "bloodred_pajamas"
 	item_state = "bl_suit"
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 40, WOUND = 5)
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 100, WOUND = 5)
 
 /obj/item/clothing/under/syndicate/tacticool
 	name = "tacticool turtleneck"
 	desc = "Just looking at it makes you want to buy an SKS, go into the woods, and -operate-."
 	icon_state = "tactifool"
 	item_state = "bl_suit"
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 40, WOUND = 5)
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 5)
 
 /obj/item/clothing/under/syndicate/tacticool/skirt
 	name = "tacticool skirtleneck"
 	desc = "Just looking at it makes you want to buy an SKS, go into the woods, and -operate-."
 	icon_state = "tactifool_skirt"
 	item_state = "bl_suit"
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 40, WOUND = 5)
+	body_parts_covered = CHEST|ARMS
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 5)
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
@@ -57,7 +60,7 @@
 	icon_state = "tactifool"
 	item_state = "bl_suit"
 	has_sensor = HAS_SENSORS
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 5)
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 5)
 
 /obj/item/clothing/under/syndicate/cosmetic/skirt
 	name = "tactitool skirtleneck"
