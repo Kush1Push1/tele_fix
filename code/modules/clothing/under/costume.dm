@@ -32,7 +32,7 @@
 	desc = "It's just like one of my Japanese animes!"
 	icon_state = "schoolgirl"
 	item_state = "schoolgirl"
-	body_parts_covered = CHEST|ARMS
+	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
@@ -93,7 +93,7 @@
 	name = "polychromic kilt"
 	desc = "It's not a skirt!"
 	icon_state = "polykilt"
-	body_parts_covered = CHEST|ARMS|LEGS
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/costume/kilt/polychromic/ComponentInitialize()
@@ -134,7 +134,7 @@
 /obj/item/clothing/under/costume/singer
 	desc = "Just looking at this makes you want to sing."
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	body_parts_covered = CHEST|ARMS
+	body_parts_covered = CHEST|GROIN|ARMS
 	alternate_worn_layer = ABOVE_SHOES_LAYER
 	can_adjust = FALSE
 
@@ -142,7 +142,7 @@
 	name = "yellow performer's outfit"
 	icon_state = "ysing"
 	item_state = "ysing"
-	body_parts_covered = CHEST|ARMS
+	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 
@@ -195,7 +195,7 @@
 	desc = "Perfect camouflage for hiding in botany."
 	icon_state = "scarecrow"
 	item_state = "scarecrow"
-	body_parts_covered = CHEST|ARMS|LEGS
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	resistance_flags = NONE
@@ -205,7 +205,7 @@
 	desc = "A dress inspired by the ancient \"Victorian\" era."
 	icon_state = "draculass"
 	item_state = "draculass"
-	body_parts_covered = CHEST|ARMS
+	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 	mutantrace_variation = USE_TAUR_CLIP_MASK
@@ -239,7 +239,7 @@
 	desc = "A black jumpsuit with a white bone pattern printed on it. Spooky!"
 	icon_state = "skeleton"
 	item_state = "skeleton"
-	body_parts_covered = CHEST|ARMS|LEGS
+	body_parts_covered = CHEST|ARMS|GROIN|LEGS
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	resistance_flags = NONE
