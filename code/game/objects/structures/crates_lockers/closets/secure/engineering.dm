@@ -79,6 +79,7 @@
 	new /obj/item/clothing/glasses/meson/engine(src)
 	new /obj/item/storage/box/emptysandbags(src)
 	new /obj/item/cartridge/engineering(src)
+	new /obj/item/extinguisher/mini(src)
 	new /obj/item/storage/bag/construction(src)
 	new /obj/item/storage/bag/material(src)
 

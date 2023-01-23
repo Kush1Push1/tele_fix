@@ -1,6 +1,7 @@
 /obj/structure/closet/secure_closet/captains/PopulateContents() //Excess clothing and such can be found in the Captain's Wardrobe. You can also find this file in code/modules/vending/wardrobes.
 	..()
 	new /obj/item/card/id/departmental_budget/civ(src)
+	new /obj/item/tank/internals/emergency_oxygen/double(src)
 
 /obj/structure/closet/secure_closet/hop/PopulateContents()
 	..()
