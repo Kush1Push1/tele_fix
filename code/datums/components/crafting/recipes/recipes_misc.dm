@@ -520,9 +520,9 @@
 	result = /obj/item/pressure_plate
 	time = 5
 	reqs = list(/obj/item/stack/sheet/metal = 1,
-				  /obj/item/stack/tile/plasteel = 1,
-				  /obj/item/stack/cable_coil = 2,
-				  /obj/item/assembly/igniter = 1)
+				/obj/item/stack/tile/plasteel = 1,
+				/obj/item/stack/cable_coil = 2,
+				/obj/item/assembly/igniter = 1)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISCELLANEOUS
 
@@ -550,6 +550,15 @@
 	result = /obj/item/bong/coconut
 	reqs = list(/obj/item/stack/sheet/mineral/bamboo = 2,
 				/obj/item/reagent_containers/food/snacks/grown/coconut = 1)
+	time = 70
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/bong
+	name = "Glass Bong"
+	result = /obj/item/bong
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/glass = 10)
 	time = 70
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISCELLANEOUS
