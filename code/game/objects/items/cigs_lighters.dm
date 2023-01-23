@@ -911,11 +911,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A water bong used for smoking dried plants."
 	icon = 'icons/obj/bongs.dmi'
 	icon_state = null
-	item_state = null
+	item_state = "bongoff"
 	w_class = WEIGHT_CLASS_NORMAL
 	light_color = "#FFCC66"
-	var/icon_off = "bong"
-	var/icon_on = "bong_lit"
+	var/icon_off = "bongoff"
+	var/icon_on = "bongon"
 	var/chem_volume = 100
 	var/last_used_time //for cooldown
 	var/firecharges = 0 //used for counting how many hits can be taken before the flame goes out
@@ -1090,10 +1090,12 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/bong/proc/bongturnon()
 	icon_state = icon_on
+	item_state = "bongon"
 	set_light(3, 0.8)
 
 /obj/item/bong/proc/bongturnoff()
 	icon_state = icon_off
+	item_state = "bongoff"
 	set_light(0, 0.0)
 
 
