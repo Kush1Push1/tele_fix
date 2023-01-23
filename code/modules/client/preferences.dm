@@ -2716,7 +2716,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("cock_length")
 					var/min_D = CONFIG_GET(number/penis_min_inches_prefs)
 					var/max_D = CONFIG_GET(number/penis_max_inches_prefs)
-					var/new_length = input(user, "Penis length in inches:\n([min_D]-[max_D])\nReminder that your sprite size will affect this.", "Character Preference") as num|null
+					var/new_length = input(user, "Penis length in centimeters:\n([min_D]-[max_D])\nReminder that your sprite size will affect this.", "Character Preference") as num|null
 					if(new_length)
 						features["cock_length"] = clamp(round(new_length), min_D, max_D)
 

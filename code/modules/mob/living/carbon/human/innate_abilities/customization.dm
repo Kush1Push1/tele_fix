@@ -117,7 +117,7 @@
 		if(new_snout)
 			H.dna.features["mam_snouts"] = new_snout
 		H.update_body()
-		
+
 	else if (select_alteration == "Wings")
 		var/new_color = input(owner, "Choose your wing color:", "Race change","#"+H.dna.features["wings_color"]) as color|null
 		if(new_color)
@@ -218,7 +218,7 @@
 			qdel(X)
 		var/min_D = CONFIG_GET(number/penis_min_inches_prefs)
 		var/max_D = CONFIG_GET(number/penis_max_inches_prefs)
-		var/new_length = input(owner, "Penis length in inches:\n([min_D]-[max_D])", "Genital Alteration") as num|null
+		var/new_length = input(owner, "Penis length in centimeters:\n([min_D]-[max_D])", "Genital Alteration") as num|null
 		if(new_length)
 			H.dna.features["cock_length"] = clamp(round(new_length), min_D, max_D)
 		H.update_genitals()
