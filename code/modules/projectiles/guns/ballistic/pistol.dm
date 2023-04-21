@@ -80,6 +80,14 @@
 	mag_type = /obj/item/ammo_box/magazine/m50
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
+	obj_flags = UNIQUE_RENAME
+	w_class = WEIGHT_CLASS_NORMAL
+	fire_sound = 'modular_bluemoon/kovac_shitcode/sound/weapons/deagle.ogg'
+	unique_reskin = list(
+		"Desert Eagle" = list("icon_state" = "deagle"),
+		"Desert Eagle Gold" = list("icon_state" = "deagleg"),
+		"Desert Eagle Camo" = list("icon_state" = "deaglecamo")
+	)
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/update_overlays()
 	. = ..()

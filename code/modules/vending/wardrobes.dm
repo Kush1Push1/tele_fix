@@ -30,6 +30,7 @@
 					/obj/item/clothing/mask/gas/sechailer = 4,
 					/obj/item/clothing/under/rank/security/officer/skirt = 5,
 					/obj/item/clothing/under/rank/security/officer/grey = 5,
+					/obj/item/clothing/under/rank/security/officer/urban_camo = 3,
 					/obj/item/clothing/under/pants/khaki = 5,
 					/obj/item/clothing/suit/toggle/labcoat/depjacket/sec = 5,
 					/obj/item/clothing/suit/armor/secjacket = 5,
@@ -422,6 +423,7 @@
 					/obj/item/clothing/suit/chaplain/pharaoh = 2,
 					/obj/item/clothing/head/nemes = 1,
 					/obj/item/clothing/head/pharaoh = 1,
+					/obj/item/clothing/neck/tie/cross = 7,
 					/obj/item/storage/fancy/candle_box = 3)
 	premium = list(/obj/item/toy/plush/plushvar = 1,
 					/obj/item/toy/plush/narplush = 1)

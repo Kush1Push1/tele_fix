@@ -25,47 +25,74 @@
 	icon_state = "steyr_m1912"
 	can_suppress = FALSE
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/steyr_shoot.ogg'
-/*
-/obj/item/gun/ballistic/automatic/pistol/steyr/update_icon_state()
-	if(current_skin)
-		icon_state = "[unique_reskin[current_skin]][chambered ? "" : "-e"]"
+
+/obj/item/auto9_kit
+	name = "Auto 9 Kit"
+	desc = "A modkit for making a WT-550 Gun into a Auto 9 Gun."
+	icon = 'icons/obj/vending_restock.dmi'
+	icon_state = "refill_donksoft"
+	var/product = /obj/item/gun/ballistic/automatic/wt550/auto9 //what it makes
+	var/list/fromitem = list(/obj/item/gun/ballistic/automatic/wt550) //what it needs
+
+/obj/item/auto9_kit/afterattack(obj/O, mob/user as mob)
+	if(istype(O, product))
+		to_chat(user,"<span class='warning'>[O] is already modified!")
+		return
+	if(O.type in fromitem) //makes sure O is the right thing
+		new product(usr.loc) //spawns the product
+		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
+		qdel(O) //Gets rid of the baton
+		qdel(src) //gets rid of the kit
 	else
-		icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
+		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
 
-/obj/item/projectile/bullet/c10mm/rubber
-	name = "10mm rubber bullet"
-	damage = 5
-	stamina = 30
-	armour_penetration = -30
-	ricochets_max = 6
-	ricochet_incidence_leeway = 70
-	ricochet_chance = 130
-	ricochet_decay_damage = 0.8
-	shrapnel_type = NONE
-	sharpness = SHARP_NONE
-	embedding = null
+/obj/item/gun/ballistic/automatic/wt550/auto9
+	name = "\improper Auto 9"
+	desc = "Come quitely or there will be troubles."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "auto9"
+	item_state = "auto9"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/auto9_shoot.ogg'
+	can_suppress = FALSE
+	can_bayonet = FALSE
 
-/obj/item/ammo_casing/c10mm/rubber
-	name = "10mm rubber bullet casing"
-	desc = "A 10mm rubber bullet casing."
-	projectile_type = /obj/item/projectile/bullet/c10mm/rubber
+/obj/item/gun/ballistic/automatic/wt550/auto9/update_icon_state()
+	if(magazine)
+		icon_state = "auto9"
+	else
+		icon_state = "auto9-e"
 
-/obj/item/ammo_box/magazine/m10mm/rubber
-	name = "pistol magazine (10mm rubber)"
-	icon_state = "9x19p"
-	desc = "A gun magazine. Loaded with rounds which make pain the target."
-	ammo_type = /obj/item/ammo_casing/c10mm/rubber
+/obj/item/m240_kit
+	name = "M240 Kit"
+	desc = "A modkit for making a Flamethrower into a M240."
+	icon = 'icons/obj/vending_restock.dmi'
+	icon_state = "refill_donksoft"
+	var/product = /obj/item/flamethrower/full/tank/m240 //what it makes
+	var/list/fromitem = list(/obj/item/flamethrower, /obj/item/flamethrower/full, /obj/item/flamethrower/full/tank) //what it needs
 
-/obj/item/storage/secure/briefcase/hos/steyr
-	name = "\improper \'Steyr M1912\' gun kit"
-	desc = "A storage case for a Steyr M1912. Bullets for everyone!"
+/obj/item/m240_kit/afterattack(obj/O, mob/user as mob)
+	if(istype(O, product))
+		to_chat(user,"<span class='warning'>[O] is already modified!")
+		return
+	if(O.type in fromitem) //makes sure O is the right thing
+		new product(usr.loc) //spawns the product
+		user.visible_message("<span class='warning'>[user] modifies [O]!","<span class='warning'>You modify the [O]!")
+		qdel(O) //Gets rid of the baton
+		qdel(src) //gets rid of the kit
+	else
+		to_chat(user, "<span class='warning'> You can't modify [O] with this kit!</span>")
 
-/obj/item/storage/secure/briefcase/hos/steyr/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/steyr(src)
-	new /obj/item/ammo_box/magazine/m10mm(src)
-	new /obj/item/ammo_box/magazine/m10mm(src)
-	new /obj/item/ammo_box/magazine/m10mm(src)
-	new /obj/item/ammo_box/magazine/m10mm/rubber(src)
-	new /obj/item/ammo_box/magazine/m10mm/rubber(src)
-	new /obj/item/ammo_box/magazine/m10mm/rubber(src)
-*/
+/obj/item/flamethrower/full/tank/m240
+	name = "M240 Flamethrower"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	icon_state = "m240"
+	item_state = "m240_0"
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	create_with_tank = TRUE
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/flamethrower.ogg'
+
+/obj/item/flamethrower/update_icon_state()
+	item_state = "m240_[lit]"

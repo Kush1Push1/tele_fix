@@ -15,9 +15,9 @@
 	exp_type_department = EXP_TYPE_SCIENCE
 	considered_combat_role = FALSE
 	outfit = /datum/outfit/job/expeditor
-	custom_spawn_text = "<font color='red'>Expeditor: You are here to explore space and gateway. You have very limited access. You are not Secuirty and you are not in the line of secceustion. You have no power, listen to the Captain and the RD. DO NOT BREAK OUTBACK FIRING PINS WITHOUT REASONS OR YOU WILL GONNA BE PUNISHED!</font>"
-	access = list(ACCESS_ROBOTICS, ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE, ACCESS_GATEWAY, ACCESS_EVA, ACCESS_TELEPORTER)
-	minimal_access = list(ACCESS_ROBOTICS, ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE, ACCESS_GATEWAY, ACCESS_EVA, ACCESS_TELEPORTER)
+	custom_spawn_text = "<font color='red'>Экспедитор: Вы здесь, чтобы исследовать космос и Пространство за Вратами. У вас очень ограниченный доступ. Вы не являетесь Офицером Службы Безопасности, вы наёмник/специалист Научного Отдела Станции. У вас нет власти, слушайте капитана и РД. НЕ ЛОМАЙТЕ СТРЕЛЯЮЩИЕ ОТБОЙНИКИ НА ТАБЕЛЬНОМ БЕЗ ПРИЧИНЫ, ИНАЧЕ ВЫ БУДЕТЕ НАКАЗАНЫ!</font>"
+	access = list(ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE, ACCESS_GATEWAY, ACCESS_EVA, ACCESS_TELEPORTER)
+	minimal_access = list(ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE, ACCESS_GATEWAY, ACCESS_EVA, ACCESS_TELEPORTER)
 	paycheck = PAYCHECK_HARD
 	paycheck_department = ACCOUNT_SCI
 	alt_titles = list("Space Expeditor", "Gateway Explorer", "Space Explorer", "Sexplorer", "Sexpeditor", "Exploration Field Medic", "Exploration Engineer", "Exploration Mercenary", "Exploration Operative")

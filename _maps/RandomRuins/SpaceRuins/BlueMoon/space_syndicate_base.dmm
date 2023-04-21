@@ -620,6 +620,67 @@
 /obj/effect/turf_decal/bluemoon_decals/ds2/middle,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
+"cl" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/obj/item/storage/box/stockparts/basic{
+	pixel_y = 11;
+	pixel_x = -3
+	},
+/obj/item/storage/box/stockparts/basic{
+	pixel_y = 8;
+	pixel_x = 5
+	},
+/obj/item/storage/box/stockparts/basic,
+/obj/item/storage/part_replacer{
+	pixel_y = -12;
+	pixel_x = -2
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj{
+	name = "---Merge conflict marker---"
+	},
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/table,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/obj/item/storage/box/stockparts/basic{
+	pixel_y = 11;
+	pixel_x = -3
+	},
+/obj/item/storage/box/stockparts/basic{
+	pixel_y = 8;
+	pixel_x = 5
+	},
+/obj/item/storage/box/stockparts/basic,
+/obj/item/storage/part_replacer{
+	pixel_y = -12;
+	pixel_x = -2
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "cm" = (
 /obj/effect/spawner/structure/window/plastitanium,
 /obj/structure/transit_tube{
@@ -802,20 +863,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/lawyer)
-"cN" = (
-/obj/effect/turf_decal/trimline/dark_blue/line{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/item/card/emag,
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "cO" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/trimline/purple/filled/line{
@@ -1139,16 +1186,6 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
-"ee" = (
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/soymilk,
-/obj/item/storage/fancy/egg_box,
-/obj/effect/turf_decal/bot_blue,
-/obj/structure/closet/secure_closet/freezer/kitchen{
-	req_access_txt = "150"
-	},
-/turf/open/floor/iron/white/textured_large,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "ek" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1259,23 +1296,6 @@
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
-"eK" = (
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/structure/window/reinforced/survival_pod,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/structure/table,
-/obj/item/stack/sheet/mineral/plastitanium,
-/obj/item/stack/sheet/plastitaniumglass,
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "eO" = (
 /obj/machinery/hydroponics/constructable,
 /obj/machinery/camera/xray/directional/east{
@@ -1616,25 +1636,6 @@
 /obj/effect/turf_decal/vg_decals/numbers/two,
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
-"gj" = (
-/obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
-/obj/effect/turf_decal/delivery/red,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
-	cycle_id = "DS2permabrig"
-	},
-/obj/machinery/door/airlock/security/glass{
-	name = "Long-Term Brig"
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "gk" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -1900,11 +1901,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
-"hl" = (
-/obj/effect/turf_decal/stripes/red/line,
-/obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar)
 "hn" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -2409,6 +2405,34 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
+"jh" = (
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/turf_decal/delivery/red,
+/obj/machinery/door/airlock/security/glass{
+	name = "Long-Term Brig"
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
+	level = 1
+	},
+/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
+	level = 1
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "DS2permabrig"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "jj" = (
 /obj/machinery/deepfryer,
 /turf/open/floor/iron/kitchen{
@@ -2807,13 +2831,6 @@
 	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
-"kS" = (
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
-	},
-/obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar)
 "kT" = (
 /obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
 	level = 1
@@ -2929,15 +2946,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
-"lp" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 6
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "lt" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/dark{
@@ -2983,17 +2991,6 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
-"lE" = (
-/obj/structure/closet/secure_closet/freezer/kitchen{
-	req_access_txt = "150"
-	},
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/soymilk,
-/obj/item/storage/fancy/egg_box,
-/obj/effect/turf_decal/bot_blue,
-/obj/machinery/light/dim/directional/south,
-/turf/open/floor/iron/white/textured_large,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "lF" = (
 /obj/effect/turf_decal/tile/dark_red/fourcorners,
 /obj/structure/table,
@@ -3197,31 +3194,6 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
-"mC" = (
-/obj/machinery/power/smes/engineering{
-	input_level = 150000;
-	charge = 4.5e+006
-	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 4;
-	pixel_x = 4
-	},
-/obj/item/aicard/aitater{
-	pixel_y = 11;
-	pixel_x = 3
-	},
-/obj/effect/turf_decal/siding/dark{
-	dir = 5
-	},
-/obj/structure/cable,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "mD" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
@@ -3243,6 +3215,16 @@
 	dir = 8
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
+"mF" = (
+/obj/effect/turf_decal/stripes/red/corner,
+/obj/effect/turf_decal/stripes/red/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/box/white/corners{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar)
 "mH" = (
 /obj/machinery/door/firedoor,
 /obj/structure/table/reinforced/plastitaniumglass,
@@ -3346,13 +3328,6 @@
 	dir = 4
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
-"nh" = (
-/obj/effect/turf_decal/box/red/corners{
-	dir = 4
-	},
-/obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar)
 "ni" = (
 /obj/effect/turf_decal/stripes/red/line,
 /obj/effect/turf_decal/stripes/red/corner{
@@ -3395,34 +3370,6 @@
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
-"nA" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/table,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 4;
-	pixel_x = 4
-	},
-/obj/effect/turf_decal/siding/dark{
-	dir = 6
-	},
-/obj/item/storage/box/stockparts/basic{
-	pixel_y = 11;
-	pixel_x = -3
-	},
-/obj/item/storage/box/stockparts/basic{
-	pixel_y = 8;
-	pixel_x = 5
-	},
-/obj/item/storage/box/stockparts/basic,
-/obj/item/storage/part_replacer{
-	pixel_y = -12;
-	pixel_x = -2
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "nG" = (
 /obj/structure/window/reinforced/survival_pod{
 	dir = 6
@@ -3548,6 +3495,17 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
+"nV" = (
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/soymilk,
+/obj/item/storage/fancy/egg_box,
+/obj/effect/turf_decal/bot_blue,
+/obj/structure/closet/secure_closet/freezer/kitchen{
+	req_access_txt = "150";
+	req_access = null
+	},
+/turf/open/floor/iron/white/textured_large,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "ob" = (
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 8
@@ -3683,16 +3641,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
-"ow" = (
-/obj/machinery/airalarm/syndicate{
-	pixel_x = 24;
-	dir = 8
-	},
-/obj/structure/closet/secure_closet/medical1{
-	req_access_txt = "150"
-	},
-/turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay/chem)
 "ox" = (
 /obj/effect/turf_decal/tile/bar/opposingcorners{
 	dir = 8
@@ -4018,25 +3966,6 @@
 	},
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
-"pB" = (
-/obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
-/obj/effect/turf_decal/delivery/red,
-/obj/machinery/door/airlock/security/glass{
-	name = "Long-Term Brig"
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
-	cycle_id = "DS2permabrig"
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "pI" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/window/reinforced/survival_pod,
@@ -4654,6 +4583,18 @@
 /obj/item/reagent_containers/glass/beaker/waterbottle/large,
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
+"se" = (
+/obj/structure/closet/secure_closet/freezer/kitchen{
+	req_access_txt = "150";
+	req_access = null
+	},
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/soymilk,
+/obj/item/storage/fancy/egg_box,
+/obj/effect/turf_decal/bot_blue,
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/iron/white/textured_large,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "sh" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 10
@@ -5546,6 +5487,24 @@
 "vU" = (
 /turf/open/floor/engine/plasma,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
+"vX" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj{
+	name = "---Merge conflict marker---"
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/turf/open/floor/iron/dark/diagonal,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "wc" = (
 /obj/structure/bed/secbed,
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
@@ -6335,31 +6294,6 @@
 /obj/machinery/computer/med_data/laptop,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
-"Ae" = (
-/obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
-/obj/effect/turf_decal/delivery/red,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	level = 1
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
-	cycle_id = "DS2permabrig"
-	},
-/obj/machinery/door/airlock/security/glass{
-	name = "Long-Term Brig"
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "Af" = (
 /obj/effect/turf_decal/trimline/blue/line{
 	dir = 8
@@ -6921,10 +6855,6 @@
 	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
-"Dd" = (
-/obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar)
 "De" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
@@ -7019,17 +6949,6 @@
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
-"Dx" = (
-/obj/effect/turf_decal/stripes/red/corner,
-/obj/effect/turf_decal/stripes/red/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/box/white/corners{
-	dir = 8
-	},
-/obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar)
 "Dy" = (
 /obj/machinery/smartfridge/chemistry,
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
@@ -7201,6 +7120,17 @@
 	},
 /turf/open/floor/iron/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
+"DZ" = (
+/obj/machinery/airalarm/syndicate{
+	pixel_x = 24;
+	dir = 8
+	},
+/obj/structure/closet/secure_closet/medical1{
+	req_access_txt = "150";
+	req_access = null
+	},
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay/chem)
 "Eb" = (
 /obj/machinery/light/dim/directional/west,
 /obj/effect/turf_decal/vg_decals/atmos/nitrogen{
@@ -7446,6 +7376,28 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
+"Ff" = (
+/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
+	level = 1
+	},
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 6
+	},
+/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
+	level = 1
+	},
+/obj/structure/table,
+/obj/item/stack/sheet/mineral/plastitanium,
+/obj/item/stack/sheet/plastitaniumglass,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Fh" = (
 /obj/effect/turf_decal/stripes/red/line,
 /turf/open/floor/mineral/plastitanium,
@@ -8328,6 +8280,17 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
+"IW" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/structure/cable,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "IZ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -8422,17 +8385,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
-"JB" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/dark,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/iron/dark/diagonal,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "JC" = (
 /turf/open/floor/catwalk_floor,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
@@ -8607,6 +8559,34 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
+"Kc" = (
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/turf_decal/delivery/red,
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 8
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
+	level = 1
+	},
+/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
+	level = 1
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "DS2permabrig"
+	},
+/obj/machinery/door/airlock/security/glass{
+	name = "Long-Term Brig"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "Kd" = (
 /obj/effect/turf_decal/bluemoon_decals/syndicate/bottom/right,
 /obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
@@ -9989,35 +9969,6 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
-"PA" = (
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 1
-	},
-/obj/machinery/light/dim/directional/north,
-/obj/structure/closet/secure_closet{
-	icon_state = "science";
-	name = "scientist gear locker";
-	req_access_txt = "150"
-	},
-/obj/item/clothing/under/rank/rnd/scientist/utility/syndicate,
-/obj/item/clothing/suit/hooded/wintercoat/science,
-/obj/item/clothing/suit/toggle/labcoat/science,
-/obj/item/clothing/under/rank/rnd/scientist/utility/syndicate{
-	pixel_y = -3
-	},
-/obj/item/clothing/glasses/science,
-/obj/item/clothing/accessory/armband/science{
-	desc = "An armband, worn by the FOB's operatives to display which department they're assigned to.";
-	name = "researcher armband"
-	},
-/obj/item/clothing/accessory/armband/science{
-	desc = "An armband, worn by the FOB's operatives to display which department they're assigned to.";
-	name = "researcher armband"
-	},
-/turf/open/floor/iron/dark/side{
-	dir = 1
-	},
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "PM" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/trimline/purple/corner{
@@ -10802,6 +10753,28 @@
 	dir = 8
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
+"SF" = (
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/turf_decal/delivery/red,
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 8
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "DS2permabrig"
+	},
+/obj/machinery/door/airlock/security/glass{
+	name = "Long-Term Brig"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "SG" = (
 /obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
 	level = 1
@@ -11400,6 +11373,35 @@
 /obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
+"US" = (
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/obj/machinery/light/dim/directional/north,
+/obj/item/clothing/under/rank/rnd/scientist/utility/syndicate,
+/obj/item/clothing/suit/hooded/wintercoat/science,
+/obj/item/clothing/suit/toggle/labcoat/science,
+/obj/item/clothing/under/rank/rnd/scientist/utility/syndicate{
+	pixel_y = -3
+	},
+/obj/item/clothing/glasses/science,
+/obj/item/clothing/accessory/armband/science{
+	desc = "An armband, worn by the FOB's operatives to display which department they're assigned to.";
+	name = "researcher armband"
+	},
+/obj/item/clothing/accessory/armband/science{
+	desc = "An armband, worn by the FOB's operatives to display which department they're assigned to.";
+	name = "researcher armband"
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "science";
+	name = "scientist gear locker";
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 1
+	},
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "UT" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -11527,16 +11529,6 @@
 	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
-"Vq" = (
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1
-	},
-/obj/structure/railing{
-	pixel_y = -2
-	},
-/obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar)
 "Vv" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -11711,13 +11703,6 @@
 	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
-"VZ" = (
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 4
-	},
-/obj/effect/gibspawner/human/bodypartless,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar)
 "Wf" = (
 /obj/effect/turf_decal/bot,
 /obj/item/storage/toolbox/syndicate{
@@ -11797,31 +11782,6 @@
 /obj/item/bedsheet/medical,
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
-"Wu" = (
-/obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
-/obj/effect/turf_decal/delivery/red,
-/obj/machinery/door/airlock/security/glass{
-	name = "Long-Term Brig"
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 4
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
-	level = 1
-	},
-/obj/effect/mapping_helpers/network_builder/atmos_pipe/scrubbers{
-	level = 1
-	},
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
-	cycle_id = "DS2permabrig"
-	},
-/turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "Wv" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 4
@@ -12112,6 +12072,25 @@
 /obj/structure/bookcase/random/fiction,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
+"Xl" = (
+/obj/machinery/power/smes/engineering{
+	input_level = 150000;
+	charge = 4.5e+006
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/item/aicard/aitater{
+	pixel_y = 11;
+	pixel_x = 3
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 5
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Xm" = (
 /obj/structure/chair,
 /obj/machinery/airalarm/syndicate{
@@ -12211,6 +12190,28 @@
 	dir = 4
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
+"XE" = (
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/effect/mapping_helpers/airlock/access/all/syndicate/leader,
+/obj/effect/turf_decal/delivery/red,
+/obj/machinery/door/airlock/security/glass{
+	name = "Long-Term Brig"
+	},
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "DS2permabrig"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "XF" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/mapping_helpers/network_builder/atmos_pipe/distro{
@@ -13050,9 +13051,9 @@ Xb
 bu
 kF
 kF
-gj
+SF
 kF
-Ae
+Kc
 kF
 kF
 fe
@@ -13215,9 +13216,9 @@ lt
 Ov
 Xh
 Xh
-pB
+XE
 ms
-Wu
+jh
 Xh
 PX
 Lv
@@ -13710,7 +13711,7 @@ So
 zp
 ms
 zl
-lp
+IW
 BO
 Tt
 he
@@ -14042,10 +14043,10 @@ gx
 NN
 KS
 HZ
-mC
-nA
-JB
-eK
+Xl
+cl
+vX
+Ff
 UY
 Qe
 TM
@@ -14362,7 +14363,7 @@ hy
 ue
 vl
 TA
-ow
+DZ
 FO
 sV
 TX
@@ -14473,7 +14474,7 @@ vQ
 yv
 iy
 az
-cN
+az
 az
 jc
 JN
@@ -14854,7 +14855,7 @@ Fx
 we
 Fx
 Hz
-PA
+US
 HI
 oK
 Gx
@@ -14872,7 +14873,7 @@ Tp
 Tp
 Tp
 Tp
-VZ
+Tp
 Ww
 xQ
 nm
@@ -14918,7 +14919,7 @@ wk
 Hz
 eH
 HD
-nh
+mQ
 nm
 nm
 nm
@@ -14981,7 +14982,7 @@ nm
 nm
 nm
 nm
-Dd
+nm
 nm
 QG
 st
@@ -15017,7 +15018,7 @@ Ws
 Rz
 ep
 oT
-ee
+nV
 Hz
 YK
 vB
@@ -15026,11 +15027,11 @@ gw
 pk
 Hz
 zc
-hl
+tQ
 nm
 nm
 nm
-Dd
+nm
 nm
 nm
 nm
@@ -15072,7 +15073,7 @@ Cf
 Gl
 MF
 Kg
-lE
+se
 Hz
 aj
 wm
@@ -15093,7 +15094,7 @@ nm
 nm
 nm
 nm
-Dd
+nm
 jN
 zX
 Oi
@@ -15140,11 +15141,11 @@ tQ
 nm
 nm
 nm
-Dd
 nm
 nm
 nm
-Dd
+nm
+nm
 nm
 nm
 nm
@@ -15204,7 +15205,7 @@ nm
 nm
 nm
 Ra
-Vq
+dv
 zX
 Oi
 ZY
@@ -15247,7 +15248,7 @@ JK
 Hz
 Lb
 wt
-Dx
+mF
 fc
 nm
 nm
@@ -15255,7 +15256,7 @@ nm
 nm
 nm
 nm
-Dd
+nm
 nm
 Ra
 KI
@@ -15305,7 +15306,7 @@ xQ
 wt
 sr
 sr
-kS
+sr
 sr
 sr
 sr

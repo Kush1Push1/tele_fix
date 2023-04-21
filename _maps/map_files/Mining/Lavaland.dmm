@@ -144,6 +144,20 @@
 /obj/effect/clockwork/overlay/floor,
 /turf/open/floor/clockwork/reebe,
 /area/lavaland/surface/outdoors)
+"aN" = (
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile/block/cracked,
+/turf/open/indestructible/boss,
+/area/lavaland/surface/outdoors)
 "aO" = (
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/dark,
@@ -433,6 +447,21 @@
 "cB" = (
 /turf/closed/mineral/random/volcanic,
 /area/lavaland/surface/outdoors/explored)
+"cC" = (
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/obj/structure/stone_tile/block,
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/bookcase,
+/obj/structure/window/reinforced/clockwork,
+/obj/structure/window/reinforced/clockwork{
+	dir = 1
+	},
+/turf/open/indestructible/boss,
+/area/lavaland/surface/outdoors)
 "cE" = (
 /obj/machinery/power/apc/auto_name/north,
 /obj/structure/cable/yellow{
@@ -3305,7 +3334,7 @@
 /obj/structure/window/reinforced/clockwork{
 	max_integrity = 180
 	},
-/turf/open/space/basic,
+/turf/open/indestructible/boss,
 /area/lavaland/surface/outdoors)
 "pb" = (
 /obj/structure/fence/corner{
@@ -4925,6 +4954,11 @@
 	},
 /obj/item/restraints/handcuffs/clockwork,
 /turf/open/indestructible/boss,
+/area/lavaland/surface/outdoors)
+"yO" = (
+/obj/structure/stone_tile/block/burnt,
+/obj/structure/stone_tile/block/cracked,
+/turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "yS" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6866,6 +6900,7 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
+/obj/structure/stone_tile/block/cracked,
 /turf/open/indestructible/boss,
 /area/lavaland/surface/outdoors)
 "Kv" = (
@@ -7337,7 +7372,8 @@
 /obj/structure/window/reinforced/clockwork{
 	dir = 1
 	},
-/turf/open/space/basic,
+/obj/structure/stone_tile/block/cracked,
+/turf/open/indestructible/boss,
 /area/lavaland/surface/outdoors)
 "MH" = (
 /obj/machinery/shower{
@@ -8008,6 +8044,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/laborcamp/security)
+"QK" = (
+/obj/structure/stone_tile/surrounding_tile/burnt{
+	dir = 1
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "QQ" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin,
@@ -8119,6 +8161,7 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
 	},
+/obj/structure/stone_tile/block/cracked,
 /turf/open/indestructible/boss,
 /area/lavaland/surface/outdoors)
 "Rs" = (
@@ -46717,7 +46760,7 @@ aa
 aa
 aa
 aa
-aj
+PV
 YC
 bu
 aa
@@ -47488,7 +47531,7 @@ aa
 aa
 aa
 aa
-aj
+QK
 OS
 ff
 Lv
@@ -48263,7 +48306,7 @@ ys
 oi
 hs
 GF
-aj
+ta
 aa
 aa
 ix
@@ -48520,7 +48563,7 @@ hs
 oi
 FC
 Rr
-Uo
+yO
 aa
 aa
 ab
@@ -49806,7 +49849,7 @@ MF
 fo
 kL
 vy
-MF
+cC
 aa
 aa
 aa
@@ -50059,7 +50102,7 @@ aa
 Hr
 mV
 fr
-vy
+aN
 vy
 aT
 vy
@@ -50572,7 +50615,7 @@ aa
 GN
 PJ
 GJ
-vy
+aN
 uQ
 PI
 Wv

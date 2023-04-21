@@ -80,7 +80,7 @@
 /datum/job/rd/New()
 	var/list/extra_titles = list(
 		"Science Administrator",
-		"Cybersun Industries Specialist",
+		"Cybersun Research Specialist",
 		"CEO of Sex",
 		"Sex Research Director",
 		"Research Manager"

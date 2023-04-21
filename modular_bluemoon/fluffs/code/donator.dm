@@ -75,11 +75,29 @@
 	path = /obj/item/clothing/suit/donator/bm/cerberus_suit
 	ckeywhitelist = list("krashly", "stgs")
 
+/datum/gear/donator/bm/Dina_Kit
+	name = "Kikimora Suit Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/Dina_Kit
+	ckeywhitelist = list("xdinka")
+
 /datum/gear/donator/bm/Kovac_Gun
 	name = "Kovac Gun"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/Kovac_Kit
-	ckeywhitelist = list("stgs")
+	ckeywhitelist = list("stgs", "krashly")
+
+/datum/gear/donator/bm/auto9_gun
+	name = "Auto 9 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/auto9_kit
+	ckeywhitelist = list("stgs", "krashly")
+
+/datum/gear/donator/bm/m240_gun
+	name = "M240 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/m240_kit
+	ckeywhitelist = list("stgs", "krashly")
 
 /datum/gear/donator/bm/Friskis_Mask
 	name = "Magic Kitsune Mask"

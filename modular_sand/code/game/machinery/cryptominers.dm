@@ -24,18 +24,13 @@
 	icon_state = "off"
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 40
-	active_power_usage = 400
+	idle_power_usage = 20
+	active_power_usage = 200
 	circuit = /obj/item/circuitboard/machine/cryptominer
 	init_process = FALSE // Don't process upon creation
 	var/mining = FALSE
-	var/miningtime = 6000
-	var/miningpoints = 100
-	var/mintemp = TCRYO // 225K equals approximately -55F or -48C
-	var/midtemp = T0C // 273K equals 32F or 0C
-	var/maxtemp = 500 // 500K equals approximately 440F or 226C
-	var/heatingPower = 100 // Heat added each processing
-	var/require_conductivity = TRUE // Prevent use in space
+	var/miningtime = 3000
+	var/miningpoints = 50
 	var/datum/bank_account/pay_me = null
 	var/obj/item/radio/cargo_radio
 	// Should this machine send messages on cargo radio?
@@ -220,17 +215,21 @@
 	// Check for temperature effects
 	// Minimum (most likely)
 	if(env_temp <= temp_min)
-		produce_points(CRYPTO_MULT_MAX)
+		say("Критически низкая температура! Экстренное отключение!!") // Ваще холодно, пиздец.
+		playsound(loc, 'sound/machines/beep.ogg', 100, TRUE, -1)
+		set_mining(FALSE)
+	else if((env_temp <= temp_mid) && (env_temp >= temp_min))
+		produce_points(CRYPTO_MULT_MAX) // Чем холоднее, тем больше.
 	// Mid
 	else if((env_temp <= temp_mid) && (env_temp >= temp_min))
 		produce_points(CRYPTO_MULT_MID)
 	// Maximum
 	else if((env_temp <= temp_max) && (env_temp >= temp_mid))
-		produce_points(CRYPTO_MULT_MIN)
+		produce_points(CRYPTO_MULT_MIN) // Чем горячее, тем меньше.
 	// Overheat
 	else if(env_temp >= temp_max)
-		say("Critical overheating detected! Shutting off!")
-		playsound(loc, 'sound/machines/beep.ogg', 50, TRUE, -1)
+		say("Критически высокая температура! Экстренное отключение!!")
+		playsound(loc, 'sound/machines/beep.ogg', 100, TRUE, -1)
 		set_mining(FALSE)
 
 	// Increase heat by heating_power
@@ -286,11 +285,11 @@
 	icon_state = "off_syndie"
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 80
-	active_power_usage = 800
+	idle_power_usage = 10
+	active_power_usage = 100
 	circuit = /obj/item/circuitboard/machine/cryptominer/syndie
 	miningtime = 6000
-	miningpoints = 200
+	miningpoints = 100
 	radio_snitch = FALSE // Illegal tech!
 
 /obj/machinery/cryptominer/syndie/update_icon()
@@ -311,7 +310,7 @@
 	idle_power_usage = 1
 	active_power_usage = 1
 	miningtime = 600000
-	miningpoints = 10000
+	miningpoints = 1000
 	radio_snitch = FALSE // None of cargo's business!
 
 /obj/machinery/cryptominer/nanotrasen/update_icon()
