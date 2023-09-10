@@ -1293,7 +1293,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
 				H.adjustBruteLoss(1)
 			else
-				H.adjustToxLoss(1) //Robots melt instead of taking brute.
+				H.adjustToxLoss(1, toxins_type = TOX_SYSCORRUPT)
 
 /datum/species/proc/spec_death(gibbed, mob/living/carbon/human/H)
 	if(H)
