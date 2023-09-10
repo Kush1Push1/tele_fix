@@ -275,7 +275,8 @@
 	. = ..()
 	if(. && user)
 		if (progress_flash_divisor == 0)
-			user.flash_act(min(light_intensity,1))
+			if(!HAS_TRAIT(user, TRAIT_ROBOTIC_ORGANISM))
+				user.flash_act(min(light_intensity,1))
 			progress_flash_divisor = initial(progress_flash_divisor)
 		else
 			progress_flash_divisor--
