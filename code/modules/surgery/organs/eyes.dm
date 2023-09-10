@@ -421,6 +421,7 @@
 /obj/item/organ/eyes/ipc
 	name = "ipc eyes"
 	icon_state = "cybernetic_eyeballs"
+	organ_flags = ORGAN_SYNTHETIC
 
 /obj/item/organ/eyes/ipc/emp_act(severity)
 	. = ..()

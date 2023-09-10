@@ -132,6 +132,7 @@
 /obj/item/organ/stomach/ipc
 	name = "ipc cell"
 	icon_state = "stomach-ipc"
+	organ_flags = ORGAN_SYNTHETIC
 
 /obj/item/organ/stomach/ipc/on_life()
 	. = ..()
