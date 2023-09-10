@@ -27,6 +27,8 @@
 	if(istype(dna.species, /datum/species/skeleton)) //skeletons shouldn't be husks.
 		cure_husk()
 		return
+	if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+		return
 	. = ..()
 	if(.)
 		update_hair()
