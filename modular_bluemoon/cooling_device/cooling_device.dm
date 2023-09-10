@@ -115,7 +115,7 @@
 
 
 /obj/item/device/suit_cooling_unit/attackby(obj/item/tool, mob/user, list/click_params)
-	if(is_in_slot) // Сначала нужно снять
+	if(is_in_slot()) // Сначала нужно снять
 		to_chat(user, span_warning("You have to take it off yourself firstly."))
 		return
 
