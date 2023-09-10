@@ -2489,16 +2489,18 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			firemodifier = min(firemodifier, 0)
 			burn_damage = max(log(2-firemodifier,(H.bodytemperature-BODYTEMP_NORMAL))-5,0) // this can go below 5 at log 2.5
 		if (burn_damage)
+			var/alert_type = HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM) ? /atom/movable/screen/alert/sweat_robotic : /atom/movable/screen/alert/sweat
 			switch(burn_damage)
 				if(0 to 2)
-					H.throw_alert("temp", /atom/movable/screen/alert/sweat, 1)
+					H.throw_alert("temp", alert_type, 1)
 				if(2 to 4)
-					H.throw_alert("temp", /atom/movable/screen/alert/sweat, 2)
+					H.throw_alert("temp", alert_type, 2)
 				else
-					H.throw_alert("temp", /atom/movable/screen/alert/sweat, 3)
+					H.throw_alert("temp", alert_type, 3)
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
 		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4) //40% for level 3 damage on humans
-			H.emote("scream")
+			if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+				H.emote("scream")
 		H.apply_damage(burn_damage, BURN)
 
 	else if(H.bodytemperature < (BODYTEMP_COLD_DAMAGE_LIMIT + cold_offset) && !HAS_TRAIT(H, TRAIT_RESISTCOLD))

@@ -697,7 +697,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 
 
 /mob/living/carbon/proc/get_environment_cooling_efficiency()
-	var/suitlink = check_suitlinking()
+	var/suitlink = check_suitlinking()  //todo - убрать, оставив только девайс для охлаждения
 	if(suitlink)
 		return suitlink //If you are wearing full EVA or lavaland hazard gear (on lavaland), assume it has been made to accomodate your cooling needs.
 	var/datum/gas_mixture/environment = loc.return_air()

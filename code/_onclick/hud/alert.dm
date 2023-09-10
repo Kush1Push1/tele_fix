@@ -231,9 +231,15 @@
 	desc = "You're sweating! Get somewhere cooler and take off any insulating clothing like a fire suit."
 	icon_state = "sweat"
 
+/atom/movable/screen/alert/sweat_robotic
+	name = "High Internal Temperature"
+	desc = "Your internal systems alert you about overheat. The temperature may damage your hull."
+	icon_state = "sweat" //TODO: отдельный спрайт
+
 /atom/movable/screen/alert/shiver
 	name = "Shivering"
 	desc = "You're shivering! Get somewhere warmer and take off any insulating clothing like a space suit."
+	icon_state = "shiver"
 
 /atom/movable/screen/alert/lowpressure
 	name = "Low Pressure"
