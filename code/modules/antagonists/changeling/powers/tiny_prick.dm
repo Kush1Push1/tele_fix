@@ -131,6 +131,9 @@
 		return
 	if(isliving(target))
 		var/mob/living/L = target
+		if(HAS_TRAIT(L, TRAIT_ROBOTIC_ORGANISM))
+			to_chat(user, span_warning("Our sting appears ineffective against machines."))
+			return FALSE
 		if((HAS_TRAIT(L, TRAIT_HUSK)) || !L.has_dna())
 			to_chat(user, "<span class='warning'>Our sting appears ineffective against its DNA.</span>")
 			return 0

@@ -132,6 +132,8 @@
 		// disallowed carbons
 		if(isalien(M) || isdevil(M))
 			return FALSE
+		if(HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM))
+			return
 		var/mob/living/carbon/target = M
 		// gotta have a head to be implanted (no changelings or sentient plants)
 		if(!target.get_bodypart(BODY_ZONE_HEAD))
