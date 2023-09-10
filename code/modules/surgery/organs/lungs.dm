@@ -434,7 +434,7 @@
 	var/is_cooling = 0
 	var/cooling_coolant_drain = 5	//Coolant (blood) use per tick of active cooling.
 	var/next_warn = BLOOD_VOLUME_NORMAL
-	actions_types = list(/datum/action/item_action/organ_action/toggle)
+//	actions_types = list(/datum/action/item_action/organ_action/toggle)
 	organ_flags = ORGAN_SYNTHETIC
 
 /obj/item/organ/lungs/ipc/emp_act(severity) //Should probably put it somewhere else later
