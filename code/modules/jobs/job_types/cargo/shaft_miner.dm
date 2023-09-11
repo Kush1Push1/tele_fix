@@ -33,21 +33,19 @@
 /datum/outfit/job/miner
 	name = "Shaft Miner (Lavaland)"
 	jobtype = /datum/job/mining
-
-//	belt = null (убрано, т.к. в этот слот у синтетиков ставится охладитель. TODO - сделать красивее и сделать замену l_pocket = belt)
+	belt = /obj/item/pda/shaftminer
 	ears = /obj/item/radio/headset/headset_cargo/mining
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/color/black
 	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
-	l_pocket = /obj/item/pda/shaftminer
+	l_pocket = /obj/item/reagent_containers/hypospray/medipen/survival
 	r_pocket = /obj/item/storage/bag/ore	//causes issues if spawned in backpack
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,\
 		/obj/item/mining_voucher=1,\
 		/obj/item/suit_voucher=1,\
-		/obj/item/stack/marker_beacon/ten=1,
-		/obj/item/reagent_containers/hypospray/medipen/survival = 1)
+		/obj/item/stack/marker_beacon/ten=1)
 
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -58,10 +56,10 @@
 
 // BLUEMOON ADD START - шахтёрским синтетикам с начала их смены выдаётся заряженная шахтёрская ПОУ
 /datum/outfit/job/miner/equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
-	. = ..()
 	if(HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
-		var/obj/item/device/cooler/lavaland/charged/cooler = new /obj/item/device/cooler/lavaland/charged(H)
-		H.equip_to_slot_or_del(cooler, ITEM_SLOT_BELT)
+		l_pocket = belt
+		belt = /obj/item/device/cooler/lavaland/charged
+	. = ..()
 // BLUEMOON ADD END
 
 /datum/outfit/job/miner/syndicate
