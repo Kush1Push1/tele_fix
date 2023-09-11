@@ -233,7 +233,8 @@
 
 /atom/movable/screen/alert/sweat_robotic
 	name = "High Internal Temperature"
-	desc = "Your internal systems alert you about overheat. The temperature may damage your hull."
+	desc = "Your internal systems alert you about overheat. The temperature may damage your hull. Use a portable cooling unit or find an atmosphere \
+	with comfortable settings."
 	icon_state = "sweat" //TODO: отдельный спрайт
 
 /atom/movable/screen/alert/shiver

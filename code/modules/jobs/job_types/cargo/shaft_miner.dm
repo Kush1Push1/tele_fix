@@ -56,7 +56,7 @@
 
 	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
 
-/datum/outfit/job/miner/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+/datum/outfit/job/miner/equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	. = ..()
 	if(HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
 		var/obj/item/device/cooler/lavaland/charged/cooler = new /obj/item/device/cooler/lavaland/charged(H)
