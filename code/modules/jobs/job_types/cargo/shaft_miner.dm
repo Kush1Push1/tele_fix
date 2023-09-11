@@ -34,19 +34,20 @@
 	name = "Shaft Miner (Lavaland)"
 	jobtype = /datum/job/mining
 
-	belt = /obj/item/pda/shaftminer
+//	belt = null
 	ears = /obj/item/radio/headset/headset_cargo/mining
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/color/black
 	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
-	l_pocket = /obj/item/reagent_containers/hypospray/medipen/survival
+	l_pocket = /obj/item/pda/shaftminer
 	r_pocket = /obj/item/storage/bag/ore	//causes issues if spawned in backpack
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,\
 		/obj/item/mining_voucher=1,\
 		/obj/item/suit_voucher=1,\
-		/obj/item/stack/marker_beacon/ten=1)
+		/obj/item/stack/marker_beacon/ten=1,
+		/obj/item/reagent_containers/hypospray/medipen/survival = 1)
 
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -54,6 +55,12 @@
 	box = /obj/item/storage/box/survival/mining
 
 	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator
+
+/datum/outfit/job/miner/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	. = ..()
+	if(HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+		var/obj/item/device/cooler/lavaland/charged/cooler = new /obj/item/device/cooler/lavaland/charged(H)
+		H.equip_to_slot_or_del(cooler, ITEM_SLOT_BELT)
 
 /datum/outfit/job/miner/syndicate
 	name = "Syndicate Shaft Miner"
