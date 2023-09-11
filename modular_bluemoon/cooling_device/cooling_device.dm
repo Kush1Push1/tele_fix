@@ -4,14 +4,14 @@
 	name = "portable cooling unit"
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
 	It has an internal power unit with power rating of 10 MJ, which can be charge with APCs or power cells with magnetic charger on top of PCU. \
-	System of strapes allows it to be worn on back or strapped to an engineering hazard vest."
+	System of strapes allows it to be worn <b>as a suit, on your back or strapped to an hazard vest</b>."
 	w_class = WEIGHT_CLASS_BULKY // Не лезет в сумку
 	icon = 'modular_bluemoon/cooling_device/cooling_device.dmi'
 	mob_overlay_icon = 'modular_bluemoon/cooling_device/cooling_device_back.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/cooling_device/cooling_device_back.dmi'
 
 	icon_state = "suitcooler0"
-	slot_flags = ITEM_SLOT_BACK //todo - добавить размещение на пояс, но забалансить, чтобы синт-СБшник с этой штукой не бегал в аблятивке по обшивке, не снимая сумки
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING // Можно вешать на спину и на грудь
 
 	flags_1 = CONDUCT_1
 	force = 8 // тяжёлое
@@ -37,8 +37,9 @@
 	name = "mining cooling unit"
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
 	It has an internal power unit with rating of 6 MJ, which can be charge with APCs or power cells with magnetic charger on top of PCU. \
-	This one was modified to be strapped on belt and mining suit, but cooling efficient was significantly reduced. It still can be used for planetary operations."
-	slot_flags = ITEM_SLOT_BELT
+	System of strapes allows it to be worn <b>as a suit, on your back, on belt or strapped to an hazard vest or exploration suit</b>. \
+	Cooling efficient was significantly reduced, but it still can be used for planetary operations."
+	slot_flags = ITEM_SLOT_BELT |  ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING
 	force = 5 // маленький, но далеко не лёгкий
 	max_cooling = 4 // максимальное охлаждение, этого вполне хватает для планетоида
 	charge_consumption = 3.3 // 30 минут работы при полном заряде
@@ -91,7 +92,7 @@
 	if(!istype(H))
 		return 0
 
-	return (H.back == src) || (H.s_store == src) || (H.belt == src)
+	return (H.back == src) || (H.s_store == src) || (H.belt == src) || (H.wear_suit == src)
 
 /obj/item/device/cooler/proc/turn_on()
 	if(charge <= 0)
