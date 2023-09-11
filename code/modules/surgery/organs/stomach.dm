@@ -132,7 +132,7 @@
 /obj/item/organ/stomach/ipc
 	name = "ipc cell"
 	icon_state = "stomach-ipc"
-	organ_flags = ORGAN_SYNTHETIC
+	organ_flags = ORGAN_SYNTHETIC // BLUEMOON ADD - органы синтетиков не должны гнить и должны быть подвержены ЭМИ
 
 /obj/item/organ/stomach/ipc/on_life()
 	. = ..()

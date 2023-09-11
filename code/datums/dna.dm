@@ -593,16 +593,20 @@
 /mob/living/carbon/proc/randmut(list/candidates, difficulty = 2)
 	if(!has_dna())
 		return
+	// BLUEMOON ADD START - синтетики не должны иметь мутаций
 	if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
 		return
+	// BLUEMOON ADD END
 	var/mutation = pick(candidates)
 	. = dna.add_mutation(mutation)
 
 /mob/living/carbon/proc/easy_randmut(quality = POSITIVE + NEGATIVE + MINOR_NEGATIVE, scrambled = TRUE, sequence = TRUE, exclude_monkey = TRUE)
 	if(!has_dna())
 		return
+	// BLUEMOON ADD START - синтетики не должны иметь мутаций
 	if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
 		return
+	// BLUEMOON ADD END
 	var/list/mutations = list()
 	if(quality & POSITIVE)
 		mutations += GLOB.good_mutations
@@ -629,8 +633,10 @@
 /mob/living/carbon/proc/randmuti()
 	if(!has_dna())
 		return
+	// BLUEMOON ADD START - синтетики не должны иметь мутаций
 	if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
 		return
+	// BLUEMOON ADD END
 	var/num = rand(1, DNA_UNI_IDENTITY_BLOCKS)
 	var/newdna = setblock(dna.uni_identity, num, random_string(DNA_BLOCK_SIZE, GLOB.hex_characters))
 	dna.uni_identity = newdna
@@ -686,8 +692,10 @@
 		return
 	if(dna.stability > 0)
 		return
+	// BLUEMOON ADD START - синтетики не должны иметь мутаций
 	if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
 		return
+	// BLUEMOON ADD END
 	var/instability = - dna.stability
 	dna.remove_all_mutations()
 	dna.stability = 100

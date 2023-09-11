@@ -1293,7 +1293,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
 				H.adjustBruteLoss(1)
 			else
-				H.adjustToxLoss(1, toxins_type = TOX_SYSCORRUPT)
+				H.adjustToxLoss(1, toxins_type = TOX_SYSCORRUPT) // BLUEMOON CHANGES - вместо урона ожогами, у синтетиков начинают пегреваться внутренности, что выражено уроном токсинами
 
 /datum/species/proc/spec_death(gibbed, mob/living/carbon/human/H)
 	if(H)
@@ -2489,17 +2489,17 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			firemodifier = min(firemodifier, 0)
 			burn_damage = max(log(2-firemodifier,(H.bodytemperature-BODYTEMP_NORMAL))-5,0) // this can go below 5 at log 2.5
 		if (burn_damage)
-			var/alert_type = HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM) ? /atom/movable/screen/alert/sweat_robotic : /atom/movable/screen/alert/sweat
+			var/alert_type = HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM) ? /atom/movable/screen/alert/sweat_robotic : /atom/movable/screen/alert/sweat // BLUEMOON ADD - для разделения алёртов синтетиков и органиков
 			switch(burn_damage)
 				if(0 to 2)
-					H.throw_alert("temp", alert_type, 1)
+					H.throw_alert("temp", alert_type, 1) // BLUEMOON CHANGES
 				if(2 to 4)
-					H.throw_alert("temp", alert_type, 2)
+					H.throw_alert("temp", alert_type, 2) // BLUEMOON CHANGES
 				else
-					H.throw_alert("temp", alert_type, 3)
+					H.throw_alert("temp", alert_type, 3) // BLUEMOON CHANGES
 		burn_damage = burn_damage * heatmod * H.physiology.heat_mod
 		if (H.stat < UNCONSCIOUS && (prob(burn_damage) * 10) / 4) //40% for level 3 damage on humans
-			if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+			if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - синтетики не кричат, когда перегреваются
 				H.emote("scream")
 		H.apply_damage(burn_damage, BURN)
 

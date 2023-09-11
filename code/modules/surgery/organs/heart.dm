@@ -264,7 +264,7 @@
 	name = "IPC heart"
 	desc = "An electronic pump that regulates hydraulic functions, the electronics have EMP shielding."
 	icon_state = "heart-c"
-	organ_flags = ORGAN_SYNTHETIC
+	organ_flags = ORGAN_SYNTHETIC // BLUEMOON ADD - органы синтетиков не должны гнить и должны быть подвержены ЭМИ
 
 /obj/item/organ/heart/freedom
 	name = "heart of freedom"

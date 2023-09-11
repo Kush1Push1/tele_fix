@@ -5,7 +5,7 @@
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
 	It has an internal power unit with power rating of 10 MJ, which can be charge with APCs or power cells with magnetic charger on top of PCU. \
 	System of strapes allows it to be worn on back or strapped to an engineering hazard vest."
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_BULKY // Не лезет в сумку
 	icon = 'modular_bluemoon/cooling_device/cooling_device.dmi'
 	mob_overlay_icon = 'modular_bluemoon/cooling_device/cooling_device_back.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/cooling_device/cooling_device_back.dmi'
@@ -14,37 +14,37 @@
 	slot_flags = ITEM_SLOT_BACK //todo - добавить размещение на пояс, но забалансить, чтобы синт-СБшник с этой штукой не бегал в аблятивке по обшивке, не снимая сумки
 
 	flags_1 = CONDUCT_1
-	force = 8 // heavy
-	throwforce = 10
+	force = 8 // тяжёлое
+	throwforce = 8
 	throw_speed = 1
 	throw_range = 4
 	actions_types = list(/datum/action/item_action/toggle)
 
 	custom_materials = list(/datum/material/iron = 15000, /datum/material/glass = 3500)
 
-	var/on = FALSE						//is it turned on?
-	var/max_cooling = 18			// in degrees per second - probably don't need to mess with heat capacity here
-	var/charge_consumption = 5.5	//КВт, energy usage at full power (около 30 минут при заряде в 10000)
+	var/on = FALSE					// включено или нет
+	var/max_cooling = 18			// максимальное охлаждение, нужно для борьбы с нагревом в космосе
+	var/charge_consumption = 5.5	// КВт, используемый charge при максимальном охлаждении (около 30 минут при заряде в 10000)
 	var/charge = 0					// Мы не используем батарейки, чтобы не было халявных накопителей высокой мощности из любого техфаба
-	var/roundstart_charged = FALSE		// Для размещения на карте с начала раунда, заряженный вариант
+	var/roundstart_charged = FALSE	// Для размещения на карте с начала раунда, заряженный вариант
 	var/max_charge = 10000			// 10 МВт
-	var/thermostat = T20C			// Какой температуре стремиться
+	var/thermostat = T20C			// К какой температуре стремиться
 
-/obj/item/device/cooler/charged
+/obj/item/device/cooler/charged // Заряжённый при размещении
 	roundstart_charged = TRUE
 
-/obj/item/device/cooler/lavaland
+/obj/item/device/cooler/lavaland // Специальный для шахтёров и планетоидов
 	name = "mining cooling unit"
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
 	It has an internal power unit with rating of 6 MJ, which can be charge with APCs or power cells with magnetic charger on top of PCU. \
 	This one was modified to be strapped on belt and mining suit, but cooling efficient was significantly reduced. It still can be used for planetary operations."
 	slot_flags = ITEM_SLOT_BELT
-	force = 5 // smaller, but still bulky
-	max_cooling = 4
+	force = 5 // маленький, но далеко не лёгкий
+	max_cooling = 4 // максимальное охлаждение, этого вполне хватает для планетоида
 	charge_consumption = 3.3 // 30 минут работы при полном заряде
 	max_charge = 6000
 
-/obj/item/device/cooler/lavaland/charged
+/obj/item/device/cooler/lavaland/charged // Заряжённый при размещении (выдаётся при спавне шахтёрам-синтетикам в том числе)
 	roundstart_charged = TRUE
 
 /obj/item/device/cooler/ui_action_click(mob/living/user)
@@ -61,11 +61,11 @@
 	STOP_PROCESSING(SSobj, src)
 
 /obj/item/device/cooler/process()
-	if(charge <= 0)
+	if(charge <= 0) // Если заряда нет, выключаемся и выдаём сообщение об аварии
 		turn_off(1)
 		return
 
-	if(!is_in_slot())
+	if(!is_in_slot()) // Если не в слоте, энергия всё равно потребляется
 		charge -= charge_consumption
 		return
 
@@ -124,11 +124,10 @@
 	to_chat(user, span_notice("You switch \the [src] [on ? "on" : "off"]."))
 
 /obj/item/device/cooler/attack_obj(atom/target, mob/user)
-	var/maxcapacity = FALSE //Safety check for batteries
+	var/maxcapacity = FALSE // Если достигнут максимальный заряд, прекращаем заряжаться
 	var/maxdrain = 0 // Проверка, чтобы из АПЦ не выкачивало более половины энергии
-	var/drain = 0 //Drain amount from batteries
 
-	if(istype(target, /obj/item/stock_parts/cell) || istype(target, /obj/machinery/power/apc))
+	if(istype(target, /obj/item/stock_parts/cell) || istype(target, /obj/machinery/power/apc)) // можно заряжаться от АПЦ и батареек, нажав по ним ПОУ
 		user.DelayNextAction(CLICK_CD_MELEE)
 		var/in_apc = FALSE
 		if(istype(target, /obj/machinery/power/apc))
@@ -146,13 +145,13 @@
 				return
 
 			user.visible_message(span_notice("[user] puts \the [src]'s magnetic charger on [in_apc ? "the APC" : "\a [target]"]."), span_notice("You hold the magnetic charger over [in_apc ? "the APC" : "\a [target]"]. It's getting hotter."))
-			while(cell.charge > 0 && !maxcapacity)
-				drain = rand(500, 1000)
+			while(cell.charge > 0 && !maxcapacity) // Если не достигнут максимальный заряд ПОУ и в источник ещё есть заряд, продолжаем заряжаться
+				var/drain = rand(500, 1000)
 
-				if(cell.charge < drain)
+				if(cell.charge < drain) // Высасываем оставшийся заряд, а не сверх него
 					drain = cell.charge
 
-				if(maxdrain)
+				if(maxdrain) // Если высосали половину АПЦ, дальше не сосём
 					if(cell.charge - drain <= maxdrain)
 						user.visible_message(span_notice("[user] takes back \the [src]'s magnetic charger as it buzzes."), span_notice("The magnetic charger buzzes - APC cannot give it more charge. You take it back and place it in socket on \the [src]."))
 						break
@@ -210,6 +209,9 @@
 		. += span_info("The charge meter reads [round(100*charge/max_charge)]%.")
 	else
 		. += span_warning("The charge meter is blank.")
+
+	. += span_info("Вы можете называть это \"ПОУ\" или \"PCU\".") // Распространяем терминологию через IC
+
 
 /*
 Сборка через техфаб
