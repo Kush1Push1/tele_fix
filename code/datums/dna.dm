@@ -654,8 +654,10 @@
 /proc/scramble_dna(mob/living/carbon/M, ui=FALSE, se=FALSE, probability)
 	if(!M.has_dna())
 		return 0
+	// BLUEMOON ADD START - гены роботов не должны изменяться
 	if(HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM))
 		return
+	// BLUEMOON ADD END
 	if(se)
 		for(var/i=1, i<=DNA_MUTATION_BLOCKS, i++)
 			if(prob(probability))
