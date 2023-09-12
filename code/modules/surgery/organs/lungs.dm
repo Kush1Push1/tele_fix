@@ -448,6 +448,13 @@
 		if(50 to INFINITY)
 			owner.adjust_bodytemperature(100*TEMPERATURE_DAMAGE_COEFFICIENT)
 
+	// BLUEMOON ADD START - шанс на перманентный выход из строя
+	if(prob(10)) //Chance of permanent effects
+		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
+		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
+			to_chat(owner, span_danger("Fatal failure detected in the cooling system - Seek for replace immediately."))
+	// BLUEMOON ADD END
+
 /obj/item/organ/lungs/ipc/ui_action_click(mob/user, actiontype)
 	if(!owner)
 		return
