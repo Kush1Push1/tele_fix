@@ -3,8 +3,8 @@
 /obj/item/device/cooler
 	name = "portable cooling unit"
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
-	It has an internal power unit with power rating of 10 MJ, which can be charge with APCs or power cells with magnetic charger on top of PCU. \
-	System of strapes allows it to be worn <b>as a suit, on your back or strapped to an hazard vest</b>."
+	It has an internal power unit with power rating of 10 MJ, which can be charge with APCs or power cells with the magnetic charger on top of PCU. \
+	System of strapes allows it to be worn <b>as a suit, on your back, strapped to a hazard vest or a hardsuit</b>."
 	w_class = WEIGHT_CLASS_BULKY // Не лезет в сумку
 	icon = 'modular_bluemoon/cooling_device/cooling_device.dmi'
 	mob_overlay_icon = 'modular_bluemoon/cooling_device/cooling_device_back.dmi'
@@ -20,7 +20,7 @@
 	throw_range = 4
 	actions_types = list(/datum/action/item_action/toggle)
 
-	custom_materials = list(/datum/material/iron = 15000, /datum/material/glass = 3500)
+	custom_materials = list(/datum/material/iron = 30000, /datum/material/glass = 4500)
 
 	var/on = FALSE					// включено или нет
 	var/max_cooling = 18			// максимальное охлаждение, нужно для борьбы с нагревом в космосе
@@ -36,14 +36,15 @@
 /obj/item/device/cooler/lavaland // Специальный для шахтёров и планетоидов
 	name = "mining cooling unit"
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
-	It has an internal power unit with rating of 6 MJ, which can be charge with APCs or power cells with magnetic charger on top of PCU. \
-	System of strapes allows it to be worn <b>as a suit, on your back, on belt or strapped to an hazard vest or exploration suit</b>. \
+	It has an internal power unit with rating of 6 MJ, which can be charge with APCs or power cells with the magnetic charger on top of PCU. \
+	System of strapes allows it to be worn <b>as a suit, on your back, on belt, strapped to a hazard vest, an exploration suit or a hardsuit</b>. \
 	Cooling efficient was significantly reduced, but it still can be used for planetary operations."
 	slot_flags = ITEM_SLOT_BELT |  ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING
 	force = 5 // маленький, но далеко не лёгкий
 	max_cooling = 4 // максимальное охлаждение, этого вполне хватает для планетоида
 	charge_consumption = 3.3 // 30 минут работы при полном заряде
 	max_charge = 6000
+	custom_materials = list(/datum/material/iron = 22000, /datum/material/glass = 3000)
 
 /obj/item/device/cooler/lavaland/charged // Заряжённый при размещении (выдаётся при спавне шахтёрам-синтетикам в том числе)
 	roundstart_charged = TRUE
@@ -85,6 +86,19 @@
 	charge -= charge_usage
 	update_icon()
 
+/obj/item/device/cooler/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+
+	if(on)
+		if(prob(50))
+			turn_off(1)
+
+	charge -= severity * rand(20, 25)
+	if(charge < 0)
+		charge = 0
+
 // Checks whether the cooling unit is being worn on the back/suit slot.
 // That way you can't carry it in your hands while it's running to cool yourself down.
 /obj/item/device/cooler/proc/is_in_slot()
@@ -114,7 +128,7 @@
 
 /obj/item/device/cooler/proc/toggle(mob/user)
 	if(charge <= 0)
-		to_chat(user, span_warning("You press switch button on \the [src], but it doesn't respond. Perhaps it is out of charge."))
+		to_chat(user, span_warning("You press a switch button on \the [src], but it doesn't respond. Perhaps it is out of charge."))
 		return
 
 	if(on)
@@ -154,7 +168,7 @@
 
 				if(maxdrain) // Если высосали половину АПЦ, дальше не сосём
 					if(cell.charge - drain <= maxdrain)
-						user.visible_message(span_notice("[user] takes back \the [src]'s magnetic charger as it buzzes."), span_notice("The magnetic charger buzzes - APC cannot give it more charge. You take it back and place it in socket on \the [src]."))
+						user.visible_message(span_notice("[user] takes back \the [src]'s magnetic charger as it buzzes."), span_warning("The magnetic charger buzzes - the APC cannot give it more charge. You take it back and place it in socket on \the [src]."))
 						break
 
 				if(charge + drain > max_charge)
@@ -202,7 +216,7 @@
 		return
 
 	if(on)
-		. += span_info("It's switched on and running.")
+		. += span_info("It is switched on and running.")
 	else
 		. += span_info("It is switched off.")
 
@@ -223,16 +237,16 @@
 	desc = "A large portable heat sink with liquid cooled radiator packaged into a modified backpack. Useful for IPCs and other synthetics during EVA operations."
 	id = "cooler"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 15000, /datum/material/glass = 3500)
+	materials = list(/datum/material/iron = 30000, /datum/material/glass = 4500)
 	build_path = /obj/item/device/cooler // печатаются пустые, чтобы не было проще выбросить старый и напечатать новый
-	category = list("Misc")
+	category = list("Equipment")
 
 /datum/design/cooler/lavaland
 	name = "Mining Cooling Unit"
 	desc = "A large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
 	This one can be strapped on belt, but lost in efficiency due reduced size. Useful for IPCs and other synthetics during mininig operations."
 	id = "cooler_mining"
-	materials = list(/datum/material/iron = 12000, /datum/material/glass = 2500)
+	materials = list(/datum/material/iron = 22000, /datum/material/glass = 3000)
 	build_path = /obj/item/device/cooler/lavaland
-	category = list("Equipment")
+	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
