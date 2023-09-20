@@ -947,6 +947,14 @@ BLUEMOON REMOVAL END */
 	set_light(3)
 	AddComponent(/datum/component/radioactive, 1000, src, 0)
 
+// BLUEMOON ADD START - удаление компонента радиации для предотвращения тысяч рантаймов после отсутствия source при удалении
+/obj/effect/decal/nuclear_waste/Destroy()
+	var/datum/component/radioactive/contamination = GetComponent(/datum/component/radioactive)
+	if(contamination)
+		qdel(contamination)
+	. = ..()
+// BLUEMOON ADD END
+
 /obj/effect/decal/nuclear_waste/epicenter //The one that actually does the irradiating. This is to avoid every bit of sludge PROCESSING
 	name = "Dense nuclear sludge"
 
