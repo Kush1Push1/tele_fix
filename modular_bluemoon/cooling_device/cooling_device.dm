@@ -3,7 +3,7 @@
 /obj/item/device/cooler
 	name = "portable cooling unit"
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
-	It has an internal power unit with power rating of 10 MJ, which can be charge with APCs or power cells with the magnetic charger on top of PCU. \
+	It has an internal power unit with power rating of 10 MJ, which can be charge with APCs or power cells - there is the magnetic charger on top of the PCU for it. \
 	System of strapes allows it to be worn <b>as a suit, on your back, strapped to a hazard vest or a hardsuit</b>."
 	w_class = WEIGHT_CLASS_BULKY // Не лезет в сумку
 	icon = 'modular_bluemoon/cooling_device/cooling_device.dmi'
@@ -11,7 +11,7 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/cooling_device/cooling_device_back.dmi'
 
 	icon_state = "suitcooler0"
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING // Можно вешать на спину и на грудь
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING // Можно вешать на спину и на грудь (а также в слот хранилища некоторых костюмов)
 
 	flags_1 = CONDUCT_1
 	force = 8 // тяжёлое
@@ -41,7 +41,7 @@
 	Cooling efficient was significantly reduced, but it still can be used for planetary operations."
 	slot_flags = ITEM_SLOT_BELT |  ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING
 	force = 5 // маленький, но далеко не лёгкий
-	max_cooling = 4 // максимальное охлаждение, этого вполне хватает для планетоида
+	max_cooling = 4 // этого вполне хватает для планетоида
 	charge_consumption = 3.3 // 30 минут работы при полном заряде
 	max_charge = 6000
 	custom_materials = list(/datum/material/iron = 22000, /datum/material/glass = 3000)
@@ -118,7 +118,7 @@
 
 /obj/item/device/cooler/proc/turn_off(failed)
 	if(failed)
-		visible_message(span_warning("\The [src] clicks and whines as it powers down."))
+		visible_message(span_warning("\The PCU clicks and whines as it powers down."))
 	on = FALSE
 	STOP_PROCESSING(SSobj, src)
 	update_icon()
@@ -128,7 +128,7 @@
 
 /obj/item/device/cooler/proc/toggle(mob/user)
 	if(charge <= 0)
-		to_chat(user, span_warning("You press a switch button on \the [src], but it doesn't respond. Perhaps it is out of charge."))
+		to_chat(user, span_warning("You press a switch button on \the PCU, but it doesn't respond. Perhaps it is out of charge."))
 		return
 
 	if(on)
@@ -136,58 +136,65 @@
 	else
 		turn_on()
 
-	to_chat(user, span_notice("You switch \the [src] [on ? "on" : "off"]."))
+	to_chat(user, span_notice("You switch the PCU [on ? "on" : "off"]."))
+
+/obj/item/device/cooler/proc/drain_power(atom/target, mob/user, var/is_apc = FALSE)
+	var/obj/item/stock_parts/cell/cell = target
+	var/maxcapacity = FALSE // Если достигнут максимальный заряд, прекращаем заряжаться
+	var/maxdrain = is_apc ? cell.maxcharge / 2 : 0 // Нельзя высасывать более половины АПЦ
+
+	if(cell.charge)
+		if(maxdrain > 0 && cell.charge - 500 <= maxdrain) // если сосём из АПЦ и осталось менее половины энергии, заранее не сосём
+			user.visible_message(span_notice("[user] puts the PCU's magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. A safety protocol prevents charge if the APC's power lower than half."))
+			return
+
+		user.visible_message(span_notice("[user] puts \the PCU's magnetic charger on [is_apc ? "the APC" : "\a [target]"]."), span_notice("You hold the magnetic charger over [is_apc ? "the APC" : "\a [target]"]. It's getting hotter."))
+		while(cell.charge > 0 && !maxcapacity) // Если не достигнут максимальный заряд ПОУ и в источник ещё есть заряд, продолжаем заряжаться
+			var/drain = 500
+
+			if(cell.charge < drain) // Высасываем оставшийся заряд, а не сверх него
+				drain = cell.charge
+
+			if(maxdrain) // Если высосали половину АПЦ, дальше не сосём
+				if(cell.charge - drain <= maxdrain)
+					user.visible_message(span_notice("[user] takes back the PCU's magnetic charger as it buzzes."), span_warning("The magnetic charger buzzes - the APC cannot give it more charge. You take it back and place it in the socket on the PCU."))
+					break
+
+			if(charge + drain > max_charge)
+				drain = max_charge - charge
+				maxcapacity = TRUE
+				playsound(src.loc, 'sound/machines/beep.ogg', 50, 0)
+
+			if(do_after(user, 1.5 SECONDS, target = user))
+				cell.charge -= drain
+				charge += drain
+				target.update_icon()
+				if(maxcapacity || !cell.charge)
+					user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in the socket on the PCU."))
+			else
+				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger and place it in the socket on the PCU."))
+				break
 
 /obj/item/device/cooler/attack_obj(atom/target, mob/user)
-	var/maxcapacity = FALSE // Если достигнут максимальный заряд, прекращаем заряжаться
-	var/maxdrain = 0 // Проверка, чтобы из АПЦ не выкачивало более половины энергии
-
-	if(istype(target, /obj/item/stock_parts/cell) || istype(target, /obj/machinery/power/apc)) // можно заряжаться от АПЦ и батареек, нажав по ним ПОУ
-		user.DelayNextAction(CLICK_CD_MELEE)
-		var/in_apc = FALSE
-		if(istype(target, /obj/machinery/power/apc))
-			var/obj/machinery/power/apc/apc = target
-			if(apc.cell)
-				target = apc.cell
-				maxdrain = apc.cell.maxcharge / 2
-			else
-				user.visible_message(span_notice("[user] puts \the [src]'s magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. Its cell seems to be out of charge."))
-				return
-		var/obj/item/stock_parts/cell/cell = target
-		if(cell.charge)
-			if(maxdrain > 0 && cell.charge - 500 <= maxdrain)
-				user.visible_message(span_notice("[user] puts \the [src]'s magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. A safety protocol prevents charge if the APC's power lower than half."))
-				return
-
-			user.visible_message(span_notice("[user] puts \the [src]'s magnetic charger on [in_apc ? "the APC" : "\a [target]"]."), span_notice("You hold the magnetic charger over [in_apc ? "the APC" : "\a [target]"]. It's getting hotter."))
-			while(cell.charge > 0 && !maxcapacity) // Если не достигнут максимальный заряд ПОУ и в источник ещё есть заряд, продолжаем заряжаться
-				var/drain = rand(500, 1000)
-
-				if(cell.charge < drain) // Высасываем оставшийся заряд, а не сверх него
-					drain = cell.charge
-
-				if(maxdrain) // Если высосали половину АПЦ, дальше не сосём
-					if(cell.charge - drain <= maxdrain)
-						user.visible_message(span_notice("[user] takes back \the [src]'s magnetic charger as it buzzes."), span_warning("The magnetic charger buzzes - the APC cannot give it more charge. You take it back and place it in socket on \the [src]."))
-						break
-
-				if(charge + drain > max_charge)
-					drain = max_charge - charge
-					maxcapacity = TRUE
-					playsound(src.loc, 'sound/machines/beep.ogg', 50, 0)
-
-				if(do_after(user, 1.5 SECONDS, target = src))
-					cell.charge -= drain
-					charge += drain
-					target.update_icon()
-					if(maxcapacity)
-						user.visible_message(span_notice("[user] takes back \the [src]'s magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in socket on \the [src]."))
-
-				else
-					user.visible_message(span_notice("[user] takes back \the [src]'s magnetic charger."), span_notice("You take back the magnetic charger and place it in socket on \the [src]."))
-					break
+	if(istype(target, /obj/machinery/power/apc))
+		var/obj/machinery/power/apc/apc = target
+		if(apc.cell)
+			target = apc.cell
+		else
+			user.visible_message(span_notice("[user] puts \the PCU's magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. Its cell seems to be out of charge."))
+			return
+		drain_power(target, user, is_apc = TRUE)
 		return
 	. = ..()
+
+/obj/item/device/cooler/afterattack(atom/target, mob/user, proximity, params)
+	. = ..()
+	if(!proximity || !check_allowed_items(target))
+		return
+
+	if(istype(target, /obj/item/stock_parts/cell))
+		drain_power(target, user)
+		return
 
 /obj/item/device/cooler/update_icon()
 	cut_overlays()
