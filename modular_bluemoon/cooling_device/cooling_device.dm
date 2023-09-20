@@ -232,7 +232,7 @@
 	else
 		. += span_warning("The charge meter is blank.")
 
-	. += span_info("You can charge it with APC or power cells.")
+	. += span_info("You can charge it with APCs or power cells.")
 
 	. += span_info("Вы можете называть это \"ПОУ\" или \"PCU\".") // Распространяем терминологию через IC
 
