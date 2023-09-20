@@ -253,7 +253,7 @@
 /datum/design/cooler/lavaland
 	name = "Mining Cooling Unit"
 	desc = "A large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
-	This one can be strapped on belt, but lost in efficiency due reduced size. Useful for IPCs and other synthetics during mininig operations."
+	This one can be strapped on belt, but lost in efficiency due reduced size. Useful for IPCs and other synthetics during mining operations."
 	id = "cooler_mining"
 	materials = list(/datum/material/iron = 22000, /datum/material/glass = 3000)
 	build_path = /obj/item/device/cooler/lavaland
