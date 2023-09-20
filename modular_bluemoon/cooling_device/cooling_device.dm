@@ -118,7 +118,7 @@
 
 /obj/item/device/cooler/proc/turn_off(failed)
 	if(failed)
-		visible_message(span_warning("\The PCU clicks and whines as it powers down."))
+		visible_message(span_warning("The PCU clicks and whines as it powers down."))
 	on = FALSE
 	STOP_PROCESSING(SSobj, src)
 	update_icon()
@@ -128,7 +128,7 @@
 
 /obj/item/device/cooler/proc/toggle(mob/user)
 	if(charge <= 0)
-		to_chat(user, span_warning("You press a switch button on \the PCU, but it doesn't respond. Perhaps it is out of charge."))
+		to_chat(user, span_warning("You press a switch button on the PCU, but it doesn't respond. Perhaps it is out of charge."))
 		return
 
 	if(on)
@@ -148,7 +148,7 @@
 			user.visible_message(span_notice("[user] puts the PCU's magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. A safety protocol prevents charge if the APC's power lower than half."))
 			return
 
-		user.visible_message(span_notice("[user] puts \the PCU's magnetic charger on [is_apc ? "the APC" : "\a [target]"]."), span_notice("You hold the magnetic charger over [is_apc ? "the APC" : "\a [target]"]. It's getting hotter."))
+		user.visible_message(span_notice("[user] puts the PCU's magnetic charger on [is_apc ? "the APC" : "\a [target]"]."), span_notice("You hold the magnetic charger over [is_apc ? "the APC" : "\a [target]"]. It's getting hotter."))
 		while(cell.charge > 0 && !maxcapacity) // Если не достигнут максимальный заряд ПОУ и в источник ещё есть заряд, продолжаем заряжаться
 			var/drain = 500
 
@@ -181,7 +181,7 @@
 		if(apc.cell)
 			target = apc.cell
 		else
-			user.visible_message(span_notice("[user] puts \the PCU's magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. Its cell seems to be out of charge."))
+			user.visible_message(span_notice("[user] puts the PCU's magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. Its cell seems to be out of charge."))
 			return
 		drain_power(target, user, is_apc = TRUE)
 		return
