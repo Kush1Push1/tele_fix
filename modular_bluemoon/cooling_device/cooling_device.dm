@@ -3,7 +3,7 @@
 /obj/item/device/cooler
 	name = "portable cooling unit"
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
-	It has an internal power unit with power rating of 10 MJ, which can be charge with APCs or power cells - there is the magnetic charger on top of the PCU for it. \
+	It has an internal power unit with power rating of 10 MJ. There is the magnetic charger on top of the PCU for recharging. \
 	System of strapes allows it to be worn <b>as a suit, on your back, strapped to a hazard vest or a hardsuit</b>."
 	w_class = WEIGHT_CLASS_BULKY // Не лезет в сумку
 	icon = 'modular_bluemoon/cooling_device/cooling_device.dmi'
@@ -227,10 +227,12 @@
 	else
 		. += span_info("It is switched off.")
 
-	if(charge)
+	if(charge > 0)
 		. += span_info("The charge meter reads [round(100*charge/max_charge)]%.")
 	else
 		. += span_warning("The charge meter is blank.")
+
+	. += span_info("You can charge it with APC or power cells.")
 
 	. += span_info("Вы можете называть это \"ПОУ\" или \"PCU\".") // Распространяем терминологию через IC
 
