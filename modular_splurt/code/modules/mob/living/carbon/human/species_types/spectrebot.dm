@@ -14,6 +14,11 @@
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
 
+// BLUEMOON ADD START
+	punchdamagelow = 5 // больше среднего урона с руки, чем у людей
+	minimal_damage_threshold = 5 // слабый удар кулаком не наносит повреждений - по сути, баллон и более половины ударов кулаком всё ещё сильнее
+// BLUEMOON ADD END
+
 	coldmod = 0.5
 	heatmod = 1.2
 	cold_offset = SYNTH_COLD_OFFSET	//Can handle pretty cold environments, but it's still a slightly bad idea if you enter a room thats full of near-absolute-zero gas

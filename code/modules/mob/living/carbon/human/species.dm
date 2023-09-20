@@ -240,6 +240,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	/// List of family heirlooms this species can get with the family heirloom quirk. List of types.
 	var/list/family_heirlooms
 
+	/// BLUEMOON ADD START - если брут или бёрн ниже этого порога, то урон не наносится
+	var/minimal_damage_threshold = 0
+	// BLUEMOON ADD END
+
 ///////////
 // PROCS //
 ///////////
@@ -410,10 +414,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			stomach = new()
 		stomach.Insert(C)
 
-	if(appendix && (!should_have_appendix || replace_current))
+	if(!mutantappendix && appendix && (!should_have_appendix || replace_current))
 		appendix.Remove(TRUE)
 		QDEL_NULL(appendix)
-	if(should_have_appendix && !appendix)
+	if(should_have_appendix && !appendix && mutantappendix)
 		appendix = new()
 		appendix.Insert(C)
 
@@ -2352,6 +2356,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(BRUTE)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
+			// BLUEMOON ADD START - если урона ниже минимального наносимого для расы, то он не наносится
+			if(minimal_damage_threshold && damage_amount < minimal_damage_threshold)
+				return 1
+			// BLUEMOON ADD END
 			if(BP)
 				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
@@ -2363,6 +2371,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(BURN)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
+			// BLUEMOON ADD START - если урона ниже минимального наносимого для расы, то он не наносится
+			if(minimal_damage_threshold && damage_amount < minimal_damage_threshold)
+				return 1
+			// BLUEMOON ADD END
 			if(BP)
 				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
