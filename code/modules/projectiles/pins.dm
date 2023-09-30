@@ -47,6 +47,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	to_chat(user, "<span class='notice'>You override the authentication mechanism.</span>")
 	return TRUE
@@ -298,10 +299,12 @@
 				overlay.color = "#b2ff59" //light green
 			if(SEC_LEVEL_BLUE)
 				overlay.color = "#99ccff" //light blue
-			if(SEC_LEVEL_AMBER)
-				overlay.color = "#ffae42" //light yellow/orange
 			if(SEC_LEVEL_RED)
 				overlay.color = "#ff3f34" //light red
+			if(SEC_LEVEL_AMBER)
+				overlay.color = "#ffae42" //light yellow/orange
+			if(SEC_LEVEL_EPSILON)
+				overlay.color = "#ffffff" //light yellow/orange
 			else
 				overlay.color = "#fe59c2" //neon fuchsia
 		. += overlay

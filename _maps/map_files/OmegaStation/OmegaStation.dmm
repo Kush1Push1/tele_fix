@@ -216,7 +216,7 @@
 /turf/open/floor/plating,
 /area/command/bridge)
 "aaz" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},
@@ -3243,7 +3243,7 @@
 	},
 /area/command/heads_quarters/hop)
 "agt" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /obj/machinery/status_display{
@@ -3934,7 +3934,7 @@
 /turf/open/floor/carpet,
 /area/command/heads_quarters/captain/private)
 "ahJ" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /obj/machinery/status_display/ai{
@@ -28189,7 +28189,7 @@
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/red,
@@ -32720,6 +32720,15 @@
 	pixel_x = 3;
 	pixel_y = -1
 	},
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = -10
+	},
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = 10
+	},
+/obj/item/storage/barricade,
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "bmC" = (

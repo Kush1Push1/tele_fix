@@ -515,27 +515,27 @@
 //////////////////////////////////////////////
 
 
-//changes two people midround into blood cultists
+//changes six people midround into blood cultists
 /datum/dynamic_ruleset/midround/narsie_awakening
 	name = "Nar'Sie Awakening"
-	antag_datum = /datum/antagonist/clockcult
+	antag_datum = /datum/antagonist/cult
 	antag_flag = "narsie mid"
 	antag_flag_override = ROLE_CULTIST
 	protected_roles = list("Shaft Miner", "NanoTrasen Representative", "Lawyer", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	restricted_roles = list("AI", "Cyborg", "Prisoner") //BLUEMOON CHANGES
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Chaplain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_enemies = list(1,1,1,1,1,1,0,0,0,0)
-	required_candidates = 2
+	required_candidates = 6
 	weight = 3
 	cost = 20
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
-	var/list/blood_cap = list(1,1,1,2,3,4,5,5,5,5)
+	var/list/blood_cap = list(1,1,2,3,4,5,6,6,6,6)
 	var/datum/team/cult/main_cult
 	flags = HIGH_IMPACT_RULESET
 
 /datum/dynamic_ruleset/midround/narsie_awakening/acceptable(population=0, threat=0)
 	if (locate(/datum/dynamic_ruleset/roundstart/bloodcult) in mode.executed_rules)
-		return FALSE // Unavailable if clockies exist at round start
+		return FALSE
 	indice_pop = min(blood_cap.len, round(living_players.len/5)+1)
 	required_candidates = blood_cap[indice_pop]
 	return ..()
@@ -573,7 +573,6 @@
 		message_admins("[ADMIN_LOOKUPFLW(M.current)] was selected by the [name] ruleset and has been made into a midround blood cultist.")
 		log_game("DYNAMIC: [key_name(M.current)] was selected by the [name] ruleset and has been made into a midround blood cultist.")
 	main_cult.setup_objectives()
-	load_reebe()
 	return ..()
 
 //////////////////////////////////////////////

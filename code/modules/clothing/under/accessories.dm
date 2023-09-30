@@ -31,13 +31,8 @@
 	//SKYRAT EDIT END
 	forceMove(U)
 
-	layer = FLOAT_LAYER
+	layer = NECK_LAYER
 	plane = FLOAT_PLANE
-	if(minimize_when_attached)
-		transform *= 0.5 //halve the size so it doesn't overpower the under
-		pixel_x += 8
-		pixel_y -= 8
-	U.add_overlay(src)
 
 	if (islist(U.armor) || isnull(U.armor)) 										// This proc can run before /obj/Initialize has run for U and src,
 		U.armor = getArmor(arglist(U.armor))	// we have to check that the armor list has been transformed into a datum before we try to call a proc on it

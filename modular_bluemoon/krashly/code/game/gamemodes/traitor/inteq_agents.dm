@@ -75,4 +75,4 @@
 
 
 /datum/game_mode/traitor/inteq_agents/generate_report()
-	return "InteQ agents are on the station and are trying to interfere with the joint research of Nanotrasen and the Syndicate"
+	return "Агенты InteQ находятся на станции и пытаются помешать совместным исследованиям Мега-Корпорации Nanotrasen и Синдиката."

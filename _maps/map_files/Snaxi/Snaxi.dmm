@@ -5084,7 +5084,7 @@
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "ajr" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 4;
 	icon_state = "computer"
 	},
@@ -39650,7 +39650,7 @@
 /area/service/bar)
 "snb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /turf/open/floor/wood,
 /area/command/heads_quarters/captain)
 "spa" = (

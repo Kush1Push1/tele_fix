@@ -155,20 +155,18 @@
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
 	flags_1 = NONE
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	// ambience_index = AMBIENCE_DANGER
-	ambientsounds = HIGHSEC
-	// network_root_id = SYNDICATE_NETWORK_ROOT
+	ambientsounds = SHUTTLE_MILITARY
+	min_ambience_cooldown = 15 SECONDS
+	max_ambience_cooldown = 40 SECONDS
 
 /area/syndicate_mothership/control
 	name = "Syndicate Control Room"
 	icon_state = "syndie-control"
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	// network_root_id = SYNDICATE_NETWORK_ROOT
 
 /area/syndicate_mothership/elite_squad
 	name = "Syndicate Elite Squad"
 	icon_state = "syndie-elite"
-	// network_root_id = SYNDICATE_NETWORK_ROOT
 
 /area/fabric_of_reality
 	name = "Tear in the Fabric of Reality"

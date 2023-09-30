@@ -11636,7 +11636,7 @@
 /turf/open/floor/carpet,
 /area/commons/dorms)
 "dED" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -33722,7 +33722,7 @@
 	dir = 6;
 	name = "customs camera"
 	},
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /turf/open/floor/plasteel,
 /area/security/checkpoint/customs)
 "nHB" = (
@@ -44368,7 +44368,7 @@
 /turf/open/floor/plasteel/dark,
 /area/service/chapel/office)
 "snb" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /turf/open/floor/wood,
 /area/command/heads_quarters/captain)
 "sng" = (

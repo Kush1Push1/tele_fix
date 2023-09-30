@@ -20517,6 +20517,15 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/item/storage/barricade,
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = -10
+	},
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "bNr" = (
@@ -74594,7 +74603,7 @@
 /turf/open/floor/wood,
 /area/command/corporate_showroom)
 "gfF" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /obj/structure/cable/white{
@@ -89628,7 +89637,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "kEj" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
@@ -103962,6 +103971,7 @@
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
+/mob/living/simple_animal/pet/dog/corgi/Lisa/ada,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "pmC" = (
@@ -114358,7 +114368,7 @@
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
 "sDG" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 4
 	},
 /obj/machinery/keycard_auth{
@@ -115730,7 +115740,7 @@
 /turf/open/floor/plasteel,
 /area/cargo/storage)
 "sXz" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 4
 	},
 /obj/structure/cable/white{

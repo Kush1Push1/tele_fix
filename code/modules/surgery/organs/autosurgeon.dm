@@ -90,9 +90,13 @@
 
 /obj/item/autosurgeon/syndicate
 	name = "Suspicious Autosurgeon"
-	desc = "A five use autosurgeon that contains a suspicious augment."
+	desc = "Автохирург имеет всего пять использований. "
 	icon_state = "autosurgeon_syndicate"
 	uses = 5
+
+/obj/item/autosurgeon/syndicate/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>В этом предмете осталось <b>[uses]</b> использований.</span>"
 
 /obj/item/autosurgeon/syndicate/thermal_eyes
 	starting_organ = /obj/item/organ/eyes/robotic/thermals

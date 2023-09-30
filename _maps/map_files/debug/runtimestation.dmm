@@ -1179,6 +1179,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/jukebox/disco,
 /turf/open/floor/plating,
 /area/commons/storage/primary)
 "dq" = (
@@ -2564,6 +2565,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/medical/chemistry)
+"iF" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/quantumpad/fullupgrade{
+	map_pad_id = "1";
+	map_pad_link_id = "2"
+	},
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "jb" = (
 /obj/machinery/door/airlock,
 /obj/structure/cable{
@@ -2751,6 +2762,10 @@
 /obj/structure/cable,
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
+"sM" = (
+/obj/effect/landmark/xeno_spawn,
+/turf/open/floor/plasteel,
+/area/commons/storage/primary)
 "sN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -2975,6 +2990,10 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/service/cafeteria)
+"DK" = (
+/obj/machinery/jukebox,
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "Em" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -2995,6 +3014,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/command/bridge)
+"EP" = (
+/obj/machinery/quantumpad/fullupgrade{
+	map_pad_id = "2";
+	map_pad_link_id = "1"
+	},
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "ES" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -3053,6 +3079,10 @@
 /obj/structure/chair/stool/bar,
 /turf/open/floor/carpet/blackred,
 /area/service/bar)
+"Jz" = (
+/obj/item/jukebox/emagged,
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "JF" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -7902,9 +7932,9 @@ Wc
 fX
 dE
 dB
-dl
-dl
-dl
+DK
+Jz
+Jz
 dp
 dE
 cS
@@ -8449,13 +8479,13 @@ bE
 cV
 fA
 dt
-dJ
+sM
 dD
 dJ
 dI
 dJ
 YL
-dJ
+sM
 dJ
 dJ
 ea
@@ -9000,8 +9030,8 @@ cm
 cK
 by
 dB
-dx
-dl
+iF
+EP
 dl
 gg
 ez

@@ -53,7 +53,7 @@
 	item_state = "schoolgirlorange"
 
 /obj/item/clothing/under/costume/pirate
-	name = "pirate outfit"
+	name = "Pirate outfit"
 	desc = "Yarr."
 	icon_state = "pirate"
 	item_state = "pirate"

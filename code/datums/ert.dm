@@ -54,6 +54,15 @@
 	polldesc = "an elite Nanotrasen Strike Team"
 	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/deathsquad_send_in.ogg"
 
+/datum/ert/asset_protection
+	roles = list(/datum/antagonist/ert/asset_protection)
+	leader_role = /datum/antagonist/ert/asset_protection/leader
+	rename_team = "Asset Protection Team"
+	code = "Epsilon"
+	mission = "Защитите Активы Пакта. Сотрудники Пакта тоже являются Активами Пакта."
+	polldesc = "a Nanotrasen Asset Protection Team"
+	ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/asset_protection_send.ogg"
+
 /datum/ert/syndiesquad
 	roles = list(/datum/antagonist/ert/syndiesquad)
 	leader_role = /datum/antagonist/ert/syndiesquad/leader

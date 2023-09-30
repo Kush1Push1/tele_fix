@@ -281,7 +281,7 @@
 		priority_announce("Благодаря неустанным усилиям наших специальных оперативных подразделений в настоящее время нет никаких действительных угроз для [station_name()]. Все проекты строительства станции утверждены. Безопасной смены!", "Отчёт о безопасности", SSstation.announcer.get_rand_report_sound())
 		return
 	var/intercepttext = "<b><i>Отчёт от Центрального Командования</i></b><hr>"
-	intercepttext += "<b>Центральное Командование перехватило и частично расшифровало передачу Синдиката с важной информацией об их передвижениях. В прилагающемся отчете представлены наиболее \
+	intercepttext += "<b>Центральное Командование перехватило и частично расшифровало передачу Синдиката с важной информацией о передвижении Войск InteQ. В прилагающемся отчете представлены наиболее \
 	вероятные угрозы в вашем секторе.</b>"
 	var/list/report_weights = config.mode_false_report_weight.Copy()
 	report_weights[config_tag] = 0 //Prevent the current mode from being falsely selected.
@@ -309,9 +309,6 @@
 
 	print_command_report(intercepttext, "Отдел ССО Пакта Синих Лун", announce=FALSE)
 	priority_announce("Благодаря неустанным усилиям наших специальных оперативных подразделений мы обнаружили несколько возможных угроз для [station_name()]. Будьте осторожней!", "Отдел ССО Пакта Синих Лун", "intercept")
-	//if(GLOB.security_level < SEC_LEVEL_BLUE)
-	//	set_security_level(SEC_LEVEL_BLUE)
-
 
 // This is a frequency selection system. You may imagine it like a raffle where each player can have some number of tickets. The more tickets you have the more likely you are to
 // "win". The default is 100 tickets. If no players use any extra tickets (earned with the antagonist rep system) calling this function should be equivalent to calling the normal

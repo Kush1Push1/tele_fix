@@ -1029,17 +1029,18 @@
 /obj/item/storage/backpack/duffelbag/syndie/x4{
 	pixel_y = 8
 	},
-/obj/item/grenade/smokebomb{
-	pixel_x = -5
-	},
-/obj/item/grenade/smokebomb{
-	pixel_x = 5
-	},
 /obj/effect/turf_decal/box/red,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/storage/backpack/duffelbag/syndie/c4,
+/obj/item/grenade/frag/mega{
+	pixel_x = 10
+	},
+/obj/item/grenade/frag/mega{
+	pixel_x = -5
+	},
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "bQ" = (
@@ -1475,7 +1476,6 @@
 	pixel_x = 1;
 	pixel_y = 4
 	},
-/obj/machinery/jukebox/disco,
 /obj/item/card/emag,
 /obj/item/ammo_box/magazine/ak47{
 	pixel_x = -8
@@ -1626,6 +1626,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/bedsheet/pirate,
 /obj/item/storage/backpack/satchel,
+/obj/item/jukebox/emagged,
 /turf/open/floor/plasteel/dark,
 /area/shuttle/pirate)
 "cM" = (

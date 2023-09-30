@@ -27,6 +27,12 @@
 		H.update_mutant_bodyparts()
 		H.update_hair()
 
+/obj/item/icona_madonna
+	name = "Madonna icon"
+	desc = "Icon of the great Madonna"
+	icon =  'modular_bluemoon/krashly/icons/obj/structures.dmi'
+	icon_state = "madonna"
+
 /obj/structure/sign/flag/skull
 	name = "flag of PMC Skull"
 	desc = "Black flag with a skull in the center. Has a red lining. The flag smells of blood."
@@ -121,6 +127,12 @@
 	desc = "Stop jerking off, join PMC InteQ!"
 	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
 	icon_state = "poster_inteq_no_sex"
+
+/obj/structure/sign/poster/contraband/inteq/inteq_vulp
+	name = "InteQ Recruitment"
+	desc = "A brown poster. The words says: 'Even if you jerking off to vulpes, join PMC InteQ. Shatter our enemies!'."
+	icon = 'modular_bluemoon/krashly/icons/obj/poster.dmi'
+	icon_state = "poster_inteq_vulp"
 
 /obj/item/storage/box/inteq_box
 	name = "brown box"

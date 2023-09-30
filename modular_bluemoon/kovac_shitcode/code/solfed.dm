@@ -131,7 +131,7 @@
 	icon_state = "solgov_headset"
 	item_state = "solgov_headset"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol_head.dmi'
-	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
+	//mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
 	radiosound = 'modular_bluemoon/kovac_shitcode/sound/radio.ogg'
 	freerange = FALSE
 	freqlock = TRUE
@@ -158,7 +158,7 @@
 
 // SolFed Hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sol
-	name = "SolFed marine hardsuit helmet"
+	name = "FCS SolFed hardsuit helmet"
 	desc = "Just like the old times."
 	icon_state = "hardsuit0-solfed"
 	item_state = "hardsuit0-solfed"
@@ -172,8 +172,8 @@
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
 
 /obj/item/clothing/suit/space/hardsuit/ert/alert/sol
-	name = "SolFed marine hardsuit"
-	desc = "Standart issue Solar marine hardsuit. Provided with special fibers and armor plates."
+	name = "FCS SolFed hardsuit"
+	desc = "The default Future Combat Systems Solar marine hardsuit. Provided with special fibers and armor plates."
 	icon_state = "hardsuit0-solfed"
 	item_state = "hardsuit0-solfed"
 	hardsuit_type = "solfed"
@@ -181,10 +181,30 @@
 	armor = list(MELEE = 70, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 65, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	//mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol.dmi'
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol.dmi'
-	tail_state = "ert_gcommander"
+	tail_state = "ce"
+	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_digi.dmi'
+
+/// Advanced hardsuit
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sol/adv
+	name = "FCS-B SolFed hardsuit helmet"
+	icon_state = "hardsuit0-solfeds"
+	item_state = "hardsuit0-solfeds"
+	hardsuit_type = "solfeds"
+	tail_state = "ert-alert"
+	armor = list(MELEE = 75, BULLET = 75, LASER = 75, ENERGY = 75, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 75)
+
+/obj/item/clothing/suit/space/hardsuit/ert/alert/sol/adv
+	name = "FCS-B SolFed hardsuit"
+	desc = "A reinforced Future Combat Systems Solar marine hardsuit. Provided with special fibers and armor plates."
+	icon_state = "hardsuit0-solfeds"
+	item_state = "hardsuit0-solfeds"
+	hardsuit_type = "solfeds"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sol/adv
+	armor = list(MELEE = 75, BULLET = 75, LASER = 75, ENERGY = 75, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 75)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -282,6 +302,10 @@
 	R.freqlock = TRUE
 
 	H.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE)
+
+	var/obj/item/card/id/sol/W = H.wear_id
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name)
 
 /datum/outfit/sol_diplomacy/slut
 	name = "SolFed Secretary?"

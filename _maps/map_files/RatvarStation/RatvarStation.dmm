@@ -13531,7 +13531,7 @@
 /turf/open/floor/clockwork/reebe,
 /area/security/checkpoint/customs)
 "bda" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -47887,7 +47887,7 @@
 /turf/open/floor/carpet,
 /area/command/heads_quarters/hop)
 "dSR" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /obj/machinery/light/small{
@@ -52048,7 +52048,7 @@
 /turf/open/floor/clockwork/reebe,
 /area/engineering/break_room)
 "ghn" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /obj/structure/cable/yellow{
@@ -52432,7 +52432,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/effect/turf_decal/tile/green{
 	dir = 1
 	},

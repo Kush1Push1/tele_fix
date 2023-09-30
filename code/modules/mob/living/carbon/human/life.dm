@@ -23,7 +23,7 @@
 		return
 	handle_active_genes()
 	//heart attack stuff
-	handle_heart()
+	handle_heart(delta_time, times_fired)
 
 	dna.species.spec_life(src) // for mutantraces
 	return (stat != DEAD) && !QDELETED(src)
@@ -343,9 +343,6 @@
 	// BLUEMOON ADD END
 	// Tissues die without blood circulation
 	adjustBruteLoss(2)
-
-
-
 
 #undef THERMAL_PROTECTION_HEAD
 #undef THERMAL_PROTECTION_CHEST

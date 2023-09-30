@@ -4412,7 +4412,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit)
 "chl" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -23189,7 +23189,7 @@
 /turf/open/floor/plasteel,
 /area/cargo/office)
 "mjB" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /turf/open/floor/wood,
@@ -36001,7 +36001,7 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/service/kitchen)
 "sFH" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/green{

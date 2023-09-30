@@ -528,12 +528,12 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	/// For figuring out where the local cryopod computer is. Must be set for cryo computer announcements.
 	var/area/computer_area
 
-/obj/machinery/computer/cryopod/proc/announce(message_type, user, rank)
+/obj/machinery/computer/cryopod/proc/announce(message_type, rank)
 	switch(message_type)
 		if("CRYO_JOIN")
-			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] просыпается после крио-заморозки.", announcement_channel)
+			radio.talk_into(src, "[usr][rank ? ", [rank]" : ""] просыпается после крио-заморозки.", announcement_channel)
 		if("CRYO_LEAVE")
-			radio.talk_into(src, "[user][rank ? ", [rank]" : ""] возвращается в крио-заморозку.", announcement_channel)
+			radio.talk_into(src, "[usr][rank ? ", [rank]" : ""] возвращается в крио-заморозку.", announcement_channel)
 
 /obj/effect/mob_spawn/human/Initialize(mapload)
 	. = ..()

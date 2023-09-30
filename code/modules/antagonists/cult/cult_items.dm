@@ -34,8 +34,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	force = 15
 	throwforce = 25
-	wound_bonus = -30
-	bare_wound_bonus = 30
+	wound_bonus = 10
+	bare_wound_bonus = 20
 	armour_penetration = 35
 	actions_types = list(/datum/action/item_action/cult_dagger)
 
@@ -57,8 +57,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	force = 30 // whoever balanced this got beat in the head by a bible too many times good lord
 	throwforce = 10
-	wound_bonus = -80
-	bare_wound_bonus = 30
+	wound_bonus = 20
+	bare_wound_bonus = 15
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "rended")
 
@@ -393,7 +393,7 @@
 	name = "\improper Nar'Sien Hardened Armor"
 	icon_state = "cult_armor"
 	item_state = "cult_armor"
-	tail_state = "cult_armour"
+	tail_state = "syndicate-blood"
 	desc = "A heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	w_class = WEIGHT_CLASS_BULKY
 	allowed = list(/obj/item/tome, /obj/item/melee/cultblade, /obj/item/tank/internals/)
@@ -619,7 +619,7 @@
 		user.DefaultCombatKnockdown(100)
 		to_chat(user, "<span class='warning'>Мощная сила отталкивает вас от [src]!</span>")
 		return
-	if(curselimit > 1)
+	if(curselimit >= 2)
 		to_chat(user, "<span class='notice'>Мы исчерпали свою способность проклинать Космическую Станцию.</span>")
 		return
 	if(locate(/obj/singularity/narsie) in GLOB.poi_list)

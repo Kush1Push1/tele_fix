@@ -14,7 +14,7 @@
 
 /obj/machinery/firealarm
 	name = "fire alarm"
-	desc = "<i>\"Pull this in case of emergency\"</i>. Thus, keep pulling it forever."
+	desc = "<i>\"Дёрните рычаг в случае чрезвычайной ситуации\"</i>. Наверняка, его допустимо тянуть и в иных случаях..."
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "fire0"
 	plane = ABOVE_WALL_PLANE
@@ -98,12 +98,20 @@
 
 	if(stat & BROKEN)
 		icon_state = "firex"
+		set_light(0)
 		return
-
-	icon_state = "fire0"
 
 	if(stat & NOPOWER)
+		icon_state = "firep"
+		set_light(0)
 		return
+
+	else if(triggered)
+		icon_state = "fire1"
+		set_light(5, 0.8, COLOR_RED_LIGHT)
+
+	icon_state = "fire0"
+	set_light(2, 1, COLOR_GREEN)
 
 /obj/machinery/firealarm/update_overlays()
 	. = ..()
@@ -113,33 +121,24 @@
 
 	if(is_station_level(z))
 		. += "fire_[GLOB.security_level]"
-		. += mutable_appearance(icon, "fire_[GLOB.security_level]")
-		. += emissive_appearance(icon, "fire_[GLOB.security_level]")
+		. += mutable_appearance(icon, "overlay_[NUM2SECLEVEL(GLOB.security_level)]")
+		. += emissive_appearance(icon, "overlay_[NUM2SECLEVEL(GLOB.security_level)]")
 	else
-		. += "fire_[SEC_LEVEL_GREEN]"
-		. += mutable_appearance(icon, "fire_[SEC_LEVEL_GREEN]")
-		. += emissive_appearance(icon, "fire_[SEC_LEVEL_GREEN]")
+		. += "overlay_[NUM2SECLEVEL(SEC_LEVEL_GREEN)]"
+		. += mutable_appearance(icon, "overlay_[NUM2SECLEVEL(GLOB.security_level)]")
+		. += emissive_appearance(icon, "overlay_[NUM2SECLEVEL(GLOB.security_level)]")
 
 	var/area/A = src.loc
 	A = A.loc
 
-	if(!detecting || !A.fire)
-		. += "fire_off"
-		. += mutable_appearance(icon, "fire_off")
-		. += emissive_appearance(icon, "fire_off")
-	else if(obj_flags & EMAGGED)
-		. += "fire_emagged"
-		. += mutable_appearance(icon, "fire_emagged")
-		. += emissive_appearance(icon, "fire_emagged")
+	if(obj_flags & EMAGGED)
+		. += "overlay_emagged"
+		. += mutable_appearance(icon, "overlay_emagged")
+		. += emissive_appearance(icon, "overlay_emagged")
 	else
 		. += "fire_on"
 		. += mutable_appearance(icon, "fire_on")
 		. += emissive_appearance(icon, "fire_on")
-
-	if(!panel_open && detecting && triggered) //It just looks horrible with the panel open
-		. += "fire_detected"
-		. += mutable_appearance(icon, "fire_detected")
-		. += emissive_appearance(icon, "fire_detected") //Pain
 
 /obj/machinery/firealarm/examine(mob/user)
 	. = ..()
@@ -158,6 +157,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	obj_flags |= EMAGGED
 	update_icon()
 	if(user)

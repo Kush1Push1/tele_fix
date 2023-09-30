@@ -135,6 +135,12 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	// This one sleeps too in it's AI code
 	ignore += typesof(/mob/living/simple_animal/hostile/swarmer)
 
+	ignore += typesof(/obj/machinery/satellite/meteor_shield)
+	ignore += typesof(/obj/machinery/satellite/meteor_shield/sci)
+	ignore += typesof(/obj/structure/shuttle/engine)
+	ignore += typesof(/obj/machinery/requests_console)
+	ignore += typesof(/obj/item/card/id)
+
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/original_turf_type = spawn_at.type
 	var/original_baseturfs = islist(spawn_at.baseturfs) ? spawn_at.baseturfs.Copy() : spawn_at.baseturfs

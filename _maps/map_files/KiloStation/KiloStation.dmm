@@ -9878,7 +9878,7 @@
 	},
 /area/maintenance/starboard/fore)
 "aru" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral{
@@ -11283,7 +11283,7 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "atI" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral{
@@ -83841,6 +83841,15 @@
 	},
 /obj/effect/turf_decal/bot,
 /obj/structure/table/reinforced,
+/obj/item/storage/barricade,
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = -10
+	},
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "lFx" = (

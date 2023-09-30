@@ -337,12 +337,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/listeningstation)
-"aH" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 4
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/listeningstation)
 "aI" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -920,10 +914,10 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/space/has_grav/listeningstation)
 "dF" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/listeningstation)
 "dH" = (
@@ -1157,8 +1151,8 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/listeningstation)
 "or" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
 /obj/effect/turf_decal/siding/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/listeningstation)
 "ow" = (
@@ -1267,6 +1261,7 @@
 /obj/machinery/door/airlock{
 	name = "Personal Quarters"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/listeningstation)
 "tn" = (
@@ -1332,7 +1327,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/listeningstation)
 "vG" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/listeningstation)
 "vM" = (
@@ -1550,13 +1545,13 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/listeningstation)
 "Fv" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 5
-	},
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/listeningstation)
 "FX" = (
@@ -1584,7 +1579,7 @@
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/listeningstation)
 "GB" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/listeningstation)
 "GN" = (
@@ -1776,7 +1771,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/listeningstation)
 "KX" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/listeningstation)
 "Lu" = (
@@ -3212,7 +3207,7 @@ tI
 tI
 ss
 zT
-aH
+bw
 ag
 ag
 ag
@@ -3250,7 +3245,7 @@ js
 Ks
 vT
 zT
-aH
+bw
 ab
 ab
 ab
@@ -3288,7 +3283,7 @@ cg
 ju
 vT
 zT
-aH
+bw
 ab
 ab
 ab
@@ -3326,7 +3321,7 @@ wT
 es
 vT
 zT
-aH
+bw
 ab
 ab
 ab
@@ -3364,7 +3359,7 @@ ag
 ag
 ag
 ag
-aH
+bw
 ab
 ab
 ab
@@ -3402,7 +3397,7 @@ ab
 ab
 ab
 ab
-aH
+bw
 ab
 ab
 ab

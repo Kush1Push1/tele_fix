@@ -44,7 +44,7 @@
 	//FREQ_BROADCASTING = 2
 
 /obj/item/radio/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] starts bouncing [src] off [user.ru_ego()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message("<span class='suicide'>[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
 /obj/item/radio/proc/set_frequency(new_frequency)
@@ -84,6 +84,18 @@
 	syndie = 1
 	recalculateChannels()
 
+/obj/item/radio/proc/make_pirate() // Turns normal radios into pirate radio
+	qdel(keyslot)
+	keyslot = new /obj/item/encryptionkey/pirate
+	syndie = 1
+	recalculateChannels()
+
+/obj/item/radio/proc/make_inteq() // Turns normal radios into InteQ radios!
+	qdel(keyslot)
+	keyslot = new /obj/item/encryptionkey/inteq
+	syndie = 1
+	recalculateChannels()
+
 /obj/item/radio/Destroy()
 	remove_radio_all(src) //Just to be sure
 	QDEL_NULL(wires)
@@ -102,7 +114,7 @@
 	for(var/ch_name in channels)
 		secure_radio_connections[ch_name] = add_radio(src, GLOB.radiochannels[ch_name])
 
-/obj/item/radio/Initialize()
+/obj/item/radio/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/empprotection, EMP_PROTECT_WIRES)
 
@@ -197,26 +209,28 @@
 					recalculateChannels()
 				. = TRUE
 
-/obj/item/radio/talk_into(atom/movable/talking_movable, message, channel, list/spans, datum/language/language)
+/obj/item/radio/talk_into(atom/movable/M, message, channel, list/spans, datum/language/language)
 	if(!spans)
-		spans = list(talking_movable.speech_span)
+		spans = list(M.speech_span)
 	if(!language)
-		language = talking_movable.get_selected_language()
-	INVOKE_ASYNC(src, .proc/talk_into_impl, talking_movable, message, channel, spans.Copy(), language)
+		language = M.get_selected_language()
+	INVOKE_ASYNC(src, .proc/talk_into_impl, M, message, channel, spans.Copy(), language)
 	return ITALICS | REDUCE_RANGE
 
-/obj/item/radio/proc/talk_into_impl(atom/movable/talking_movable, message, channel, list/spans, datum/language/language)
+/obj/item/radio/proc/talk_into_impl(atom/movable/M, message, channel, list/spans, datum/language/language)
 	if(!on)
 		return // the device has to be on
-	if(!talking_movable || !message)
+	if(!M || !message)
 		return
 	if(wires.is_cut(WIRE_TX))  // Permacell and otherwise tampered-with radios
 		return
-	if(!talking_movable.IsVocal())
+	if(!M.IsVocal())
+		return
+	if(language == /datum/language/signlanguage)
 		return
 
 	if(use_command)
-		spans |= SPAN_COMMAND
+		spans |= commandspan
 
 	/*
 	Roughly speaking, radios attempt to make a subspace transmission (which
@@ -249,25 +263,21 @@
 			break
 
 	// Determine the identity information which will be attached to the signal.
-	var/atom/movable/virtualspeaker/speaker = new(null, talking_movable, src)
+	var/atom/movable/virtualspeaker/speaker = new(null, M, src)
 
 	// Construct the signal
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans)
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE || freq == FREQ_DS1 || freq == FREQ_DS2 || freq == FREQ_PIRATE || freq == FREQ_INTEQ || freq == FREQ_TARKOFF || freq == FREQ_SOL || freq == FREQ_NRI || freq == FREQ_HOTEL))
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE || freq == FREQ_DS1 || freq == FREQ_DS2 || freq == FREQ_TARKOFF || freq == FREQ_SOL || freq == FREQ_NRI || freq == FREQ_HOTEL))
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.levels = list(0)  // reaches all Z-levels
 		signal.broadcast()
-		//playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)
 		return
 
 	// All radios make an attempt to use the subspace system first
 	signal.send_to_receivers()
-
-	//At this point the signal was transmitted so play a sound			//WS Edit - Radio chatter
-	//playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
 
 	// If the radio is subspace-only, that's all it can do
 	if (subspace_transmission)
@@ -312,7 +322,7 @@
 	// deny checks
 	if (!on || !listening || wires.is_cut(WIRE_RX))
 		return FALSE
-	if (freq == FREQ_SYNDICATE && !syndie)
+	if ((freq == FREQ_SYNDICATE || freq == FREQ_INTEQ || freq == FREQ_PIRATE) && !syndie)
 		return FALSE
 	if (freq == FREQ_CENTCOM)
 		return independent  // hard-ignores the z-level check

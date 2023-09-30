@@ -117,6 +117,11 @@
 	outfit = /datum/outfit/death_commando
 	role = "Солдат"
 
+/datum/antagonist/ert/asset_protection
+	name = "Asset Protection Team Trooper"
+	outfit = /datum/outfit/death_commando
+	role = "Солдат"
+
 /datum/antagonist/ert/syndiesquad
 	name = "Syndiesquad Specialist"
 	outfit = /datum/outfit/syndicate/syndiesquad
@@ -148,7 +153,12 @@
 
 /datum/antagonist/ert/deathsquad/leader
 	name = "Deathsquad Officer"
-	outfit = /datum/outfit/death_commando
+	outfit = /datum/outfit/death_commando/officer
+	role = "Офицер"
+
+/datum/antagonist/ert/asset_protection/leader
+	name = "Asset Protection Team Officer"
+	outfit = /datum/outfit/death_commando/officer
 	role = "Офицер"
 
 /datum/antagonist/ert/syndiesquad/leader
@@ -212,22 +222,22 @@
 	..()
 	var/mob/living/M = mob_override || owner.current
 	add_antag_hud(antag_hud_type, antag_hud_name, M)
-	if(M.hud_used)
-		var/datum/hud/H = M.hud_used
-		var/atom/movable/screen/wanted/giving_wanted_lvl = new /atom/movable/screen/wanted()
-		H.wanted_lvl = giving_wanted_lvl
-		giving_wanted_lvl.hud = H
-		H.infodisplay += giving_wanted_lvl
-		H.mymob.client.screen += giving_wanted_lvl
+//	if(M.hud_used)
+//		var/datum/hud/H = M.hud_used
+//		var/atom/movable/screen/wanted/giving_wanted_lvl = new /atom/movable/screen/wanted()
+//		H.wanted_lvl = giving_wanted_lvl
+//		giving_wanted_lvl.hud = H
+//		H.infodisplay += giving_wanted_lvl
+//		H.mymob.client.screen += giving_wanted_lvl
 
 
 /datum/antagonist/ert/families/remove_innate_effects(mob/living/mob_override)
 	var/mob/living/M = mob_override || owner.current
 	remove_antag_hud(antag_hud_type, M)
-	if(M.hud_used)
-		var/datum/hud/H = M.hud_used
-		H.infodisplay -= H.wanted_lvl
-		QDEL_NULL(H.wanted_lvl)
+//	if(M.hud_used)
+//		var/datum/hud/H = M.hud_used
+//		H.infodisplay -= H.wanted_lvl
+//		QDEL_NULL(H.wanted_lvl)
 	..()
 
 /datum/antagonist/ert/families/greet()

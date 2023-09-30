@@ -246,7 +246,7 @@
 	imp_type = /obj/item/implant/radio/inteq_subspace
 
 /mob/living/simple_animal/drone/syndrone/badass/inteq
-	name = "Inteq Combat Drone"
+	name = "InteQ Combat Drone"
 	icon_state = "drone_inteq"
 	icon_living = "drone_inteq"
 	default_hatmask = /obj/item/clothing/head/helmet/space/syndicate/contract

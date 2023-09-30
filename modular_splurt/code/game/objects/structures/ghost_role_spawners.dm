@@ -69,7 +69,7 @@
 	mob_name = "hotel staff member"
 	job_description = "Hotel Staff"
 	icon = 'icons/obj/machines/sleeper.dmi'
-	icon_state = "sleeper_s"
+	icon_state = "sleeper"
 	objectives = "Обслуживайте приезжающих гостей вместе со своими сотрудниками. Не бросайте отель - вы можете рекламировать его и налаживать связи с потенциальными гостями, но всегда помните, кто подписывает ваши чеки! Клиент всегда прав!!"
 	short_desc = "Вы сотрудник Космического Отеля!"
 	flavour_text = "Вы - сотрудник первоклассного космического отеля! Ухаживайте за гостями и следите за тем, чтобы менеджер не уволил вас."
@@ -78,6 +78,7 @@
 	death = FALSE
 	roundstart = FALSE
 	random = TRUE
+	loadout_enabled = TRUE
 	canloadappearance = TRUE
 	id_job = "Hotel Staff"
 	id = /obj/item/card/id/away/hotel/splurt

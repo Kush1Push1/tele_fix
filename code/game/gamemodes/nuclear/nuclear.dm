@@ -123,7 +123,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	back = /obj/item/storage/backpack
-	ears = /obj/item/radio/headset/syndicate/alt
+	ears = /obj/item/radio/headset/inteq/alt
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
 	id = /obj/item/card/id/syndicate/inteq
 	belt = /obj/item/gun/ballistic/automatic/pistol
@@ -159,6 +159,7 @@
 	W.implant(H)
 	var/obj/item/implant/explosive/E = new
 	E.implant(H)
+
 	H.faction |= ROLE_INTEQ
 	H.update_icons()
 

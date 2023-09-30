@@ -195,7 +195,7 @@
 				data["occupant"]["stat"] = "Conscious"
 				data["occupant"]["statstate"] = "average"
 			if(UNCONSCIOUS)
-				data["occupant"]["stat"] = "Unconscious"
+				data["occupant"]["stat"] = "Unconscious" // 15.09.2023. Отметка. Перевести
 				data["occupant"]["statstate"] = "average"
 			if(DEAD)
 				data["occupant"]["stat"] = "Dead"
@@ -243,6 +243,7 @@
 	. = ..()
 	obj_flags |= EMAGGED
 	scramble_chem_buttons()
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='warning'>You scramble the sleeper's user interface!</span>")
 	return TRUE
 

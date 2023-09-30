@@ -2,7 +2,7 @@
 
 /datum/map_template/shuttle/pirate/default/inteq
 	suffix = "inteq"
-	name = "pirate ship (InteQ)"
+	name = "Pirate ship (InteQ)"
 
 /area/shuttle/pirate/inteq
 	name = "InteQ Shuttle"
@@ -17,7 +17,7 @@
 	possible_destinations = "pirateship_away;pirateship_home;inteqship_custom"
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/pirate/inteq
-	name = "InteQ shuttle navigation computer"
+	name = "InteQ Shuttle Navigation Computer"
 	desc = "Used to designate a precise transit location for the InteQ Colossus."
 	shuttleId = "inteqship"
 	lock_override = CAMERA_LOCK_STATION

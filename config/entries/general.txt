@@ -339,12 +339,15 @@ ROUNDSTART_RACES dullahan
 ROUNDSTART_RACES spectre_bot
 ROUNDSTART_RACES vampire_roundstart
 ROUNDSTART_RACES shadekin
+ROUNDSTART_RACES teshari
+ROUNDSTART_RACES xenochimera
 ROUNDSTART_RACES undead_mammal
 ROUNDSTART_RACES undead_insect
 ROUNDSTART_RACES ghoul_lizard
 ROUNDSTART_RACES podweak
 
 ROUNDSTART_RACES vox
+ROUNDSTART_RACES nucleation
 
 ##-------------------------------------------------------------------------------------------
 

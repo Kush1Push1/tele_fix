@@ -20,6 +20,20 @@
 	var/map_pad_id = "" as text //what's my name
 	var/map_pad_link_id = "" as text //who's my friend
 
+/obj/machinery/quantumpad/fullupgrade/Initialize(mapload)
+	. = ..()
+	component_parts = list()
+	component_parts += new /obj/item/circuitboard/machine/quantumpad/fullupgrade(null)
+	component_parts += new /obj/item/stack/ore/bluespace_crystal(null)
+	component_parts += new /obj/item/stock_parts/capacitor/giga(null)
+	component_parts += new /obj/item/stock_parts/manipulator/atto(null)
+	component_parts += new /obj/item/stack/cable_coil(null)
+	component_parts += new /obj/item/stack/cable_coil(null)
+	component_parts += new /obj/item/stack/cable_coil(null)
+	component_parts += new /obj/item/stack/cable_coil(null)
+	component_parts += new /obj/item/stack/cable_coil(null)
+	RefreshParts()
+
 /obj/machinery/quantumpad/Initialize(mapload)
 	. = ..()
 	if(map_pad_id)

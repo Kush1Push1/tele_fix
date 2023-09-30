@@ -90,7 +90,7 @@
 	if(alert)
 		var/area/alarmed = get_base_area(src)
 		alarmed.burglaralert(src)
-		playsound(src, 'sound/effects/alert.ogg', 50, 1)
+		playsound(src, 'sound/misc/alerts/alert.ogg', 50, 1)
 
 /obj/structure/displaycase/update_overlays()
 	. = ..()
@@ -353,7 +353,7 @@
 /obj/structure/displaycase/forsale
 	name = "vend-a-tray"
 	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "laserbox0"
+	icon_state = "laserbox"
 	custom_glass_overlay = TRUE
 	desc = "A display case with an ID-card swiper. Use your ID to purchase the contents."
 	density = FALSE
@@ -548,6 +548,7 @@
 	. = ..()
 	payments_acc = null
 	req_access = list()
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='warning'>[src]'s card reader fizzles and smokes, and the account owner is reset.</span>")
 
 /obj/structure/displaycase/forsale/examine(mob/user)

@@ -169,11 +169,16 @@
 /datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/carbon/M)
 	var/power = -0.00003 * (M.bodytemperature ** 2) + 3
 	if(M.bodytemperature < T0C)
-		M.adjustOxyLoss(-3 * power, 0)
-		M.adjustBruteLoss(-power, 0)
-		M.adjustFireLoss(-power, 0)
-		M.adjustToxLoss(-power, 0, TRUE) //heals TOXINLOVERs
+		M.adjustOxyLoss(-4 * power, 0)
+		M.adjustBruteLoss(-2 * power, 0)
+		M.adjustFireLoss(-2 * power, 0)
+		M.adjustToxLoss(-2 * power, 0, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-power, 0)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -power*REM) //additional heal for brain
+		for(var/organ in M.internal_organs)
+			var/obj/item/organ/O = organ
+			if ((!(O.organ_flags & ORGAN_FAILING)) && (!(O.organ_flags & ORGAN_FAILING)) && (!(O.organ_flags & ORGAN_FAILING))) //Check for organ failure
+				O.applyOrganDamage(-1 * power) //Use reverse damage for heal
 		for(var/i in M.all_wounds)
 			var/datum/wound/iter_wound = i
 			iter_wound.on_xadone(power)

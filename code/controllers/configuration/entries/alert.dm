@@ -1,29 +1,44 @@
 /datum/config_entry/string/alert_green
-	config_entry_value = "All threats to the station have passed. Security may not have weapons visible, privacy laws are once again fully enforced."
+	config_entry_value = "Уровень угрозы понижен до зелёного. Все угрозы для станции устранены. Всё оружие должно быть в кобуре, и законы о конфиденциальности вновь полностью соблюдаются."
 
 /datum/config_entry/string/alert_blue_upto
-	config_entry_value = "The station has received reliable information about potential threats to the station. Security staff may have weapons visible, random searches are permitted."
+	config_entry_value = "Уровень угрозы повышен до Синего. Станция получила надежные данные о возможной враждебной активности на борту. Служба безопасности может держать оружие на виду."
 
 /datum/config_entry/string/alert_blue_downto
-	config_entry_value = "Significant confirmed threats have been neutralized. Security may no longer have weapons drawn at all times, but may continue to have them visible. Random searches are still permitted."
+	config_entry_value = "Значительные подтвержденные угрозы были нейтрализованы. Служба безопасности больше не может постоянно держать оружие наготове, но может продолжать держать его на виду."
+
+/datum/config_entry/string/alert_orange_upto
+	config_entry_value = "Уровень угрозы повышен до Оранжевого. Станция получила серьезные повреждения корпуса и машинерии. Часть отделов не может функционировать. Нетехнический персонал обязан выполнять инструкции инженерного персонала. рекомендуется провести эвакуацию с пострадавших отсеков."
+
+/datum/config_entry/string/alert_orange_downto
+	config_entry_value = "Значительные подтвержденные угрозы были нейтрализованы. Станция получила серьезные повреждения корпуса и машинерии, часть отделов не может функционировать. Нетехнический персонал обязан выполнять инструкции инженерного персонала. рекомендуется провести эвакуацию с пострадавших отсеков."
+
+/datum/config_entry/string/alert_violet_upto
+	config_entry_value = "Значительные подтвержденные угрозы были нейтрализованы. На станции обнаружены биологические угрозы. Немедицинский персонал обязан подчиняться всем соответствующим инструкциям медицинского персонала. Всему экипажу рекомендуется носить защиту дыхательных путей и минимизировать контакты с живыми существами станции. Медицинский персонал имеет право организовывать карантинные зоны."
+
+/datum/config_entry/string/alert_violet_downto
+	config_entry_value = "Значительные подтвержденные угрозы были нейтрализованы. Служба безопасности больше не может постоянно держать оружие наготове, но может продолжать держать его на виду."
 
 /datum/config_entry/string/alert_amber_upto
-	config_entry_value = "There are significant confirmed threats to the station. Security staff may have weapons unholstered at all times. Random searches are allowed and advised."
+	config_entry_value = "Станции грозит серьезная опасность. Службе безопасности рекомендуется иметь оружие в полной боевой готовности. Выборочные обыски разрешены и рекомендованы."
 
 /datum/config_entry/string/alert_amber_downto
-	config_entry_value = "The immediate threat has passed. Security is no longer authorized to use lethal force, but may continue to have weapons drawn. Access requirements have been restored."
+	config_entry_value = "Непосредственная угроза миновала. Служба безопасности больше не имеет права применять летальную силу, но может продолжать держать оружие наготове. Требования к доступу были восстановлены."
 
 /datum/config_entry/string/alert_red_upto
-	config_entry_value = "There is an immediate serious threat to the station. Security is now authorized to use lethal force. Additionally, access requirements on some machines have been lifted."
+	config_entry_value = "Служба безопасности должна быть полностью вооружена. Гражданский персонал обязан немедленно обратиться к Главам отделов для получения указаний к эвакуации."
 
 /datum/config_entry/string/alert_red_downto
-	config_entry_value = "The station's destruction has been averted. There is still however an immediate serious threat to the station. Security is still authorized to use lethal force."
+	config_entry_value = "Разрушение станции было предотвращено. Однако, по прежнему существует непосредственная серьезная угроза для станции. Служба безопасности уполномочена применять летальную силу."
 
 /datum/config_entry/string/alert_lambda
-	config_entry_value = "Destruction of the station is imminent. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill."
+	config_entry_value = "Станция несёт серьезный урон и подвергается разрушению. Персонал станции должен сделать всё от него зависящее для предотвращения окончательной утери станции. Служба безопасности получит усиление."
+
+/datum/config_entry/string/alert_epsilon
+	config_entry_value = "Центральным командованием был установлен Код ЭПСИЛОН. Система находится под серьёзной угрозой и может быть потеряна. Персонал станции должен сделать всё от него зависящее для предотвращения окончательной утери Системы. Служба безопасности получит усиление. ЦЕЛЬ - ВЫЖИТЬ. ЛЮБОЙ ЦЕНОЙ."
 
 /datum/config_entry/string/alert_delta
-	config_entry_value = "Destruction of the station is imminent. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill."
+	config_entry_value = "Механизм Самоуничтожения запущен. Все члены экипажа обязаны подчиняться указаниям Глав отделов. Любые нарушения караются смертью. Это не учебная тревога."
 
 /datum/config_entry/number/minimum_secborg_alert	//Minimum alert level for secborgs to be chosen.
 	config_entry_value = 3

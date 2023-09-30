@@ -446,6 +446,12 @@ AI MODULES
 	name = "Syndicate Core AI Module"
 	law_id = "syndie"
 
+/********************    SOL    ********************/
+
+/obj/item/aiModule/core/full/solfed
+	name = "Solar Federation Core AI Module"
+	law_id = "solfed"
+
 /******************** Freeform Core ******************/
 
 /obj/item/aiModule/core/freeformcore

@@ -46,3 +46,13 @@
 					/obj/item/staff/broom/liquidator,
 					/obj/item/staff/broom/liquidator)
 	crate_name = "Liquidator's Kit"
+
+/datum/supply_pack/security/armor
+	name = "C.U.C.K.S Deployable Barricades"
+	desc = "Four cases of deployable barricades, for all your fortification needs."
+	cost = 4510
+	contains = list(/obj/item/storage/barricade,
+					/obj/item/storage/barricade,
+					/obj/item/storage/barricade,
+					/obj/item/storage/barricade)
+	crate_name = "C.U.C.K.S Deployable Barricades"

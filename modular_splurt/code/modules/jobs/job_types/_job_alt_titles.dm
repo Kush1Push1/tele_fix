@@ -207,7 +207,6 @@
 /datum/job/cook/New()
 	var/list/extra_titles = list(
 		"Waffle Co. Specialist",
-		"Donk Co. Specialist",
 		"Chef De Partie",
 		"Chef De Sexe",
 		"Boss Of This Gym",
@@ -393,7 +392,7 @@
 		"Security Agent",
 		"Probation Officer",
 		"Guardsman",
-		"Civil Protection Cosplayer",
+		"Civil Protection",
 		"Police Officer",
 		"Tyranny Lover",
 		"Cerberus",
@@ -442,7 +441,7 @@
 		"Cock Packager",
 		"Mailroom Technician",
 		"Disposal Technician",
-		"Syndicate Deck Worker",
+		"Donk Co. Specialist",
 		"Logistics Technician",
 		"Cryptocurrency Technician"
 	)

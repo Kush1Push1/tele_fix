@@ -119,7 +119,7 @@
 	if(H.wear_suit)
 		var/obj/item/clothing/suit/armor/A = H.wear_suit
 		maxHealth += A.armor.melee //That zombie's got armor, I want armor!
-	maxHealth += 40
+	maxHealth += 120
 	health = maxHealth
 	name = "blob zombie"
 	desc = "A shambling corpse animated by the blob."

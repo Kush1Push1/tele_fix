@@ -133,7 +133,7 @@
 	item_state = "detective"
 
 /obj/item/clothing/head/pirate
-	name = "pirate hat"
+	name = "Pirate hat"
 	desc = "Yarr."
 	icon_state = "pirate"
 	item_state = "pirate"
@@ -142,12 +142,12 @@
 	beepsky_fashion = /datum/beepsky_fashion/pirate
 
 /obj/item/clothing/head/pirate/captain
-	name = "pirate captain hat"
+	name = "Pirate captain hat"
 	icon_state = "hgpiratecap"
 	item_state = "hgpiratecap"
 
 /obj/item/clothing/head/bandana
-	name = "pirate bandana"
+	name = "Pirate bandana"
 	desc = "Yarr."
 	icon_state = "bandana"
 	item_state = "bandana"

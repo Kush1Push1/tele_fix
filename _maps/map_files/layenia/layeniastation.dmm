@@ -10536,6 +10536,15 @@
 	dir = 8;
 	color = "#FFFFFF"
 	},
+/obj/item/storage/barricade,
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = -10
+	},
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "bEZ" = (
@@ -43958,7 +43967,7 @@
 	},
 /area/maintenance/port/aft)
 "gAr" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /obj/machinery/button/door{
@@ -99638,7 +99647,7 @@
 	name = "Hallway Window Shutters";
 	pixel_x = -5;
 	pixel_y = 28;
-	req_access_txt = "71"
+	req_access_txt = "76"
 	},
 /obj/item/flashlight/lamp/green{
 	pixel_x = -16;
@@ -103489,7 +103498,7 @@
 	name = "Hallway Window Shutters";
 	pixel_x = -5;
 	pixel_y = 7;
-	req_access_txt = "71"
+	req_access_txt = "76"
 	},
 /obj/machinery/light_switch{
 	pixel_x = -7;
@@ -110247,7 +110256,7 @@
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
 "qaY" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /obj/structure/table/reinforced,
@@ -151794,7 +151803,7 @@
 	},
 /area/hallway/primary/central)
 "wcZ" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/machinery/status_display/ai{
 	pixel_y = 26
 	},
@@ -152320,7 +152329,7 @@
 	},
 /area/service/bar)
 "wfP" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -259792,7 +259801,7 @@ nLS
 nLS
 nLS
 nLS
-nLS
+boa
 nLS
 nLS
 aEb

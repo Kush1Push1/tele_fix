@@ -9,7 +9,7 @@
 	item_state = "centcom_t_skirt"
 
 /obj/item/clothing/under/syndicate/brigdoc
-	name = "brig physician turtleneck"
+	name = "red turtleneck"
 	icon_state = "security_medic_turtleneck"
 	item_state = "security_medic_turtleneck"
 	has_sensor = 3
@@ -18,6 +18,15 @@
 	name = "red skirtleneck"
 	icon_state = "security_medic_turtleneck_skirt"
 	item_state = "security_medic_turtleneck_skirt"
+
+/obj/item/clothing/under/rank/security/officer/tacticool
+	name = "tacticool security jumpsuit"
+	icon_state = "tacticool_sec"
+	item_state = "tacticool_sec"
+	can_adjust = FALSE
+	unique_reskin = list(
+		"Red" = list("icon_state" = "tacticool_sec")
+	)
 
 /obj/item/clothing/suit/armor/vest/agent
 	name = "agent armored vest"
@@ -39,6 +48,8 @@
 	icon_state = "russian_green_helmet"
 	item_state = "russian_green_helmet"
 	desc = "One of the newest NRI helmets, also widely spread asross space corporations security forces."
+	icon = 'modular_bluemoon/kovac_shitcode/icons/rus/obj_rus.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/rus/mob_rus.dmi'
 
 /obj/item/clothing/head/helmet/aviator_helmet
 	name = "aviator helmet"
@@ -227,7 +238,7 @@
 			toggle_stealth(TRUE)
 			return
 		if(wearer)
-			wearer.alpha = 4
+			wearer.alpha = 12
 			wearer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			if(current_charge <= (power_decrease * 15)) // there are 30 seconds to full discharge
 				playsound(get_turf(src), 'sound/rig/loudbeep.ogg', 100, 1, 1)
@@ -288,7 +299,7 @@
 			slowdown = 1.4
 			new /obj/effect/temp_visual/emp/pulse(get_turf(src))
 			playsound(get_turf(src), 'sound/effects/pop.ogg', 100, 1, -6)
-			wearer.alpha = 4
+			wearer.alpha = 12
 			wearer.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 			START_PROCESSING(SSobj, src)
 
@@ -475,17 +486,86 @@
 
 /////////////////////////////////////////////////////////
 
+/obj/item/clothing/mask/gas/sechailer/syndicate/flektarn
+	icon_state = "half_mask_flektarn"
+
+/obj/item/clothing/mask/gas/sechailer/syndicate/green
+	icon_state = "half_mask_green"
+
+/obj/item/clothing/mask/gas/sechailer/syndicate/tan
+	icon_state = "half_mask_tan"
+
+/obj/item/storage/backpack/hipbag
+	name = "Hipbag"
+	icon_state = "hipbag"
+	item_state = "hipbag"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	icon = 'icons/obj/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
+
+/obj/item/storage/backpack/hipbag/tan
+	name = "Tan Hipbag"
+	icon_state = "hipbag_tan"
+	item_state = "hipbag_tan"
+
+/obj/item/storage/backpack/hipbag/green
+	name = "Green Hipbag"
+	icon_state = "hipbag_green"
+	item_state = "hipbag_green"
+
+//////////////////////////////////////////////
+
 /mob/living/simple_animal/pet/dog/corgi/pig/assistant
 	name = "Danya"
 	real_name = "Danya"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 	maxHealth = 250
 	health = 250
+	gender = MALE
 
 /mob/living/simple_animal/pet/fox/fennec/eldritch
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 	maxHealth = 100
 	health = 100
+	held_icon = "fennec_eldritch"
+
+/mob/living/simple_animal/pet/cat/moro
+	name = "Moro"
+	desc = "He likes grechkya."
+	icon_state = "moro"
+	icon_living = "moro"
+	icon_dead = "moro_dead"
+	held_icon = "moro"
+	unique_pet = TRUE
+	mob_size = MOB_SIZE_LARGE
+	maxHealth = 250
+	health = 250
+	gender = MALE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+
+/mob/living/simple_animal/pet/cat/alta
+	name = "Alta"
+	desc = "A cute white cat."
+	icon_state = "alta"
+	icon_living = "alta"
+	icon_dead = "alta_dead"
+	held_icon = "alta"
+	unique_pet = TRUE
+	gender = FEMALE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+
+/mob/living/simple_animal/pet/dog/corgi/Lisa/ada
+	name = "Ada"
+	real_name = "Ada"
+	gender = FEMALE
+	desc = "She will bite your throat till you die."
+	gold_core_spawnable = NO_SPAWN
+	unique_pet = TRUE
+	icon_state = "ada"
+	icon_living = "ada"
+	icon_dead = "ada_dead"
+	held_icon = "ada"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
 ///////////////
 
@@ -507,3 +587,37 @@
 	name = "raita plushie"
 	icon_state = "raita"
 	item_state = "raita"
+
+/obj/item/toy/plush/mammal/fox/emma/aiko
+	name = "aiko plushie"
+	icon_state = "aiko"
+	item_state = "aiko"
+
+/obj/item/toy/plush/nukeplushie/who
+	name = "security officer plushie"
+	desc = "A stuffed toy that resembles a Nanotrasen operative. He smells like burnt cotton."
+	icon_state = "who"
+	item_state = "who"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
+	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
+	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
+	squeak_override = list('modular_bluemoon/kovac_shitcode/sound/vulps/plush_1.ogg' = 9, 'modular_bluemoon/kovac_shitcode/sound/vulps/plush_2.ogg' = 1)
+
+/obj/item/toy/plush/deer/qm
+	name = "supply chief plushie"
+	desc = "A stuffed toy that resembles a Cargonia Chief. Looks like a fallen economy."
+	icon_state = "qm"
+	item_state = "qm"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
+	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
+	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
+
+/obj/item/toy/plush/sergal/judas
+	name = "yellow shark plushie"
+	desc = "An adorable stuffed plushie that resembles a yellow security shark."
+	icon_state = "judas"
+	item_state = "judas"
+	squeak_override = list('modular_splurt/sound/voice/barks/undertale/voice_alphys.ogg' = 9)
+	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
+	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
+	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'

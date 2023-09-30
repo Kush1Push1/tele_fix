@@ -289,6 +289,15 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = -10
+	},
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = 10
+	},
+/obj/item/storage/barricade,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "acp" = (
@@ -1911,9 +1920,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/delivery,
-/obj/structure/sign/poster/official/pda_ad800{
-	pixel_y = 32
-	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "aji" = (
@@ -7896,7 +7902,7 @@
 /turf/open/floor/plasteel,
 /area/commons/storage/primary)
 "aDc" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -8888,6 +8894,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
+/mob/living/simple_animal/pet/dog/corgi/Lisa/ada,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "aHe" = (
@@ -15472,7 +15479,7 @@
 /turf/open/floor/wood,
 /area/command/heads_quarters/captain)
 "bil" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -17170,20 +17177,16 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
-/obj/machinery/status_display/supply{
-	pixel_x = -28;
-	pixel_y = 2
-	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "bmo" = (
 /turf/closed/wall,
 /area/command/heads_quarters/hop)
 "bmp" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/maintenance/central)
+/obj/machinery/photocopier,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plasteel,
+/area/hallway/primary/central)
 "bmq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall,
@@ -17739,6 +17742,7 @@
 /obj/machinery/firealarm{
 	pixel_y = 27
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel,
 /area/cargo/office)
 "bnK" = (
@@ -18892,7 +18896,7 @@
 /turf/open/floor/carpet,
 /area/command/heads_quarters/hop)
 "bqA" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue{
@@ -58710,6 +58714,10 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/command/bridge)
+"qaB" = (
+/obj/machinery/photocopier,
+/turf/open/floor/plasteel,
+/area/cargo/office)
 "qbq" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -67308,6 +67316,10 @@
 /obj/structure/lattice,
 /turf/closed/wall,
 /area/service/chapel/office)
+"xpy" = (
+/obj/machinery/status_display/supply,
+/turf/closed/wall,
+/area/cargo/sorting)
 "xpG" = (
 /obj/machinery/door/morgue{
 	name = "Confession Booth (Chaplain)";
@@ -92226,7 +92238,7 @@ bbR
 fZx
 cBq
 bbR
-bbR
+qaB
 bwd
 bxC
 byK
@@ -92734,7 +92746,7 @@ beV
 cNI
 bKP
 cNI
-aZK
+xpy
 bnK
 bnK
 bqu
@@ -94019,8 +94031,8 @@ bgH
 bie
 bjB
 bkW
-bmp
 bjz
+bmp
 ajh
 bqy
 cBr

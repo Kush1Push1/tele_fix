@@ -41,7 +41,7 @@
 	getbooty.team = src
 	for(var/obj/machinery/computer/piratepad_control/P in GLOB.machines)
 		var/area/A = get_area(P)
-		if(istype(A,/area/shuttle/inteq))
+		if(istype(A,/area/shuttle/inteq/collosus))
 			getbooty.cargo_hold = P
 			break
 	getbooty.update_explanation_text()
@@ -139,14 +139,8 @@
 
 	uniform = /obj/item/clothing/under/inteq
 	shoes = /obj/item/clothing/shoes/combat
-	//r_pocket = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
-	//gloves = /obj/item/clothing/gloves/combat
-	//back = /obj/item/storage/backpack
-	ears = /obj/item/radio/headset/syndicate/alt
+	ears = /obj/item/radio/headset/inteq/alt
 	id = /obj/item/card/id/syndicate/inteq
-	//belt = /obj/item/gun/ballistic/automatic/pistol
-	//backpack_contents = list(/obj/item/storage/box/survival/syndie=1,
-	//obj/item/kitchen/knife/combat/survival)
 
 	var/command_radio = FALSE
 
@@ -159,10 +153,8 @@
 	command_radio = TRUE
 
 /datum/outfit/inteq_raider/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
-	H.faction |= "InteQ"
-
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_PIRATE)
+	R.set_frequency(FREQ_INTEQ)
 	R.freqlock = TRUE
 	if(command_radio)
 		R.command = TRUE
@@ -175,14 +167,11 @@
 		B.registered_name = H.real_name
 		B.update_label(H.real_name)
 
+	H.grant_language(/datum/language/codespeak, TRUE, TRUE)
+	H.faction |= ROLE_INTEQ
 	H.update_icons()
 
-	H.grant_language(/datum/language/codespeak, TRUE, TRUE)
-
 ////// Shuttle (Krashly) ///////////
-
-/area/shuttle/inteq
-	name = "InteQ Shuttle"
 
 /datum/map_template/shuttle/inteq_collosus
 	prefix = "_maps/shuttles/bluemoon/"
@@ -193,12 +182,12 @@
 /obj/machinery/computer/shuttle/inteq_collosus
 	name = "Collosus Control"
 	desc = "Used to control the Collosus."
-	icon_screen = "syndishuttle"
-	icon_keyboard = "syndie_key"
+	icon_screen = "inteqshuttle"
+	icon_keyboard = "inteq_key"
 	light_color = LIGHT_COLOR_ORANGE
 	circuit = /obj/item/circuitboard/computer/inteq_collosus
 	shuttleId = "inteq_collosus"
-	possible_destinations = "inteq_collosus_custom, raiders_away"
+	possible_destinations = "inteq_collosus_custom;pirateship_home;raiders_away"
 
 /obj/item/circuitboard/computer/inteq_collosus
 	name = "Collosus Control Console (Computer Board)"
@@ -207,8 +196,8 @@
 /obj/machinery/computer/camera_advanced/shuttle_docker/inteq_collosus
 	name = "Collosus Navigation Computer"
 	desc = "The Navigation console for the Collosus."
-	icon_screen = "syndishuttle"
-	icon_keyboard = "syndie_key"
+	icon_screen = "inteqshuttle"
+	icon_keyboard = "inteq_key"
 	shuttleId = "inteq_collosus"
 	lock_override = NONE
 	shuttlePortId = "inteq_collosus_custom"
@@ -223,10 +212,8 @@
 	armor = list(MELEE = 50, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 50, BIO = 0, RAD = 0, FIRE = 90, ACID = 90)
 	faction = list("InteQ")
 
-
 /obj/machinery/mineral/ore_redemption/inteq
 	req_access = list(ACCESS_SYNDICATE)
-
 
 /datum/team/raiders/roundend_report()
 	var/list/parts = list()

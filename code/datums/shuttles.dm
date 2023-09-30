@@ -700,7 +700,7 @@
 
 /datum/map_template/shuttle/pirate/default
 	suffix = "default"
-	name = "pirate ship (Default)"
+	name = "Pirate ship (Default)"
 
 /datum/map_template/shuttle/hunter/space_cop
 	suffix = "space_cop"

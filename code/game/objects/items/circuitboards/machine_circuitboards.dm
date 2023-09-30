@@ -1108,7 +1108,18 @@
 		/obj/item/stack/ore/bluespace_crystal = 1,
 		/obj/item/stock_parts/capacitor = 1,
 		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stack/cable_coil = 1)
+		/obj/item/stack/cable_coil = 5)
+	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
+
+/obj/item/circuitboard/machine/quantumpad/fullupgrade
+	name = "Full Upgrade Quantum Pad (Machine Board)"
+	icon_state = "science"
+	build_path = /obj/machinery/quantumpad/fullupgrade
+	req_components = list(
+		/obj/item/stack/ore/bluespace_crystal = 1,
+		/obj/item/stock_parts/capacitor/giga = 1,
+		/obj/item/stock_parts/manipulator/atto = 1,
+		/obj/item/stack/cable_coil = 5)
 	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
 
 /obj/item/circuitboard/machine/rdserver

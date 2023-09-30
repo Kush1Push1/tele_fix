@@ -4497,7 +4497,7 @@
 /turf/open/floor/spooktime/cobble,
 /area/eventmap/outside)
 "anr" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /obj/structure/cable/white{
@@ -8283,7 +8283,7 @@
 /turf/open/floor/wood,
 /area/eventmap/inside)
 "axR" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 4
 	},
 /obj/structure/cable/white{

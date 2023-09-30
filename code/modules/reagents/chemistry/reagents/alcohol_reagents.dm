@@ -750,7 +750,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(HAS_TRAIT(H, TRAIT_DWARF) || HAS_TRAIT(H, TRAIT_ALCOHOL_TOLERANCE || real_dorf))
-			to_chat(H, "<span class='notice'>Now THAT is MANLY!</span>")
+			to_chat(H, "<span class='notice'>Вот это уже по МУЖИЦКИ!</span>")
 			if(real_dorf)
 				boozepwr = 100 // Don't want dwarves to die because of a low booze power
 			else
@@ -2505,6 +2505,13 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "cup of Drisky Kitty"
 	glass_desc = "Warm milk and some catnip."
 	species_required = "furry"
+
+/datum/reagent/consumable/ethanol/species_drink/frisky_kitty/on_mob_life(mob/living/carbon/M)
+	if(iscatperson(M))
+		if(prob(15))
+			M.emote(pick("nya","purr"))
+			to_chat(M, "<span class = 'notice'>[pick("So tasty~", "Ahh~ can't hold my hapiness!","Tastes perfectly!")]</span>")
+	return ..()
 
 /datum/reagent/consumable/ethanol/species_drink/jell_wyrm
 	name = "Jell Wyrm"

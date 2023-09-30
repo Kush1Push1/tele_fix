@@ -94,21 +94,49 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/syndicate //disguised to look like a normal headset for stealth ops
 
 /obj/item/radio/headset/syndicate/alt //undisguised bowman with flash protection
-	name = "illegal headset"
-	desc = "An illegal hacked headset that can be used to hear all radio frequencies. Protects ears from flashbangs."
+	name = "Syndicate Headset"
+	desc = "Боевые наушники Синдиката, способные прослушивать рацию всех ближайших используемых диапазонов. Защищает уши от громких звуков."
 	icon_state = "syndie_headset"
 	item_state = "syndie_headset"
 	bowman = TRUE
 
 /obj/item/radio/headset/syndicate/alt/leader
-	name = "team leader headset"
+	name = "Team Leader Syndicate Headset"
 	command = TRUE
 
 /obj/item/radio/headset/syndicate/Initialize(mapload)
 	. = ..()
 	make_syndie()
 
+/obj/item/radio/headset/pirate
+
+/obj/item/radio/headset/pirate/Initialize(mapload)
+	. = ..()
+	make_pirate()
+
+/obj/item/radio/headset/inteq //disguised to look like a normal headset for stealth ops
+
+/obj/item/radio/headset/inteq/alt //undisguised bowman with flash protection
+	name = "InteQ Headset"
+	desc = "Боевые наушники InteQ, способные прослушивать рацию всех ближайших используемых диапазонов. Защищает уши от громких звуков."
+	icon_state = "inteq_headset_alt"
+	item_state = "inteq_headset_alt"
+	//freqlock = TRUE
+	bowman = TRUE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol_head.dmi'
+	//mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
+	radiosound = 'modular_bluemoon/kovac_shitcode/sound/radio.ogg'
+
+/obj/item/radio/headset/inteq/alt/leader
+	name = "Team Leader InteQ Headset"
+	command = TRUE
+
+/obj/item/radio/headset/inteq/Initialize(mapload)
+	. = ..()
+	make_inteq()
+
 /obj/item/radio/headset/binary
+
 /obj/item/radio/headset/binary/Initialize(mapload)
 	. = ..()
 	qdel(keyslot)

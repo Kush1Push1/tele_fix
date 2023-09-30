@@ -51,7 +51,7 @@
 /area/awaymission/spacebattle/syndicate2)
 "ao" = (
 /obj/machinery/sleeper/syndie/fullupgrade{
-	name = "Ultra Cool Inteq Sleeper"
+	name = "Ultra Cool InteQ Sleeper"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate2)
@@ -149,7 +149,7 @@
 /area/awaymission/spacebattle/syndicate1)
 "aT" = (
 /obj/machinery/sleeper/syndie/fullupgrade{
-	name = "Ultra Cool Inteq Sleeper"
+	name = "Ultra Cool InteQ Sleeper"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate3)
@@ -231,7 +231,7 @@
 /area/awaymission/spacebattle/syndicate1)
 "bh" = (
 /obj/machinery/sleeper/syndie/fullupgrade{
-	name = "Ultra Cool Inteq Sleeper"
+	name = "Ultra Cool InteQ Sleeper"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate1)
@@ -1186,7 +1186,7 @@
 /area/awaymission/spacebattle/cruiser)
 "eR" = (
 /obj/machinery/sleeper/syndie/fullupgrade{
-	name = "Ultra Cool Inteq Sleeper"
+	name = "Ultra Cool InteQ Sleeper"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate4)
@@ -2248,7 +2248,7 @@
 /area/awaymission/spacebattle/cruiser)
 "il" = (
 /obj/machinery/sleeper/syndie/fullupgrade{
-	name = "Ultra Cool Inteq Sleeper"
+	name = "Ultra Cool InteQ Sleeper"
 	},
 /turf/open/floor/plasteel/white,
 /area/awaymission/spacebattle/cruiser)
@@ -2265,7 +2265,7 @@
 /area/awaymission/spacebattle/cruiser)
 "ip" = (
 /obj/machinery/sleeper/syndie/fullupgrade{
-	name = "Ultra Cool Inteq Sleeper"
+	name = "Ultra Cool InteQ Sleeper"
 	},
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -2337,7 +2337,7 @@
 /area/space/nearstation)
 "iB" = (
 /obj/machinery/sleeper/syndie/fullupgrade{
-	name = "Ultra Cool Inteq Sleeper"
+	name = "Ultra Cool InteQ Sleeper"
 	},
 /turf/open/floor/mineral/plastitanium/yellow/airless,
 /area/space/nearstation)
@@ -2373,7 +2373,7 @@
 /area/awaymission/spacebattle/syndicate5)
 "iP" = (
 /obj/machinery/sleeper/syndie/fullupgrade{
-	name = "Ultra Cool Inteq Sleeper"
+	name = "Ultra Cool InteQ Sleeper"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate5)
@@ -2423,7 +2423,7 @@
 /area/awaymission/spacebattle/syndicate6)
 "jd" = (
 /obj/machinery/sleeper/syndie/fullupgrade{
-	name = "Ultra Cool Inteq Sleeper"
+	name = "Ultra Cool InteQ Sleeper"
 	},
 /turf/open/floor/mineral/plastitanium/yellow,
 /area/awaymission/spacebattle/syndicate6)

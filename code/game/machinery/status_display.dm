@@ -483,6 +483,8 @@
 		AI_EMOTION_FRIEND_COMPUTER = "ai_friend",
 		AI_EMOTION_BLUE_GLOW = "ai_sal",
 		AI_EMOTION_RED_GLOW = "ai_hal",
+		AI_EMOTION_TRIBUNAL = "ai_tribunal",
+		AI_EMOTION_TRIBUNAL_MALF = "ai_tribunal_malf",
 	)
 
 
@@ -554,6 +556,28 @@
 
 	set_picture(emotion_map[emotion])
 	return PROCESS_KILL
+
+/obj/machinery/status_display/emag_act(mob/user)
+	. = ..()
+	if(obj_flags & EMAGGED)
+		to_chat(user, "<span class='warning'>Ничего интересного не произошло!!</span>")
+		return
+	obj_flags |= EMAGGED
+	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+	to_chat(user, "<span class='notice'>Вы взломали дисплей. Осуществляется взлом систем...</span>")
+	addtimer(CALLBACK(src, .proc/syndie_display_good), 10 SECONDS)
+	return TRUE
+
+/obj/machinery/status_display/proc/syndie_display_good()
+	req_access = list(ACCESS_SYNDICATE)
+	set_picture("synd")
+
+/obj/machinery/status_display/syndie
+	name = "Syndicate Status Display"
+
+/obj/machinery/status_display/syndie/LateInitialize()
+	. = ..()
+	set_picture("synd")
 
 /*
 /obj/item/circuit_component/status_display

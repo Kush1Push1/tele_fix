@@ -281,7 +281,7 @@
 /turf/closed/wall/r_wall,
 /area/science/xenobiology)
 "amq" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /obj/machinery/status_display/ai{
@@ -16708,7 +16708,7 @@
 /turf/open/floor/plasteel/dark,
 /area/command/gateway)
 "mbj" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /obj/machinery/status_display{
@@ -18161,7 +18161,7 @@
 /turf/open/floor/plasteel,
 /area/medical/medbay/zone3)
 "nfZ" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},

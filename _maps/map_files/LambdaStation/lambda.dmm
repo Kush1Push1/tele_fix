@@ -6443,6 +6443,15 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
+/obj/item/storage/barricade,
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = -10
+	},
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "and" = (
@@ -25668,7 +25677,7 @@
 /turf/open/floor/carpet,
 /area/command/heads_quarters/hop)
 "aWW" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -28101,7 +28110,7 @@
 /turf/closed/wall,
 /area/cargo/office)
 "bcg" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 4
 	},
 /turf/open/floor/carpet,
@@ -32012,7 +32021,7 @@
 /turf/open/floor/plasteel/white,
 /area/command/heads_quarters/cmo)
 "bjZ" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /obj/machinery/light/small{
@@ -54549,7 +54558,7 @@
 /turf/open/floor/plasteel,
 /area/security/checkpoint/customs)
 "cwZ" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /obj/item/radio/intercom{

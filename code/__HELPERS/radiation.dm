@@ -31,6 +31,8 @@
 		if(PL.filled == TRUE)
 			intensity *= 0.15
 	var/area/A = get_area(source)
+	if(source == null)
+		return
 	var/atom/nested_loc = source.loc
 	var/spawn_waves = TRUE
 	while(nested_loc != A)

@@ -568,12 +568,18 @@
 			level = "green"
 		if(SEC_LEVEL_BLUE)
 			level = "blue"
+		if(SEC_LEVEL_ORANGE)
+			level = "orange"
+		if(SEC_LEVEL_VIOLET)
+			level = "violet"
 		if(SEC_LEVEL_AMBER)
 			level = "amber"
 		if(SEC_LEVEL_RED)
 			level = "red"
 		if(SEC_LEVEL_LAMBDA)
 			level = "lambda"
+		if(SEC_LEVEL_EPSILON)
+			level = "epsilon"
 		if(SEC_LEVEL_DELTA)
 			level = "delta"
 
@@ -741,7 +747,7 @@
 		return
 	client.crew_manifest_delay = world.time + (1 SECONDS)
 
-	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></head><body>"
+	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></head><body>"
 	dat += "<h4>Crew Manifest</h4>"
 	dat += GLOB.data_core.get_manifest(OOC = 1)
 

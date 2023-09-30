@@ -163,7 +163,7 @@
 		if(1) //station general
 			return list(ACCESS_KITCHEN,ACCESS_BAR, ACCESS_HYDROPONICS, ACCESS_JANITOR, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_LIBRARY, ACCESS_THEATRE, ACCESS_LAWYER)
 		if(2) //security
-			return list(ACCESS_SEC_DOORS, ACCESS_WEAPONS, ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_COURT, ACCESS_HOS, ACCESS_ENTER_GENPOP, ACCESS_LEAVE_GENPOP,)
+			return list(ACCESS_SEC_DOORS, ACCESS_WEAPONS, ACCESS_SECURITY, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_COURT, ACCESS_HOS, ACCESS_ENTER_GENPOP, ACCESS_LEAVE_GENPOP, ACCESS_BRIGDOC)
 		if(3) //medbay
 			return list(ACCESS_MEDICAL, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_MORGUE, ACCESS_CHEMISTRY, ACCESS_VIROLOGY, ACCESS_SURGERY, ACCESS_CMO, ACCESS_PSYCH)
 		if(4) //research
@@ -386,6 +386,16 @@
 		return "scrambled"
 	if (istype(src, /obj/item/card/id/syndicate))
 		return "scrambled"
+	if (istype(src, /obj/item/card/id/nri))
+		return "nri"
+	if (istype(src, /obj/item/card/id/nri_citizen))
+		return "nri"
+	if (istype(src, /obj/item/card/id/sol))
+		return "sol"
+	if (istype(src, /obj/item/card/id/sol_citizen))
+		return "sol"
+	if (istype(src, /obj/item/card/id/death))
+		return "deathcommando"
 	var/obj/item/card/id/I = GetID()
 	if(!I)
 		return

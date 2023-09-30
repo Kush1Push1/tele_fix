@@ -21,7 +21,7 @@
 // Returns special prefixes for the station name on certain days. You wind up with names like "Christmas Object Epsilon". See new_station_name()
 /datum/holiday/proc/getStationPrefix()
 	//get the first word of the Holiday and use that
-	var/i = findtext(name, " ")
+	var/i = findtext(name, "  Сектор |")
 	return copytext(name, 1, i)
 
 // Return 1 if this holidy should be celebrated today
@@ -68,7 +68,7 @@
 	drone_hat = /obj/item/clothing/head/festive
 
 /datum/holiday/new_year/getStationPrefix()
-	return pick("Праздничный","Новый","Похмельный","Новогодний")
+	return pick("Праздничный Сектор |","Новый Сектор |","Похмельный Сектор |","Новогодний Сектор |")
 
 /datum/holiday/groundhog
 	name = "День Сурка"
@@ -77,7 +77,7 @@
 	drone_hat = /obj/item/clothing/head/helmet/space/chronos
 
 /datum/holiday/groundhog/getStationPrefix()
-	return pick("Deja Vu") //I have been to this place before
+	return pick("Deja Vu Сектор |") //I have been to this place before
 
 /datum/holiday/valentines
 	name = VALENTINES
@@ -86,7 +86,7 @@
 	begin_month = FEBRUARY
 
 /datum/holiday/valentines/getStationPrefix()
-	return pick("Любовный","Аморный","Одинокий","Легкосердечный","Обнимашковый")
+	return pick("Любовный Сектор |","Аморный Сектор |","Одинокий Сектор |","Легкосердечный Сектор |","Обнимашковый Сектор |")
 
 /// Garbage DAYYYYY
 /// Huh?.... NOOOO
@@ -105,7 +105,7 @@
 	drone_hat = /obj/item/clothing/head/festive
 
 /datum/holiday/birthday/greet()
-	var/game_age = text2num(time2text(world.timeofday, "YYYY")) - 2003
+	var/game_age = text2num(time2text(world.timeofday, "YYYY Сектор |")) - 2003
 	var/Fact
 	switch(game_age)
 		if(16)
@@ -150,7 +150,7 @@
 	begin_month = MARCH
 
 /datum/holiday/pi/getStationPrefix()
-	return pick("Синусоидный","Косинусоидный","Тангенсный","Пересекающий", "Не пересекающий", "Котангенсный")
+	return pick("Синусоидный Сектор |","Косинусоидный Сектор |","Тангенсный Сектор |","Пересекающий Сектор |", "Не пересекающий Сектор |", "Котангенсный Сектор |")
 
 /datum/holiday/no_this_is_patrick
 	name = "День Святого Патрика"
@@ -159,7 +159,7 @@
 	drone_hat = /obj/item/clothing/head/soft/green
 
 /datum/holiday/no_this_is_patrick/getStationPrefix()
-	return pick("Лестный","Зелёный","Лепреконовский","Пьяный")
+	return pick("Лестный Сектор |","Зелёный Сектор |","Лепреконовский Сектор |","Пьяный Сектор |")
 
 /datum/holiday/no_this_is_patrick/greet()
 	return "Счастливый Национальный день Опьянения!"
@@ -170,7 +170,7 @@
 	begin_month = APRIL
 
 /datum/holiday/april_fools/celebrate()
-	SSjob.set_overflow_role("Clown")
+	SSjob.set_overflow_role("Clown Сектор |")
 	SSticker.login_music = 'sound/ambience/clown.ogg'
 	for(var/mob/dead/new_player/P in GLOB.mob_list)
 		if(P.client)
@@ -191,7 +191,7 @@
 	begin_month = APRIL
 
 /datum/holiday/fourtwenty/getStationPrefix()
-	return pick("Шпионский","Туповатый","Затяжной","Промозглый","Чичевый","Чонговый")
+	return pick("Шпионский Сектор |","Туповатый Сектор |","Затяжной Сектор |","Промозглый Сектор |","Чичевый Сектор |","Чонговый Сектор |")
 
 /datum/holiday/tea
 	name = "Национальный День Чая"
@@ -199,7 +199,7 @@
 	begin_month = APRIL
 
 /datum/holiday/tea/getStationPrefix()
-	return pick("Пышечный","Ассамский","Улунгский","Пу-эрский","Сладкочаевый","Зелёный","Чёрный")
+	return pick("Пышечный Сектор |","Ассамский Сектор |","Улунгский Сектор |","Пу-эрский Сектор |","Сладкочаевый Сектор |","Зелёный Сектор |","Чёрный Сектор |")
 
 /datum/holiday/earth
 	name = "День Земли"
@@ -219,7 +219,7 @@
 	drone_hat = /obj/item/clothing/head/hardhat/red
 
 /datum/holiday/firefighter/getStationPrefix()
-	return pick("Горящий","Пылающий","Плазменный","Огненный")
+	return pick("Горящий Сектор |","Пылающий Сектор |","Плазменный Сектор |","Огненный Сектор |")
 
 /datum/holiday/pobeda
 	name = "День Победы"
@@ -227,7 +227,7 @@
 	begin_month = MAY
 
 /datum/holiday/pobeda/getStationPrefix()
-	return pick("Ветеранский","Победный","Ряженый","Окопный","Дедовский")
+	return pick("Ветеранский Сектор |","Победный Сектор |","Ряженый Сектор |","Окопный Сектор |","Дедовский Сектор |")
 
 /datum/holiday/bee
 	name = "День пчёл"
@@ -236,7 +236,7 @@
 	drone_hat = /obj/item/clothing/mask/rat/bee
 
 /datum/holiday/bee/getStationPrefix()
-	return pick("Пчёлочный","Медовый","Роевой","Бжжжжжж","Медовуховый","Жужжащий")
+	return pick("Пчёлочный Сектор |","Медовый Сектор |","Роевой Сектор |","Бжжжжжж Сектор |","Медовуховый Сектор |","Жужжащий Сектор |")
 
 /datum/holiday/summersolstice
 	name = "День Летнего Солнцестояния"
@@ -256,7 +256,7 @@
 	drone_hat = /obj/item/clothing/mask/facehugger/dead
 
 /datum/holiday/ufo/getStationPrefix() //Is such a thing even possible?
-	return pick("Ayy","Правдивый","Цукалосный","Малдеровый","Скаллевый") //Yes it is!
+	return pick("Ayy Сектор |","Правдивый Сектор |","Цукалосный Сектор |","Малдеровый Сектор |","Скаллевый Сектор |") //Yes it is!
 
 /datum/holiday/usa
 	name = "День Независимости США"
@@ -264,7 +264,7 @@
 	begin_month = JULY
 
 /datum/holiday/usa/getStationPrefix()
-	return pick("Независимый","Американский","Бургеровый","Белоголово-орланский","Настроенный Шовинистически", "Фейерверковый")
+	return pick("Независимый Сектор |","Американский Сектор |","Бургеровый Сектор |","Белоголово-орланский Сектор |","Настроенный Шовинистически Сектор |", "Фейерверковый Сектор |")
 
 /datum/holiday/nz
 	name = "Waitangi Day"
@@ -272,10 +272,10 @@
 	begin_month = FEBRUARY
 
 /datum/holiday/nz/getStationPrefix()
-	return pick("Aotearoa","Kiwi","Fish 'n' Chips","Kākāpō","Southern Cross")
+	return pick("Aotearoa Сектор |","Kiwi Сектор |","Fish 'n' Chips Сектор |","Kākāpō Сектор |","Southern Cross Сектор |")
 
 /datum/holiday/nz/greet()
-	var/nz_age = text2num(time2text(world.timeofday, "YYYY")) - 1840 //is this work
+	var/nz_age = text2num(time2text(world.timeofday, "YYYY Сектор |")) - 1840 //is this work
 	return "On this day [nz_age] years ago, New Zealand's Treaty of Waitangi, the founding document of the nation, was signed!" //thus creating much controversy
 
 /datum/holiday/anz
@@ -285,7 +285,7 @@
 	drone_hat = /obj/item/reagent_containers/food/snacks/grown/poppy
 
 /datum/holiday/anz/getStationPrefix()
-	return pick("Australian","New Zealand","Poppy", "Southern Cross")
+	return pick("Australian Сектор |","New Zealand Сектор |","Poppy Сектор |", "Southern Cross Сектор |")
 
 /datum/holiday/writer
 	name = "День Писателя"
@@ -299,7 +299,7 @@
 	drone_hat = /obj/item/clothing/head/beret
 
 /datum/holiday/france/getStationPrefix()
-	return pick("Французский","Fromage", "Zut", "Merde")
+	return pick("Французский Сектор |","Fromage Сектор |", "Zut Сектор |", "Merde Сектор |")
 
 /datum/holiday/france/greet()
 	return "Ты слышишь, как люди поют?"
@@ -322,7 +322,7 @@
 	return "Ye be talkin' like a pirate today or else ye'r walkin' tha plank, matey!"
 
 /datum/holiday/pirate/getStationPrefix()
-	return pick("Yarr","Scurvy","Yo-ho-ho")
+	return pick("Yarr Сектор |","Scurvy Сектор |","Yo-ho-ho Сектор |")
 
 /datum/holiday/programmers
 	name = "День Программиста"
@@ -338,7 +338,7 @@
 	return FALSE
 
 /datum/holiday/programmers/getStationPrefix()
-	return pick("span>","DEBUG: ","null","/list","EVENT PREFIX NOT FOUND") //Portability
+	return pick("</span> |","DEBUG |","NULL |","/list |","EVENT PREFIX NOT FOUND |") //Portability
 
 /datum/holiday/questions
 	name = "День Глупых Вопросов"
@@ -354,7 +354,7 @@
 	begin_month = OCTOBER
 
 /datum/holiday/animal/getStationPrefix()
-	return pick("Parrot","Corgi","Cat","Pug","Goat","Fox")
+	return pick("Parrot Сектор |","Corgi Сектор |","Cat Сектор |","Pug Сектор |","Goat Сектор |","Fox Сектор |")
 
 /datum/holiday/smile
 	name = "День Улыбок"
@@ -379,7 +379,7 @@
 	return "Жуткий Хэллоуин!"
 
 /datum/holiday/halloween/getStationPrefix()
-	return pick("Bone-Rattling","Mr. Bones' Own","2SPOOKY","Spooky","Scary","Skeletons")
+	return pick("Bone-Rattling Сектор |","Mr. Bones' Own Сектор |","2SPOOKY Сектор |","Spooky Сектор |","Scary Сектор |","Skeletons Сектор |")
 
 /datum/holiday/vegan
 	name = "День Вегана"
@@ -387,7 +387,7 @@
 	begin_month = NOVEMBER
 
 /datum/holiday/vegan/getStationPrefix()
-	return pick("Tofu", "Tempeh", "Seitan", "Tofurkey")
+	return pick("Tofu Сектор |", "Tempeh Сектор |", "Seitan Сектор |", "Tofurkey Сектор |")
 
 /datum/holiday/october_revolution
 	name = "День, когда ебанные коммунисты взяли эту страну."
@@ -396,7 +396,7 @@
 	end_day = 7
 
 /datum/holiday/october_revolution/getStationPrefix()
-	return pick("Коммунистический", "Советский", "Большевиковский", "Социалистический", "Красный", "Рабочий")
+	return pick("Коммунистический Сектор |", "Советский Сектор |", "Большевиковский Сектор |", "Социалистический Сектор |", "Красный Сектор |", "Рабочий Сектор |")
 
 /datum/holiday/kindness
 	name = "День доброты"
@@ -415,7 +415,7 @@
 	begin_month = NOVEMBER
 
 /datum/holiday/hello/greet()
-	return "[pick(list("Aloha", "Bonjour", "Hello", "Hi", "Greetings", "Salutations", "Bienvenidos", "Hola", "Howdy", "Ni hao", "Guten Tag", "Konnichiwa", "G'day cunt"))]! " + ..()
+	return pick("Aloha Сектор |", "Bonjour Сектор |", "Hello Сектор |", "Hi Сектор |", "Greetings Сектор |", "Salutations Сектор |", "Bienvenidos Сектор |", "Hola Сектор |", "Howdy Сектор |", "Ni hao Сектор |", "Guten Tag Сектор |", "Konnichiwa Сектор |", "G'day cunt Сектор |")
 
 /datum/holiday/human_rights
 	name = "День прав человека"
@@ -438,7 +438,7 @@
 	end_day = 3
 
 /datum/holiday/islamic/ramadan/getStationPrefix()
-	return pick("Вредный","Халяльный","Джихадный","Мусульманский")
+	return pick("Вредный Сектор |","Халяльный Сектор |","Джихадный Сектор |","Мусульманский Сектор |")
 
 /datum/holiday/islamic/ramadan/end
 	name = "Конец Рамадана"
@@ -452,7 +452,7 @@
 	begin_month = NOVEMBER
 
 /datum/holiday/lifeday/getStationPrefix()
-	return pick("Зудящий", "Комковатый", "Маллайий", "Казучий") //he really pronounced it "Kazook", I wish I was making shit up
+	return pick("Зудящий Сектор |", "Комковатый Сектор |", "Маллайий Сектор |", "Казучий Сектор |") //he really pronounced it "Kazook Сектор |", I wish I was making shit up
 
 /datum/holiday/doomsday
 	name = "Годовщина Судного Дня Майя"
@@ -505,7 +505,7 @@
 	return FALSE
 
 /datum/holiday/friday_thirteenth/getStationPrefix()
-	return pick("Mike","Friday","Evil","Myers","Murder","Deathly","Stabby")
+	return pick("Mike Сектор |","Friday Сектор |","Evil Сектор |","Myers Сектор |","Murder Сектор |","Deathly Сектор |","Stabby Сектор |")
 
 /datum/holiday/easter
 	name = EASTER
@@ -515,7 +515,7 @@
 
 /datum/holiday/easter/shouldCelebrate(dd, mm, yyyy, ddd)
 	if(!begin_month)
-		current_year = text2num(time2text(world.timeofday, "YYYY"))
+		current_year = text2num(time2text(world.timeofday, "YYYY Сектор |"))
 		var/list/easterResults = EasterDate(current_year+year_offset)
 
 		begin_day = easterResults["day"]
@@ -547,7 +547,7 @@
 	return "Привет! Счастливой Пасхи и следите за пасхальными кроликами!"
 
 /datum/holiday/easter/getStationPrefix()
-	return pick("Fluffy","Bunny","Easter","Egg")
+	return pick("Fluffy Сектор |","Bunny Сектор |","Easter Сектор |","Egg Сектор |")
 
 /datum/holiday/ianbirthday
 	name = "День Рождения Яна" //github.com/tgstation/tgstation/commit/de7e4f0de0d568cd6e1f0d7bcc3fd34700598acb
@@ -559,7 +559,7 @@
 	return "С днём рождения, Ян!"
 
 /datum/holiday/ianbirthday/getStationPrefix()
-	return pick("Ian", "Corgi", "Erro")
+	return pick("Ian Сектор |", "Corgi Сектор |", "Erro Сектор |")
 
 /datum/holiday/hotdogday //I have plans for this.
 	name = "Национальный день Хот-Дога!"
@@ -575,4 +575,4 @@
 	begin_day = 9
 
 /datum/holiday/indigenous/getStationPrefix()
-	return pick("Endangered language", "Word", "Language", "Language revitalization", "Potato", "Corn")
+	return pick("Endangered language Сектор |", "Word Сектор |", "Language Сектор |", "Language revitalization Сектор |", "Potato Сектор |", "Corn Сектор |")

@@ -12,21 +12,17 @@ Our Solutions:
 Our Method:
 • Override the supermatter's explode() proc to respect the bombcap.
 • Scan through the player list an count how many alive engineers are there. If you sign up as an engineer, you consent to fixing the damage.
-Custom Bombcaps:
-• Small Delam: 1, 2, 5
-• Medium Delam: 2, 3, 10
-• Big Delam: 3, 5, 15
 */
 
-#define EXPLOSION_MODIFIER_SMALL 25
-#define EXPLOSION_MODIFIER_MEDIUM 50
-#define EXPLOSION_MODIFIER_LARGE 100
+#define EXPLOSION_MODIFIER_SMALL 100
+#define EXPLOSION_MODIFIER_MEDIUM 200
+#define EXPLOSION_MODIFIER_LARGE 300
 
 // Let's turn the base explosion power down a little...
 /obj/machinery/power/supermatter_crystal
-	explosion_power = 40
+	explosion_power = 120
 /obj/machinery/power/supermatter_crystal/shard
-	explosion_power = 20
+	explosion_power = 60
 
 // Proc to screen the mob list for engineers. We'll need this later!
 /proc/count_alive_engineers(mob/M)
@@ -45,7 +41,7 @@ Custom Bombcaps:
 	for(var/mob/living/carbon/human/M in GLOB.alive_mob_list)
 		if(count_alive_engineers(M))
 			alive_engineers++
-	priority_announce("There are [alive_engineers] alive engineers!", "How many engineers are there?")
+	priority_announce("На станции присутствует [alive_engineers] живых инженеров!", "А сколько у нас инженеров?")
 
 /obj/machinery/power/supermatter_crystal/explode()
 // Handle the mood event.
@@ -58,7 +54,7 @@ Custom Bombcaps:
 // Don't explode if we no allow
 	if(!CONFIG_GET(flag/sm_delamination))
 		investigate_log("has attempted a delamination, but the config disallows it", INVESTIGATE_SUPERMATTER)
-		priority_announce("Supermatter privileges revoked. Current crew is deemed unsuitable to handle a highly hazardous engine. More training is required.", "SIMULATION TERMINATED")
+		priority_announce("Симуляция Суперматерии отозвана. Текущий экипаж признан неподходящим для работы с двигателями повышенной опасности. Вам надо тренироваться.", "ОТКЛЮЧЕНИЕ СИМУЛЯЦИИ")
 		var/skill_issue_sound = pick('modular_splurt/sound/voice/boowomp.ogg', 'modular_splurt/sound/effects/fart_reverb.ogg')
 		sound_to_playing_players(skill_issue_sound)
 		var/obj/item/toy/plush/random/plushe = new(get_turf(src))

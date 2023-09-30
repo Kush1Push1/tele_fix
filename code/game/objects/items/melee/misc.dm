@@ -1,5 +1,6 @@
 /obj/item/melee
 	item_flags = NEEDS_PERMIT
+	wound_bonus = 4
 
 /obj/item/melee/proc/check_martial_counter(mob/living/carbon/human/target, mob/living/carbon/human/user)
 	if(target.check_martial_melee_block())
@@ -58,7 +59,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 14
 	throwforce = 10
-	wound_bonus = 15
+	wound_bonus = 8
 	bare_wound_bonus = 10
 	reach = 2
 	w_class = WEIGHT_CLASS_NORMAL
@@ -341,7 +342,7 @@
 	var/weight_class_on // What is the new size class when turned on
 	var/sword_point = TRUE
 
-	wound_bonus = 15
+	wound_bonus = 5
 
 /obj/item/melee/classic_baton/Initialize(mapload)
 	. = ..()

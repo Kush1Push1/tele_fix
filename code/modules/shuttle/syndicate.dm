@@ -18,10 +18,10 @@
 	return ..()
 
 /obj/machinery/computer/shuttle/syndicate/ui_act(action, params)
+	var/static/musiclimit = 0
 	if(!allowed(usr))
 		to_chat(usr, "<span class='danger'>Access denied.</span>")
 		return
-
 	switch(action)
 		if("move")
 			if(istype(src, /obj/machinery/computer/shuttle/syndicate/drop_pod))
@@ -33,29 +33,18 @@
 				to_chat(usr, "<span class='warning'>You've issued a combat challenge to the station! You've got to give them at least [DisplayTimeText(SYNDICATE_CHALLENGE_TIMER - world.time)] more to allow them to prepare.</span>")
 				return
 			board.moved = TRUE
+			if(board?.challenge && board.moved == TRUE)
+				for(var/mob/M in GLOB.player_list)
+					if(musiclimit >= 1)
+						return
+					SEND_SOUND(M, sound('modular_bluemoon/SmiLeY/sounds/Nuclear_Operations.ogg'))
+					musiclimit++
 	return ..()
 
 /obj/machinery/computer/shuttle/syndicate/recall
 	name = "InteQ shuttle recall terminal"
 	desc = "Use this if your friends left you behind."
 	possible_destinations = "inteq_away"
-
-/obj/machinery/computer/shuttle/real_syndicate
-	name = "Syndicate Shuttle Terminal"
-	desc = "The terminal used to control the InteQ transport shuttle."
-	circuit = /obj/item/circuitboard/computer/syndicate_shuttle
-	icon_screen = "syndishuttle"
-	icon_keyboard = "syndie_key"
-	light_color = COLOR_RED
-	req_access = list(ACCESS_SYNDICATE)
-	shuttleId = "syndicate"
-	possible_destinations = "syndicate_away;syndicate_z5;syndicate_ne;syndicate_nw;syndicate_n;syndicate_se;syndicate_sw;syndicate_s;syndicate_custom"
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-
-/obj/machinery/computer/shuttle/real_syndicate/recall
-	name = "Syndicate shuttle recall terminal"
-	desc = "Use this if your friends left you behind."
-	possible_destinations = "syndicate_away"
 
 /obj/machinery/computer/shuttle/syndicate/drop_pod
 	name = "InteQ assault pod control"
@@ -69,7 +58,7 @@
 	clockwork = TRUE //it'd look weird
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate
-	name = "InteQ shuttle navigation computer"
+	name = "InteQ Shuttle Navigation Computer"
 	desc = "Used to designate a precise transit location for the syndicate shuttle."
 	icon_screen = "syndishuttle"
 	icon_keyboard = "syndie_key"

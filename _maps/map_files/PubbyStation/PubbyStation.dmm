@@ -2921,6 +2921,15 @@
 	pixel_x = -4
 	},
 /obj/structure/table,
+/obj/item/storage/barricade,
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = -10
+	},
+/obj/item/storage/barricade{
+	pixel_y = -10;
+	pixel_x = 10
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "aig" = (
@@ -6301,7 +6310,7 @@
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
 "arL" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/machinery/camera{
 	c_tag = "Bridge - Central"
 	},
@@ -8929,7 +8938,7 @@
 /turf/open/floor/carpet,
 /area/command/heads_quarters/captain)
 "axU" = (
-/obj/machinery/computer/card,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/item/radio/intercom{
 	name = "Station Intercom (General)";
 	pixel_y = 26
@@ -11886,7 +11895,7 @@
 /turf/open/floor/carpet,
 /area/command/heads_quarters/hop)
 "aEP" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /obj/structure/cable{
@@ -20379,7 +20388,7 @@
 	},
 /area/hallway/secondary/entry)
 "aZF" = (
-/obj/machinery/computer/card{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 4
 	},
 /obj/machinery/light{

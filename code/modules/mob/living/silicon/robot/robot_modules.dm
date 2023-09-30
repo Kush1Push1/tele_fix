@@ -360,9 +360,9 @@
 		/obj/item/crowbar/cyborg,
 		/obj/item/healthanalyzer,
 		/obj/item/reagent_containers/borghypo,
-		/obj/item/gripper/medical,
 		/obj/item/reagent_containers/dropper,
 		/obj/item/reagent_containers/syringe,
+		/obj/item/gripper/medical,
 		/obj/item/surgical_drapes,
 		/obj/item/retractor,
 		/obj/item/hemostat,
@@ -1121,9 +1121,9 @@
 		/obj/item/crowbar/cyborg,
 		/obj/item/toy/crayon/rainbow,
 		/obj/item/instrument/bikehorn,
-		/obj/item/stamp/clown,
 		/obj/item/bikehorn,
 		/obj/item/bikehorn/airhorn,
+		/obj/item/stamp/clown,
 		/obj/item/paint/anycolor,
 		/obj/item/soap/nanotrasen,
 		/obj/item/pneumatic_cannon/pie/selfcharge/cyborg,
@@ -1655,7 +1655,6 @@
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/extinguisher/mini,
-		/obj/item/crowbar/cyborg,
 		/obj/item/melee/transforming/energy/sword/cyborg,
 		/obj/item/gun/energy/printer,
 		/obj/item/gun/ballistic/revolver/grenadelauncher/cyborg,
@@ -1753,14 +1752,17 @@
 
 /obj/item/robot_module/syndicate/inteq
 	name = "InteQ Assault"
+	added_channels = list(RADIO_CHANNEL_INTEQ = 1)
 	cyborg_base_icon = "inteq_sec"
 
 /obj/item/robot_module/syndicate_medical/inteq
 	name = "InteQ Medical"
-	cyborg_base_icon = "inteq_med"
+	added_channels = list(RADIO_CHANNEL_INTEQ = 1)
+	cyborg_base_icon = "inteq_medical"
 
 /obj/item/robot_module/saboteur/inteq
 	name = "InteQ Saboteur"
+	added_channels = list(RADIO_CHANNEL_INTEQ = 1)
 	cyborg_base_icon = "inteq_engi"
 
 /datum/robot_energy_storage

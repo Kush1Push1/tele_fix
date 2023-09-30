@@ -49,7 +49,9 @@
 				/obj/item/bedsheet/red = 8, /obj/item/bedsheet/yellow = 8, /obj/item/bedsheet/brown = 8,
 				/obj/item/bedsheet/black = 8, /obj/item/bedsheet/patriot = 3, /obj/item/bedsheet/rainbow = 3,
 				/obj/item/bedsheet/ian = 3, /obj/item/bedsheet/runtime = 3, /obj/item/bedsheet/nanotrasen = 3,
-				/obj/item/bedsheet/pirate = 1, /obj/item/bedsheet/cosmos = 1, /obj/item/bedsheet/gondola = 1
+				/obj/item/bedsheet/pirate = 1, /obj/item/bedsheet/cosmos = 1, /obj/item/bedsheet/gondola = 1,
+				/obj/item/bedsheet/vulp = 1, /obj/item/bedsheet/vulp/vulp2 = 1, /obj/item/bedsheet/vulp/vulp3,
+				/obj/item/bedsheet/vulp/vulp4 = 1
 				)
 
 /obj/effect/spawner/lootdrop/armory_contraband
@@ -312,7 +314,7 @@
 		/obj/item/clothing/head/rabbitears = 1)
 
 /obj/effect/spawner/lootdrop/minor/pirate_or_bandana
-	name = "pirate hat or bandana spawner"
+	name = "Pirate hat or bandana spawner"
 	loot = list(
 		/obj/item/clothing/head/pirate = 1,
 		/obj/item/clothing/head/bandana = 1)
@@ -487,7 +489,8 @@
 	loot = list(/obj/structure/reagent_dispensers/keg/mead = 5,
 		/obj/structure/reagent_dispensers/keg/aphro = 2,
 		/obj/structure/reagent_dispensers/keg/aphro/strong = 2,
-		/obj/structure/reagent_dispensers/keg/gargle = 1)
+		/obj/structure/reagent_dispensers/keg/gargle = 1,
+		/obj/structure/reagent_dispensers/keg/catnip = 3)
 
 /obj/effect/spawner/lootdrop/coin
 	lootcount = 1
