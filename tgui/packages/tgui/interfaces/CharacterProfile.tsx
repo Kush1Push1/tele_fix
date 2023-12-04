@@ -32,6 +32,7 @@ interface CharacterProfileContext {
   vore_tag: string;
   erp_tag: string;
   mob_tag: string;
+  hornyantags_tag: string;
   nc_tag: string;
   unholy_tag: string;
   extreme_tag: string;
@@ -46,6 +47,7 @@ export const CharacterProfile = (props, context) => {
     { name: "Non-Con", title: "Изнасилование", value: data.nc_tag },
     { name: "Vore", title: "Поедание/Проглатывание", value: data.vore_tag },
     { name: "Mob-Sex", title: "Совокупление с Мобами", value: data.mob_tag },
+    { name: "Horny Antags", title: "Жертва хорни антагов", value: data.hornyantags_tag },	
     { name: "Unholy", title: "Грязный секс", value: data.unholy_tag },
     { name: "Extreme", title: "Жестокий секс", value: data.extreme_tag },
     { name: "Extreme Harm", title: "Очень жестокий секс", value: data.very_extreme_tag },
@@ -61,8 +63,12 @@ export const CharacterProfile = (props, context) => {
         </Tabs>
         <Flex>
           <Flex.Item pl="10px">
-            {!data.is_unknown ? (<CharacterProfileImageElement />)
-              : (<Box />)}
+          {
+            // убрал проверку на ношение маски для отображения хеда
+            }
+         { /*  {!data.is_unknown ? (<CharacterProfileImageElement />)
+              : (<Box />)}*/}
+            <CharacterProfileImageElement />
             <CharacterModelImageElement />
           </Flex.Item>
           <Flex.Item Flex-direction="column" pl="10px" width="100%">

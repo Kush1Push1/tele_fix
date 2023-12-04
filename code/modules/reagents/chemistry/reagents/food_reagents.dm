@@ -370,7 +370,8 @@
 			return
 		else if ( mouth_covered )	// Reduced effects if partially protected
 			if(prob(50))
-				victim.emote("realagony")
+				if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					victim.emote("realagony")
 			victim.blur_eyes(6)
 			victim.blind_eyes(4)
 			victim.confused = max(M.confused, 6)
@@ -384,7 +385,7 @@
 			victim.damageoverlaytemp = 60
 			return
 		else // Oh dear :D
-			if(prob(5))
+			if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
 				victim.emote("realagony")
 			victim.blur_eyes(10)
 			victim.blind_eyes(6)

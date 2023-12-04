@@ -41,7 +41,7 @@
 
 	if(!istype(H))
 		return
-	if(SSticker.mode.name == "Extended")
+	if(GLOB.master_mode == "Extended")
 		H.equipOutfit(/datum/outfit/syndicate/lone)
 		priority_announce("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.", "Фрегат [title] ССО Синдиката")
 	else
@@ -255,7 +255,7 @@
 	syndicate_name = syndicate_name()
 
 /datum/team/nuclear/proc/update_objectives()
-	if(SSticker.mode.name == "Extended")
+	if(GLOB.master_mode == "Extended")
 		var/datum/objective/O = new revert_objective
 		O.team = src
 		objectives += O

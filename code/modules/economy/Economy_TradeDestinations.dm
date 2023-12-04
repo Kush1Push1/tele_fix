@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(weighted_mundaneevent_locations)
 	return null
 
 //distance is measured in AU and co-relates to travel time
-/datum/trade_destination/centcomm
+/datum/trade_destination/centcom
 	name = "CentCom"
 	description = "Nanotrasen's administrative centre for Tau Ceti."
 	distance = 1.2

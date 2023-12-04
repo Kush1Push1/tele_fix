@@ -232,7 +232,7 @@
 	syndicate_name = syndicate_name()
 
 /datum/team/syndicate_nuclear/proc/update_objectives()
-	if(SSticker.mode.name == "Extended")
+	if(GLOB.master_mode == "Extended")
 		var/datum/objective/O = new revert_objective
 		O.team = src
 		objectives += O
@@ -411,6 +411,15 @@
 	id = /obj/item/card/id/syndicate/nuke_leader
 	gloves = /obj/item/clothing/gloves/krav_maga/combatglovesplus
 	command_radio = TRUE
+
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/syndicate/leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
 
 /datum/outfit/syndicate/no_crystals
 	tc = 0

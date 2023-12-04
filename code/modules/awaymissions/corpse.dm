@@ -207,6 +207,10 @@
 
 	var/give_cooler_to_mob_if_synth = FALSE // BLUEMOON ADD - если персонаж - синтетик, то ему выдаётся заряженный космический охладитель. Для специальных ролей
 
+	/// set this to make the spawner use the outfit.name instead of its name var for things like cryo announcements and ghost records
+	/// modifying the actual name during the game will cause issues with the GLOB.mob_spawners associative list
+	var/use_outfit_name
+
 /obj/effect/mob_spawn/human/Initialize(mapload)
 	if(ispath(outfit))
 		outfit = new outfit()

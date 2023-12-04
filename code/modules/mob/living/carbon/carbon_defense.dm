@@ -375,7 +375,9 @@
 					M.visible_message("<span class='warning'><b>[H]</b> быстро выкручивает руку <b>[M]</b>!</span>", \
 						"<span class='boldwarning'>Твоя рука выкручивается в хватке <b>[H]</b>! Может, тебе следовало понять тот явственный намек...</span>")
 					// playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1) // BLUEMOON REMOVAL - звук проигрывается в конце
-					M.emote("scream")
+					if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+						M.emote("scream")
+					M.dropItemToGround(M.get_active_held_item())
 					var/hand = pick(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND)
 					M.apply_damage(50, STAMINA, hand)
 					M.apply_damage(5, BRUTE, hand)
@@ -493,16 +495,31 @@
 			return
 
 		if (damage == 1)
-			to_chat(src, "<span class='warning'>Глаза немного щиплет.</span>")
-			if(prob(40))
-				eyes.applyOrganDamage(1)
+			// BLUEMOON ADD START
+			if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+				to_chat(src, span_warning("Визуальные сенсоры: опасность повреждения ярким светом, искусственная расфокусировка линзы активна. Вред предотвращен."))
+			else
+			// BLUEMOON ADD END
+				to_chat(src, "<span class='warning'>Глаза немного щиплет.</span>")
+				if(prob(40))
+					eyes.applyOrganDamage(1)
 
 		else if (damage == 2)
-			to_chat(src, "<span class='warning'>Глаза горят.</span>")
+			// BLUEMOON ADD START
+			if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+				to_chat(src, span_warning("Визуальные сенсоры: опасность повреждения ярким светом, искусственная расфокусировка линзы активна. Возможен минимальный вред."))
+			else
+			// BLUEMOON ADD END
+				to_chat(src, "<span class='warning'>Глаза горят.</span>")
 			eyes.applyOrganDamage(rand(2, 4))
 
 		else if( damage >= 3)
-			to_chat(src, "<span class='warning'>Ты ощущаешь сильный зуд и жжение в глазах!</span>")
+			// BLUEMOON ADD START
+			if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+				to_chat(src, span_warning("Визуальные сенсоры: опасность повреждения ярким светом, искусственная расфокусировка линзы активна. Оценка повреждений; средние."))
+			else
+			// BLUEMOON ADD END
+				to_chat(src, "<span class='warning'>Ты ощущаешь сильный зуд и жжение в глазах!</span>")
 			eyes.applyOrganDamage(rand(12, 16))
 
 		if(eyes.damage > 10)
@@ -512,16 +529,31 @@
 			if(eyes.damage > 20)
 				if(prob(eyes.damage - 20))
 					if(!HAS_TRAIT(src, TRAIT_NEARSIGHT))
-						to_chat(src, "<span class='warning'>Глаза начинает сильно жечь!</span>")
+						// BLUEMOON ADD START
+						if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+							to_chat(src, span_warning("Визуальные сенсоры: тяжёлое повреждение линзы, необходима замена или ремонт."))
+						else
+						// BLUEMOON ADD END
+							to_chat(src, "<span class='warning'>Глаза начинает сильно жечь!</span>")
 					become_nearsighted(EYE_DAMAGE)
 
 				else if(prob(eyes.damage - 25))
 					if(!HAS_TRAIT(src, TRAIT_BLIND))
-						to_chat(src, "<span class='warning'>Вы ничего не видите!</span>")
+						// BLUEMOON ADD START
+						if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+							to_chat(src, span_warning("Визуальные сенсоры: выгорание линзы, необходима замена или ремонт."))
+						else
+						// BLUEMOON ADD END
+							to_chat(src, "<span class='warning'>Вы ничего не видите!</span>")
 					eyes.applyOrganDamage(eyes.maxHealth)
 
 			else
-				to_chat(src, "<span class='warning'>Ваши глаза начинают болеть. Это не хорошо!</span>")
+				// BLUEMOON ADD START
+				if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+					to_chat(src, span_warning("Визуальные сенсоры: обнаружены умеренные повреждения, рекомендуется ремонт или замена."))
+				else
+				// BLUEMOON ADD END
+					to_chat(src, "<span class='warning'>Ваши глаза начинают болеть. Это не хорошо!</span>")
 		if(has_bane(BANE_LIGHT))
 			mind.disrupt_spells(-500)
 		return TRUE

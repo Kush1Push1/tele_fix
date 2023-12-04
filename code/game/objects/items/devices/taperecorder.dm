@@ -9,6 +9,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=SMALL_MATERIAL_AMOUNT * 0.6, /datum/material/glass=SMALL_MATERIAL_AMOUNT * 0.3)
+	flags_1 = HEAR_1
 	force = 2
 	throwforce = 2
 	speech_span = SPAN_TAPE_RECORDER
@@ -154,11 +155,11 @@
 	return ..()
 
 
-/obj/item/taperecorder/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, spans, list/message_mods = list(), message_range)
+/obj/item/taperecorder/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
 	. = ..()
 	if(mytape && recording)
 		mytape.timestamp += mytape.used_capacity
-		mytape.storedinfo += "\[[time2text(mytape.used_capacity,"mm:ss")]\] [raw_message]"
+		mytape.storedinfo += "\[[time2text(mytape.used_capacity,"mm:ss")]\] [speaker.GetVoice()] [lang_treat(speaker, message_language, raw_message, spans, message_mode)]"
 
 
 /obj/item/taperecorder/verb/record()
@@ -259,7 +260,7 @@
 			balloon_alert(usr, "recording ended")
 			stoplag(1 SECONDS) //prevents multiple balloon alerts covering each other
 			break
-		say("[mytape.storedinfo[i]]", sanitize=FALSE)//We want to display this properly, don't double encode
+		say("[mytape.storedinfo[i]]", sanitize=TRUE)
 		if(mytape.storedinfo.len < i + 1)
 			playsleepseconds = 1
 			sleep(1 SECONDS)
