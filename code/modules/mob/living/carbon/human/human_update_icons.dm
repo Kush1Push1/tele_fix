@@ -893,7 +893,8 @@ use_mob_overlay_icon: if FALSE, it will always use the default_icon_file even if
 	//Get the overlays for this item when it's being worn
 	//eg: ammo counters, primed grenade flashes, etc.
 	var/list/worn_overlays = worn_overlays(isinhands, file2use, t_state, style_flags)
-	if(worn_overlays && worn_overlays.len)
+	if(worn_overlays.len)
+// BLUEMOON ADD START - HEIGHT_SCALING
 		standing.overlays.Add(worn_overlays)
 
 	standing = center_image(standing, isinhands ? inhand_x_dimension : worn_x_dimension, isinhands ? inhand_y_dimension : worn_y_dimension)

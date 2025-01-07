@@ -162,6 +162,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
+	var/mob_height = HUMAN_HEIGHT_TALL
 	var/list/features = list(
 "mcolor" = "FFFFFF",
 "mcolor2" = "FFFFFF",
@@ -262,7 +263,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "ooc_notes" = "",
 "meat_type" = "Mammalian",
 "body_model" = MALE,
-"body_size" = RESIZE_DEFAULT_SIZE,
 "fuzzy" = FALSE,
 "color_scheme" = OLD_CHARACTER_COLORING,
 "neckfire" = FALSE,
@@ -835,6 +835,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 						dat += "<b>Sprite Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
 						dat += "<b>Scaled Appearance:</b> <a href='?_src_=prefs;preference=toggle_fuzzy;task=input'>[fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
+
+						dat += "<b>Height:</b> <a href='?_src_=prefs;preference=body_height;task=input'>[mob_height]</a>"
 
 					if(!(NOEYES in pref_species.species_traits))
 						dat += "<h3>Eye Type</h3>"
@@ -3006,6 +3008,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_meat = tgui_input_list(user, "Choose your character's meat type:", "Character Preference", GLOB.meat_types)
 					if(new_meat)
 						features["meat_type"] = new_meat
+
+				if("body_height")
+					var/new_meat
+					new_meat = tgui_input_list(user, "Choose your character's meat type:", "Character Preference", GLOB.allowed_mob_heights)
+					if(new_meat)
+						mob_height = new_meat
 
 				if("snout")
 					var/list/snowflake_snouts_list = list()

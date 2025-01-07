@@ -411,3 +411,89 @@
 #define STATUS_UPDATE_NEARSIGHTED 64
 #define STATUS_UPDATE_NONE 0
 #define STATUS_UPDATE_ALL (~0)
+
+
+
+// Height defines
+// - They are numbers so you can compare height values (x height < y height)
+// - They do not start at 0 for futureproofing
+// - They skip numbers for futureproofing as well
+// Otherwise they are completely arbitrary
+#define MONKEY_HEIGHT_DWARF 2
+#define MONKEY_HEIGHT_MEDIUM 4
+#define MONKEY_HEIGHT_TALL HUMAN_HEIGHT_DWARF
+#define HUMAN_HEIGHT_DWARF 6
+#define HUMAN_HEIGHT_SHORTEST 8
+#define HUMAN_HEIGHT_SHORT 10
+#define HUMAN_HEIGHT_MEDIUM 12
+#define HUMAN_HEIGHT_TALL 14
+#define HUMAN_HEIGHT_TALLER 16
+#define HUMAN_HEIGHT_TALLEST 18
+
+/// Assoc list of all heights, cast to strings, to """"tuples"""""
+/// The first """tuple""" index is the upper body offset
+/// The second """tuple""" index is the lower body offset
+GLOBAL_LIST_INIT(human_heights_to_offsets, list(
+	"[MONKEY_HEIGHT_DWARF]" = list(-9, -3),
+	"[MONKEY_HEIGHT_MEDIUM]" = list(-7, -4),
+	"[HUMAN_HEIGHT_DWARF]" = list(-5, -4),
+	"[HUMAN_HEIGHT_SHORTEST]" = list(-2, -1),
+	"[HUMAN_HEIGHT_SHORT]" = list(-1, -1),
+	"[HUMAN_HEIGHT_MEDIUM]" = list(0, 0),
+	"[HUMAN_HEIGHT_TALL]" = list(1, 1),
+	"[HUMAN_HEIGHT_TALLER]" = list(2, 1),
+	"[HUMAN_HEIGHT_TALLEST]" = list(3, 2)
+))
+
+#define UPPER_BODY "upper body"
+#define LOWER_BODY "lower body"
+#define NO_MODIFY "do not modify"
+
+/// Used for human height overlay adjustments
+/// Certain standing overlay layers shouldn't have a filter applied and should instead just offset by a pixel y
+/// This list contains all the layers that must offset, with its value being whether it's a part of the upper half of the body (TRUE) or not (FALSE)
+GLOBAL_LIST_INIT(layers_to_offset, list(
+	// Weapons commonly cross the middle of the sprite so they get cut in half by the filter
+	"[HANDS_LAYER]" = LOWER_BODY,
+	// Very tall hats will get cut off by filter
+	"[HEAD_LAYER]" = UPPER_BODY,
+	// Hair will get cut off by filter
+	"[HAIR_LAYER]" = UPPER_BODY,
+	// Long belts (sabre sheathe) will get cut off by filter
+	"[BELT_LAYER]" = LOWER_BODY,
+	// Everything below looks fine with or without a filter, so we can skip it and just offset
+	// (In practice they'd be fine if they got a filter but we can optimize a bit by not.)
+	"[NECK_LAYER]" = UPPER_BODY,
+	"[GLASSES_LAYER]" = UPPER_BODY,
+	"[GLOVES_LAYER]" = LOWER_BODY,
+	"[HANDCUFF_LAYER]" = LOWER_BODY,
+	"[ID_LAYER]" = UPPER_BODY,
+	"[FACEMASK_LAYER]" = UPPER_BODY,
+	// These two are cached, and have their appearance shared(?), so it's safer to just not touch it
+	"[MUTATIONS_LAYER]" = NO_MODIFY,
+	"[FRONT_MUTATIONS_LAYER]" = NO_MODIFY,
+	// These DO get a filter, I'm leaving them here as reference,
+	// to show how many filters are added at a glance
+	// BACK_LAYER (backpacks are big)
+	// BODYPARTS_HIGH_LAYER (arms)
+	// BODY_LAYER (body markings (full body), underwear (full body), eyes)
+	// BODY_ADJ_LAYER (external organs like wings)
+	// BODY_BEHIND_LAYER (external organs like wings)
+	// BODY_FRONT_LAYER (external organs like wings)
+	// DAMAGE_LAYER (full body)
+	// HIGHEST_LAYER (full body)
+	// UNIFORM_LAYER (full body)
+	// WOUND_LAYER (full body)
+))
+
+GLOBAL_LIST_INIT(allowed_mob_heights, list(
+	MONKEY_HEIGHT_DWARF,
+	MONKEY_HEIGHT_MEDIUM,
+	MONKEY_HEIGHT_TALL,
+	HUMAN_HEIGHT_SHORTEST,
+	HUMAN_HEIGHT_SHORT,
+	HUMAN_HEIGHT_MEDIUM,
+	HUMAN_HEIGHT_TALL,
+	HUMAN_HEIGHT_TALLER,
+	HUMAN_HEIGHT_TALLEST
+))
